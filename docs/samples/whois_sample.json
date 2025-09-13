@@ -1,0 +1,33 @@
+{
+  "domain_name": "adint.com.br",
+  "registrant_name": "R F G DA SILVA - SEGURANCA DE DADOS LTDA",
+  "registrant_id": "37.737.641/0001-33",
+  "country": "BR",
+  "owner_c": "ADINT19",
+  "admin_c": null,
+  "tech_c": "COTHA",
+  "billing_c": null,
+  "name_server": [
+    "ns1.serverbrasil.com.br",
+    "ns2.serverbrasil.com.br"
+  ],
+  "creation_date": "20230320 #25916944",
+  "updated_date": "20231118",
+  "expiration_date": "20330320",
+  "status": "published",
+  "nic_hdl_br": [
+    "ADINT19",
+    "COTHA"
+  ],
+  "person": [
+    "Adsumus Intelligence",
+    "Contato Técnico - Hagile"
+  ],
+  "email": [
+    "robsonnavyseals@gmail.com",
+    "contato@hagile.com.br"
+  ],
+  "domain": "adint.com.br",
+  "server": "whois.registro.br",
+  "tld": "br"
+}

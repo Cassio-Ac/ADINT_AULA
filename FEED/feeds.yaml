@@ -1,0 +1,42 @@
+AI:
+  OpenAI News: https://openai.com/news/rss.xml
+  Google DeepMind Blog: https://deepmind.com/blog/feed/basic
+  Google Research Blog: https://blog.research.google/atom.xml
+  Hugging Face Blog: https://huggingface.co/blog/feed.xml
+  NVIDIA Developer Blog: https://developer.nvidia.com/blog/feed/
+  MIT Technology Review: https://www.technologyreview.com/feed/
+  arXiv Artificial Intelligence (cs.AI): https://export.arxiv.org/rss/cs.AI
+
+Cybersecurity (News/Análises):
+  The Hacker News: https://feeds.feedburner.com/TheHackersNews
+  Krebs on Security: https://krebsonsecurity.com/feed/
+  BleepingComputer: https://www.bleepingcomputer.com/feed/
+  SecurityWeek: https://feeds.feedburner.com/securityweek
+  Dark Reading: https://www.darkreading.com/rss.xml
+  Threatpost: https://threatpost.com/feed/
+  Schneier on Security: https://www.schneier.com/feed/atom/
+  SANS Internet Storm Center (ISC): https://isc.sans.edu/rssfeed.xml
+  Ars Technica » Security: https://arstechnica.com/tag/security/feed/
+  The Register » Security (Atom): https://www.theregister.com/security/headlines.atom
+
+Threat Intel / CVEs / IOCs:
+  CISA Cybersecurity Advisories (All): https://www.cisa.gov/cybersecurity-advisories/all.xml
+  CISA ICS Advisories: https://www.cisa.gov/cybersecurity-advisories/ics-advisories.xml
+  CISA ICS Medical Advisories (ICSMA): https://www.cisa.gov/cybersecurity-advisories/ics-medical-advisories.xml
+  US-CERT Current Activity: https://www.cisa.gov/ncas/current-activity.xml
+  US-CERT Alerts: https://www.cisa.gov/ncas/alerts.xml
+  US-CERT Analysis Reports: https://www.cisa.gov/ncas/analysis-reports.xml
+  NVD (Recent CVEs): https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml
+  abuse.ch (blog): https://abuse.ch/feed/
+
+Vendors/Research (Threat Intel):
+  Palo Alto Networks — Unit 42: https://unit42.paloaltonetworks.com/feed/
+  Cisco Talos Intelligence: https://blog.talosintelligence.com/feed/
+  Microsoft MSRC Blog: https://msrc.microsoft.com/blog/feed/
+  Elastic Security Labs: https://www.elastic.co/security-labs/feed/
+  CrowdStrike Blog: https://www.crowdstrike.com/blog/feed/
+  Proofpoint Threat Insight: https://www.proofpoint.com/us/blog/feed
+  Google Cloud Blog (geral): https://cloudblog.withgoogle.com/rss
+  Rapid7 Blog: https://blog.rapid7.com/rss/
+  Qualys Security Blog: https://blog.qualys.com/feed
+  Tenable Blog: https://www.tenable.com/blog/feed

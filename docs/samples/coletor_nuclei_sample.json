@@ -1,0 +1,19 @@
+{
+  "template": "ssl/detect-ssl-issuer.yaml",
+  "template-id": "ssl-issuer",
+  "info": {
+    "name": "Detect SSL Certificate Issuer",
+    "author": ["lingtren"],
+    "tags": ["ssl", "tls"],
+    "description": "Extract the issuer's organization from the target's certificate.",
+    "severity": "info"
+  },
+  "type": "ssl",
+  "host": "www.adint.com.br",
+  "port": "443",
+  "matched-at": "www.adint.com.br:443",
+  "extracted-results": ["Let's Encrypt"],
+  "ip": "69.162.95.26",
+  "timestamp": "2025-08-18T07:58:36.072353-03:00",
+  "matcher-status": true
+}

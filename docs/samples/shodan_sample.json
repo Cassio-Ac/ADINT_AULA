@@ -1,0 +1,54 @@
+{
+  "ip": "69.162.95.26",
+  "hostnames": [
+    "adint.com.br",
+    "mail.adint.com.br",
+    "www.adint.com.br"
+  ],
+  "domains": [
+    "adint.com.br"
+  ],
+  "country_code": "US",
+  "city": "Chicago",
+  "org": "Unified Layer",
+  "isp": "Unified Layer",
+  "asn": "AS46606",
+  "last_update": "2025-08-15T07:23:45.123456",
+  "ports": [
+    22,
+    80,
+    443,
+    25,
+    110,
+    143,
+    993,
+    995
+  ],
+  "vulns": [
+    "CVE-2023-1234",
+    "CVE-2023-5678"
+  ],
+  "services": [
+    {
+      "port": 80,
+      "name": "http",
+      "product": "nginx",
+      "version": "1.20.1",
+      "banner": "HTTP/1.1 301 Moved Permanently\r\nServer: nginx/1.20.1\r\nDate: Mon, 18 Aug 2025 07:23:45 GMT"
+    },
+    {
+      "port": 443,
+      "name": "https",
+      "product": "nginx",
+      "version": "1.20.1",
+      "ssl": {
+        "cert": {
+          "issued": "2025-06-24T08:05:06Z",
+          "expires": "2025-09-22T08:05:05Z",
+          "issuer": "Let's Encrypt Authority X3",
+          "subject": "CN=adint.com.br"
+        }
+      }
+    }
+  ]
+}

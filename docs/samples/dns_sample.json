@@ -1,0 +1,131 @@
+{
+  "domain": "adint.com.br",
+  "timestamp": "2025-08-18T07:18:57.572288",
+  "dns_records": {
+    "A": [
+      "69.162.95.26"
+    ],
+    "AAAA": [],
+    "NS": [
+      "ns2.serverbrasil.com.br.",
+      "ns1.serverbrasil.com.br."
+    ],
+    "MX": [
+      "0 adint.com.br."
+    ],
+    "TXT": [
+      "\"v=spf1 ip4:69.162.95.26 +a +mx +ip4:69.162.77.162 +ip4:69.162.77.166 +ip4:69.162.95.30 +ip4:216.245.220.186 +ip4:216.245.220.187 +ip4:216.245.220.188 -all\""
+    ],
+    "SOA": [
+      "ns1.serverbrasil.com.br. allan\\.marques.hagile.com.br. 2025062301 3600 1800 1209600 86400"
+    ],
+    "CAA": [],
+    "CNAME": []
+  },
+  "security_scores": [
+    {
+      "category": "DNSSEC",
+      "description": "Validação DNSSEC",
+      "max_points": 20,
+      "earned_points": 0,
+      "details": "❌ DNSSEC não habilitado",
+      "severity": "critical"
+    },
+    {
+      "category": "SPF",
+      "description": "Registro SPF",
+      "max_points": 15,
+      "earned_points": 15,
+      "details": "SPF configurado: ✅ Usa -all (fail)",
+      "severity": "high"
+    },
+    {
+      "category": "DMARC",
+      "description": "Registro DMARC",
+      "max_points": 15,
+      "earned_points": 0,
+      "details": "❌ Nenhum registro DMARC encontrado",
+      "severity": "high"
+    },
+    {
+      "category": "DKIM",
+      "description": "Seletores DKIM",
+      "max_points": 10,
+      "earned_points": 10,
+      "details": "✅ DKIM configurado (seletores: default)",
+      "severity": "high"
+    },
+    {
+      "category": "CAA",
+      "description": "Registros CAA",
+      "max_points": 10,
+      "earned_points": 0,
+      "details": "❌ Nenhum registro CAA encontrado",
+      "severity": "medium"
+    },
+    {
+      "category": "MX",
+      "description": "Registros MX",
+      "max_points": 10,
+      "earned_points": 7,
+      "details": "MX configurado: ⚠️ Apenas 1 servidor MX (sem redundância)",
+      "severity": "medium"
+    },
+    {
+      "category": "NS",
+      "description": "Nameservers",
+      "max_points": 10,
+      "earned_points": 5,
+      "details": "NS configurado: ✅ 2 nameservers configurados, ⚠️ Todos os NS no mesmo provedor, ⚠️ Sem suporte IPv6 nos nameservers",
+      "severity": "high"
+    },
+    {
+      "category": "DANE",
+      "description": "DANE/TLSA",
+      "max_points": 5,
+      "earned_points": 0,
+      "details": "⚠️ DANE/TLSA não configurado",
+      "severity": "low"
+    },
+    {
+      "category": "TXT",
+      "description": "Registros TXT",
+      "max_points": 5,
+      "earned_points": 5,
+      "details": "Análise TXT: ✅ Sem problemas identificados",
+      "severity": "low"
+    },
+    {
+      "category": "IPv6",
+      "description": "Suporte IPv6",
+      "max_points": 5,
+      "earned_points": 0,
+      "details": "⚠️ Sem suporte IPv6 (nenhum registro AAAA)",
+      "severity": "low"
+    }
+  ],
+  "total_score": 42,
+  "max_possible_score": 105,
+  "grade": "D",
+  "recommendations": [
+    {
+      "priority": "🔴 CRÍTICO",
+      "category": "DNSSEC",
+      "recommendation": "Habilitar DNSSEC para prevenir ataques de DNS spoofing e cache poisoning",
+      "impact": "Proteção contra manipulação de respostas DNS"
+    },
+    {
+      "priority": "🟠 ALTO",
+      "category": "DMARC",
+      "recommendation": "Implementar DMARC com política 'reject' ou 'quarantine'",
+      "impact": "Proteção completa contra phishing e spoofing de email"
+    },
+    {
+      "priority": "🟡 MÉDIO",
+      "category": "CAA",
+      "recommendation": "Adicionar registros CAA para controlar emissão de certificados SSL",
+      "impact": "Prevenção contra emissão não autorizada de certificados SSL"
+    }
+  ],
+  "percentage": 40.0
+}

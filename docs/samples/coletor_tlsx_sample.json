@@ -1,0 +1,30 @@
+{
+  "timestamp": "2025-08-18T07:22:34.465891-03:00",
+  "host": "69.162.95.26",
+  "ip": "69.162.95.26",
+  "port": "443",
+  "probe_status": true,
+  "tls_version": "tls13",
+  "cipher": "TLS_AES_128_GCM_SHA256",
+  "mismatched": true,
+  "untrusted": true,
+  "not_before": "2025-06-24T08:05:06Z",
+  "not_after": "2025-09-22T08:05:05Z",
+  "subject_dn": "CN=6solucoes.com.br",
+  "subject_cn": "6solucoes.com.br",
+  "subject_an": [
+    "*.6solucoes.com.br",
+    "6solucoes.com.br"
+  ],
+  "issuer_dn": "CN=R10, O=Let's Encrypt, C=US",
+  "issuer_cn": "R10",
+  "issuer_org": [
+    "Let's Encrypt"
+  ],
+  "fingerprint_hash": {
+    "md5": "d42a445213cfafb53e7d735fe6dbe5a5",
+    "sha1": "1377e29fe21bfd39bf13cdef7dc6e9b651e65698",
+    "sha256": "a44350bf5d549f67d0928fa9ee880b9c9d34a539fd70cc0174f08e1f7599eb96"
+  },
+  "wildcard_certificate": true
+}
