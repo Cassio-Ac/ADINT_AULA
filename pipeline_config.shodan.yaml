@@ -1,0 +1,38 @@
+# Config auxiliar: roda SOMENTE a etapa Shodan (reaproveita o mesmo pipeline).
+# Uso: python3 adint_pipeline.py ... --config pipeline_config.shodan.yaml
+tools:
+  whois:
+    enabled: false
+    script: WHOIS/whois_universal.py
+    index: whois
+  dns:
+    enabled: false
+    script: DNS/dns-security-analyzer.py
+    index: dns
+  coletor:
+    enabled: false
+    script: COLETOR/coletor.sh
+    index: coletor
+  shodan:
+    enabled: true
+    script: SHODAN/unified_shodan_scanner.py
+    index: shodan
+    description: "Consulta informações no Shodan para domínios e IPs"
+  feed:
+    enabled: false
+    script: FEED/rss_feed.py
+    index: feed
+  telegram:
+    enabled: false
+    script: TELEGRAM/download_Combo.py
+    index: telegram
+
+elasticsearch:
+  index_settings:
+    number_of_shards: 1
+    number_of_replicas: 0
+    refresh_interval: "5s"
+
+tool_settings:
+  shodan:
+    max_results: 1000

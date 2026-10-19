@@ -1,0 +1,83 @@
+tools:
+  whois:
+    enabled: true
+    script: WHOIS/whois_universal.py
+    index: whois
+    description: "Consulta informações WHOIS para domínios"
+    
+  dns:
+    enabled: true
+    script: DNS/dns-security-analyzer.py
+    index: dns
+    description: "Analisa configurações DNS e atribui pontuação de segurança"
+    
+  coletor:
+    enabled: true
+    script: COLETOR/coletor.sh
+    index: coletor
+    description: "Pipeline de coleta com subfinder, httpx, naabu, tlsx e nuclei"
+    sub_indices:
+      - httpx
+      - naabu
+      - certs
+      - san
+      - nuclei
+    
+  shodan:
+    enabled: true
+    script: SHODAN/unified_shodan_scanner.py
+    index: shodan
+    description: "Consulta informações no Shodan para domínios e IPs"
+    
+  feed:
+    enabled: true
+    script: FEED/rss_feed.py
+    index: feed
+    description: "Coleta feeds RSS de segurança relevantes"
+    
+  telegram:
+    enabled: false
+    script: TELEGRAM/download_Combo.py
+    index: telegram
+    description: "Coleta dados de vazamentos do Telegram (opcional)"
+
+elasticsearch:
+  index_settings:
+    number_of_shards: 1
+    number_of_replicas: 0
+    refresh_interval: "5s"
+  
+  # Template para índices criados pelo pipeline
+  template:
+    settings:
+      index.mapping.total_fields.limit: 2000
+    
+    # Mapeamento padrão para campos comuns
+    mappings:
+      properties:
+        "@timestamp":
+          type: "date"
+        "_adint_metadata":
+          properties:
+            company:
+              type: "keyword"
+            timestamp:
+              type: "date"
+            pipeline_run:
+              type: "keyword"
+
+# Configurações específicas por ferramenta
+tool_settings:
+  coletor:
+    threads: 20
+    rate_limit: 50
+    
+  shodan:
+    max_results: 1000
+    
+  feed:
+    days_to_collect: 7
+    
+  telegram:
+    max_files: 10
+    file_types: [".txt"]

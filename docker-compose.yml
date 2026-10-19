@@ -1,0 +1,84 @@
+# Elasticsearch + Kibana para o laboratório ADINT (modo AULA).
+# ATENÇÃO: segurança DESLIGADA e portas abertas — use APENAS em laboratório/localhost.
+#
+#   Subir:    docker compose up -d
+#   Status:   docker compose ps
+#   Logs:     docker compose logs -f es
+#   Parar:    docker compose down        (mantém os dados no volume es-data)
+#   Resetar:  docker compose down -v      (APAGA os dados)
+#
+# No Linux/WSL, antes de subir:  sudo sysctl -w vm.max_map_count=262144
+# A versão do stack vem do .env (STACK_VERSION) — use um 8.x porque o cliente Python
+# do projeto está fixado em elasticsearch>=8,<9.
+
+services:
+  es:
+    image: docker.elastic.co/elasticsearch/elasticsearch:${STACK_VERSION:-8.15.3}
+    container_name: adint-es
+    environment:
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - xpack.ml.enabled=false
+      - ES_JAVA_OPTS=-Xms1g -Xmx1g
+      # Destrava a auto-criação dos índices do pipeline — inclusive os subíndices do coletor
+      # (_coletor_httpx/_naabu/_certs/_san/_nuclei). Sem isto, eles não são criados.
+      # apt_groups* = indice de treino do bloco D2-02 (criado na mao, em aula)
+      - action.auto_create_index=analise_superficie_*,vazamentos_dados,rss-feeds*,telegram_*,apt_groups*,.monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*
+    volumes:
+      - es-data:/usr/share/elasticsearch/data
+    ports:
+      - "9200:9200"
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:${STACK_VERSION:-8.15.3}
+    container_name: adint-kibana
+    environment:
+      - ELASTICSEARCH_HOSTS=http://es:9200
+    ports:
+      - "5601:5601"
+    depends_on:
+      - es
+
+  # Runner Linux do pipeline (coletor.sh + adint_pipeline.py). NAO sobe com
+  # `docker compose up` (profile "tools"); roda sob demanda:
+  #   docker compose build pipeline
+  #   docker compose run --rm pipeline python3 adint_pipeline.py \
+  #     --company "ADINT School" --company-slug adint --domains dominios.txt --es-host es
+  pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile.pipeline
+    image: adint-pipeline:latest
+    container_name: adint-pipeline
+    depends_on:
+      - es
+    env_file:
+      - .env
+    environment:
+      - ES_HOST=es
+      - ES_PORT=9200
+    volumes:
+      - ./:/app
+      - ./.secrets/subfinder/provider-config.yaml:/root/.config/subfinder/provider-config.yaml:ro
+    cap_add:          # naabu (SYN scan) precisa de raw sockets
+      - NET_RAW
+      - NET_ADMIN
+    working_dir: /app
+    profiles: ["tools"]
+    command: ["bash"]
+
+  # Alvo educativo self-hosted (OWASP Juice Shop) — 100% seu, pode escanear/explorar
+  # a vontade. Nao sobe com `docker compose up` (profile "targets"). Subir com:
+  #   docker compose --profile targets up -d juiceshop   ->  http://localhost:3000
+  juiceshop:
+    image: bkimminich/juice-shop
+    container_name: adint-juiceshop
+    ports:
+      # NAO remova o "127.0.0.1:". Sem ele o Docker faz bind em 0.0.0.0 (toda a rede
+      # local alcanca o alvo) e, no Linux/WSL, o publish passa por cima do firewall
+      # do host. Juice Shop e vulneravel de proposito: ele fica preso nesta maquina.
+      - "127.0.0.1:3000:3000"
+    profiles: ["targets"]
+
+volumes:
+  es-data:

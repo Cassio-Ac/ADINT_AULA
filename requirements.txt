@@ -1,0 +1,21 @@
+# Dependências do pipeline ADINT (raiz do projeto)
+# Instale com:  pip install -r requirements.txt
+#
+# As ferramentas externas de rede (subfinder, httpx, naabu, tlsx, nuclei)
+# são instaladas à parte via pdtm — veja docs/INSTALLATION.md.
+
+elasticsearch>=8,<9      # cliente ES — fixar <9: a 9.x removeu timeout= do construtor
+dnspython                # DNS/dns-security-analyzer.py (import dns.resolver)
+python-whois             # DNS/dns-security-analyzer.py (import whois)
+pyyaml                   # leitura de pipeline_config.yaml / feeds.yaml
+requests                 # SHODAN (API), FEED e o servidor MCP
+feedparser               # FEED/rss_feed.py
+shodan                   # CLI do Shodan (shodan init / domain / host)
+tqdm                     # TELEGRAM/import_to_elk.py (barra de progresso)
+python-dateutil          # mcp_exposure_poc.py
+mcp<2                    # servidor MCP (mcp_exposure_poc.py) — fixar <2: a 2.x renomeou
+                         # FastMCP -> MCPServer e o nosso codigo usa a API v1 (FastMCP)
+python-dotenv            # carrega chaves/config do .env (Shodan/Telegram/ES)
+setuptools<80            # CLI do shodan importa pkg_resources (removido no setuptools>=81; py3.12 nao traz no venv)
+
+# Coleta do Telegram (opcional): veja TELEGRAM/requirements.txt (telethon)

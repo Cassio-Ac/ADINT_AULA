@@ -1,0 +1,67 @@
+# ============================================================
+# feeds.yaml — fontes RSS do curso ADINT 2026
+#
+# Organizado pela NARRATIVA da aula: CVEs e Vazamentos sao o CONTRAPONTO
+# PUBLICO das fontes do submundo (Telegram).
+#   - Fonte publica  -> diz que a FALHA existe (CVE) / que o vazamento ja e publico
+#   - Fonte Telegram -> diz que alguem ja esta USANDO / VENDENDO
+# O cruzamento das duas vira o "relatorio de exposicao".
+#
+# TODAS as URLs abaixo foram TESTADAS em 17/10/2026 e retornaram 200.
+# As fontes mortas/bloqueadas estao documentadas no fim (licao de aula).
+# ============================================================
+
+# --- CVEs: vulnerabilidades publicadas (fontes vivas, testadas) ---
+CVEs:
+  CVEFeed Latest: https://cvefeed.io/rssfeed/latest.xml
+  VulDB Recent: https://vuldb.com/?rss.recent
+
+# --- Vazamentos: breaches publicos (contraponto ao canal de leak do Telegram) ---
+Vazamentos:
+  Have I Been Pwned (Latest Breaches): https://feeds.feedburner.com/HaveIBeenPwnedLatestBreaches
+
+# --- Cybersecurity (noticias / analises) — ricas em mencoes de CVE ---
+Cybersecurity:
+  The Hacker News: https://feeds.feedburner.com/TheHackersNews
+  Krebs on Security: https://krebsonsecurity.com/feed/
+  BleepingComputer: https://www.bleepingcomputer.com/feed/
+  SecurityWeek: https://feeds.feedburner.com/securityweek
+  Dark Reading: https://www.darkreading.com/rss.xml
+  SANS Internet Storm Center (ISC): https://isc.sans.edu/rssfeed.xml
+  The Register Security: https://www.theregister.com/security/headlines.atom
+  Security Affairs: https://securityaffairs.com/feed
+
+# --- Vendors / Research (threat intel de fabricante) ---
+Vendors:
+  Palo Alto Unit 42: https://unit42.paloaltonetworks.com/feed/
+  Cisco Talos: https://blog.talosintelligence.com/feed/
+  CrowdStrike Blog: https://www.crowdstrike.com/blog/feed/
+  Rapid7 Blog: https://blog.rapid7.com/rss/
+
+# --- AI (o 'tema novo' de 2026) ---
+AI:
+  OpenAI News: https://openai.com/news/rss.xml
+  Hugging Face Blog: https://huggingface.co/blog/feed.xml
+
+# ============================================================
+# FONTES MORTAS / BLOQUEADAS — nao sao feeds; sao LICAO DE AULA.
+# (Deixadas comentadas de proposito. Testadas em 17/10/2026.)
+#
+#  NVD Recent CVEs (nvd-rss.xml)      -> 404: o NIST APOSENTOU o RSS.
+#     Hoje a fonte oficial e a API 2.0 (JSON):
+#     https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=5   (200, JSON)
+#
+#  CISA Advisories / US-CERT (.xml)   -> 403: bloqueio no WAF (Akamai).
+#     NAO se resolve trocando User-Agent (testado: navegador tambem toma 403).
+#     Exigiria a API oficial ou outra saida de rede.  <-- ponto de aula forte.
+#
+#  CISA KEV (Known Exploited Vulns)   -> 200, mas em JSON (nao RSS). E a fonte
+#     PREMIUM de CVE: so o que esta sendo ATIVAMENTE explorado. Vale um
+#     coletor proprio (fetch JSON), encaixa direto no relatorio de exposicao:
+#     https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+#
+#  abuse.ch /feed/                    -> 404 (endpoint mudou).
+#  Elastic Security Labs /feed/       -> 404 (endpoint mudou).
+#  Microsoft MSRC /blog/feed/         -> XML malformado (0 entradas).
+#  arXiv cs.AI                        -> 0 entradas (formato RSS do arXiv mudou).
+# ============================================================

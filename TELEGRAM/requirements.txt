@@ -1,0 +1,19 @@
+# Dependencias EXCLUSIVAS da coleta do Telegram.
+#
+# ATENCAO: instale isto num ambiente virtual SEPARADO do venv principal.
+#     python3 -m venv telegram_venv
+#     source telegram_venv/bin/activate
+#     pip install -r TELEGRAM/requirements.txt
+#
+# Por que separado: o pipeline principal usa o cliente Elasticsearch 8.x
+# (requirements.txt da raiz fixa elasticsearch>=8,<9). Instalar este arquivo
+# por cima do venv principal REBAIXA o cliente para 7.x e quebra a ingestao
+# de todas as outras etapas -- e o erro aparece longe daqui, o que torna o
+# diagnostico dificil.
+#
+# Se voce so quer rodar os coletores de CVE/vazamento (coletor_cve_leak.py),
+# precisa apenas de `telethon`, e ele convive bem com o venv principal.
+
+telethon==1.24.0
+elasticsearch==7.17.0   # <- exigido por import_to_elk.py; NAO instale no venv principal
+tqdm==4.64.0

@@ -1,0 +1,45 @@
+# Configuração do Elasticsearch para POC/Aula seguindo documentação oficial
+
+# =================== Configurações básicas do cluster ===================
+cluster.name: elasticsearch-aula
+node.name: node-1
+
+# =================== Configurações de rede ===================
+# Para aceitar conexões de outras máquinas (multi-host)
+network.host: 0.0.0.0
+
+# Para conectividade externa do transport layer
+transport.host: 0.0.0.0
+
+# Porta HTTP padrão
+http.port: 9200
+
+# =================== Configuração para desenvolvimento ===================
+# Configuração para single-node (não usar em produção!)
+discovery.type: single-node
+
+# Para desenvolvimento - desabilita security (CUIDADO!)
+xpack.security.enabled: false
+
+# =================== Configurações de path (comentadas para usar padrão) ===================
+# path.data: C:\elasticsearch-data
+# path.logs: C:\elasticsearch-logs
+
+# =================== Configurações para economia de recursos ===================
+# Desabilita ML para economizar recursos
+xpack.ml.enabled: false
+
+# Configuração para aceitar CORS (útil para testes com interfaces web)
+http.cors.enabled: true
+http.cors.allow-origin: "*"
+http.cors.allow-headers: "X-Requested-With,Content-Type,Content-Length,Authorization"
+
+# =================== Configurações de log ===================
+logger.level: INFO
+
+# =================== Auto-criação de índices (útil para demos) ===================
+# Libera a auto-criação dos índices do pipeline (analise_superficie_*, inclusive os
+# subíndices do coletor: _coletor_httpx/_naabu/_certs/_san/_nuclei), do índice de
+# vazamentos e dos índices de feeds RSS. Sem isso, os subíndices do coletor NÃO são
+# criados e httpx/naabu/certs/san/nuclei nunca chegam ao Elasticsearch.
+action.auto_create_index: analise_superficie_*,vazamentos_dados,rss-feeds*,.monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*

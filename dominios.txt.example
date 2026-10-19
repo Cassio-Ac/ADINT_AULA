@@ -1,0 +1,9 @@
+# Um dominio por linha. Linhas vazias e comecadas por # sao ignoradas.
+# Escaneie APENAS dominios que voce possui ou tem autorizacao escrita para testar.
+#
+# Alvo de treino publico, mantido pela Acunetix para este fim:
+vulnweb.com
+#
+# Substitua pelos seus:
+# exemplo.com.br
+# sub.exemplo.com.br

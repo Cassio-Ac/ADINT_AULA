@@ -1,0 +1,45 @@
+# ============================================================
+# Runner Linux do pipeline ADINT (coletor.sh + adint_pipeline.py).
+# O coletor e um pipeline Linux puro (bash+dig+jq+awk) e as ferramentas
+# do Project Discovery sao nativas de Linux — por isso rodamos tudo aqui,
+# na MESMA rede do Elasticsearch (servico `es` do docker-compose).
+#
+#   Build:  docker compose build pipeline
+#   Rodar:  docker compose run --rm pipeline \
+#             python3 adint_pipeline.py --company "ADINT School" \
+#               --company-slug adint --domains dominios.txt --es-host es
+# ============================================================
+
+# ---- Stage 1: compila os binarios do Project Discovery ----
+FROM golang:1.23-bookworm AS tools
+ENV CGO_ENABLED=1
+# naabu precisa de libpcap no build (raw sockets)
+RUN apt-get update && apt-get install -y --no-install-recommends libpcap-dev \
+ && rm -rf /var/lib/apt/lists/*
+RUN go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest \
+ && go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest \
+ && go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest \
+ && go install -v github.com/projectdiscovery/tlsx/cmd/tlsx@latest \
+ && go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+# binarios ficam em /go/bin
+
+# ---- Stage 2: runtime (python + utilitarios do coletor.sh) ----
+FROM python:3.12-slim-bookworm
+
+# Dependencias de linha de comando que o coletor.sh usa:
+#   dig (dnsutils), jq, bc, awk (gawk), column (bsdextrautils), tput (ncurses-bin),
+#   whois (whois), libpcap (naabu em runtime)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      dnsutils whois jq bc gawk bsdextrautils ncurses-bin coreutils \
+      ca-certificates libpcap0.8 \
+ && rm -rf /var/lib/apt/lists/*
+
+# Binarios do Project Discovery do stage anterior
+COPY --from=tools /go/bin/ /usr/local/bin/
+
+WORKDIR /app
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+
+# O repositorio e montado em /app em tempo de execucao (volume no compose).
+CMD ["bash"]

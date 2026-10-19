@@ -1,0 +1,57 @@
+# ── Segredos (NUNCA comitar) ──────────────────────────────────────────
+.env
+.env.local
+.secrets/
+*.session
+*.session-journal
+*.session*
+**/provider-config.yaml
+*.key
+*.pem
+credentials*.json
+
+# ── Alvos reais (cada um usa os seus) ─────────────────────────────────
+dominios.txt
+dominios_*.txt
+!dominios.txt.example
+
+# ── Dados coletados / resultados locais ───────────────────────────────
+pipeline_results/
+dns_analysis/
+shodan_results/
+out/
+*.log
+*.jsonl
+# NAO ponha uma regra "elk/" solta aqui: no Windows/WSL o filesystem e
+# case-insensitive e ela engole a pasta de CODIGO "ELK/". A saida do coletor
+# ja esta coberta por pipeline_results/ e out/.
+
+# ── Telegram (dados sensiveis) ────────────────────────────────────────
+TELEGRAM/downloads_omega_cloud/
+TELEGRAM/downloaded_files_cache.txt
+TELEGRAM/download_log.csv
+TELEGRAM/lista_chats.txt
+
+# ── Ferramentas / ambiente local ──────────────────────────────────────
+nuclei-templates/
+__pycache__/
+*.pyc
+venv/
+.venv/
+telegram_venv/
+adint-mcp-venv/
+
+# ── Lixo de sistema ───────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Saidas de coleta que caem junto ao codigo ─────────────────────────
+# (o pipeline grava em pipeline_results/, mas rodar um script solto na mao
+#  deixa json de dado REAL dentro da pasta da ferramenta)
+WHOIS/*.json
+DNS/*.json
+SHODAN/*.json
+COLETOR/*.json
+COLETOR/dominios.txt
+!docs/samples/*.json
