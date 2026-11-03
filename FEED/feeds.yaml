@@ -7,11 +7,25 @@
 #   - Fonte Telegram -> diz que alguem ja esta USANDO / VENDENDO
 # O cruzamento das duas vira o "relatorio de exposicao".
 #
-# TODAS as URLs abaixo foram TESTADAS em 17/10/2026 e retornaram 200.
-# As fontes mortas/bloqueadas estao documentadas no fim (licao de aula).
+# ------------------------------------------------------------
+# TESTADO EM 03/11/2026. Criterio: HTTP 200 **e** >= 1 entrada lida
+# pelo feedparser. So HTTP 200 nao basta — ver MSRC e Avast no fim.
+#
+#   57 URLs testadas (as 19 daqui + as 38 do OPML publico do slide)
+#   38 vivas  |  19 mortas
+#   Este arquivo ficou com 40 fontes vivas, em 7 categorias.
+#
+# Para reconferir antes da aula:
+#   python3 FEED/rss_feed.py collect --feeds-file FEED/feeds.yaml --days 2
+#   (ou o script de teste em C:\ADINT\samples\, se preferir so o status)
+# ------------------------------------------------------------
+#
+# ATENCAO AO VOLUME: o teto e RSS_MAX_ENTRIES (default 100 por feed).
+# Com 40 fontes, uma coleta completa passou de ~2.660 itens em 03/11.
+# Em JSON cru isso da ~303 mil tokens. Ver a licao de token no fim.
 # ============================================================
 
-# --- CVEs: vulnerabilidades publicadas (fontes vivas, testadas) ---
+# --- CVEs: vulnerabilidades publicadas ---
 CVEs:
   CVEFeed Latest: https://cvefeed.io/rssfeed/latest.xml
   VulDB Recent: https://vuldb.com/?rss.recent
@@ -30,6 +44,16 @@ Cybersecurity:
   SANS Internet Storm Center (ISC): https://isc.sans.edu/rssfeed.xml
   The Register Security: https://www.theregister.com/security/headlines.atom
   Security Affairs: https://securityaffairs.com/feed
+  # --- acrescentados em 03/11/2026, do OPML publico (todos testados) ---
+  WeLiveSecurity: https://www.welivesecurity.com/feed
+  Malwarebytes Labs: https://www.malwarebytes.com/blog/feed/index.xml
+  Wired Security: https://www.wired.com/category/security/feed/
+  Ars Technica Security: https://arstechnica.com/tag/security/feed/
+  BRANDEFENSE Blog: https://brandefense.io/blog/feed
+  Schneier on Security: https://www.schneier.com/feed/atom/
+  Threatpost: https://threatpost.com/feed/
+  Quick Heal Blog: https://blogs.quickheal.com/feed/
+  CSHub Attacks: https://www.cshub.com/rss/categories/attacks
 
 # --- Vendors / Research (threat intel de fabricante) ---
 Vendors:
@@ -37,31 +61,85 @@ Vendors:
   Cisco Talos: https://blog.talosintelligence.com/feed/
   CrowdStrike Blog: https://www.crowdstrike.com/blog/feed/
   Rapid7 Blog: https://blog.rapid7.com/rss/
+  # --- acrescentados em 03/11/2026 ---
+  Google Cloud Blog: https://cloudblog.withgoogle.com/rss
+  Qualys Security: https://blog.qualys.com/feed
+  Tenable Blog: https://www.tenable.com/blog/feed
 
 # --- AI (o 'tema novo' de 2026) ---
 AI:
   OpenAI News: https://openai.com/news/rss.xml
   Hugging Face Blog: https://huggingface.co/blog/feed.xml
+  # --- acrescentados em 03/11/2026 ---
+  # arXiv cs.AI RESSUSCITOU: em 17/10 dava 0 entradas, hoje da 297.
+  # Fonte morre — e fonte tambem VOLTA. Por isso o teste e periodico.
+  arXiv cs.AI: https://export.arxiv.org/rss/cs.AI
+  Google DeepMind Blog: https://deepmind.com/blog/feed/basic
+  NVIDIA Developer Blog: https://developer.nvidia.com/blog/feed/
+  Google Research Blog: https://blog.research.google/atom.xml
+  MIT Technology Review: https://www.technologyreview.com/feed/
+
+# --- Disinformation (categoria nova, 03/11/2026) ---
+Disinformation:
+  Inforrm Fake News: https://inforrm.org/tag/fake-news/feed/
+
+# --- Espionage (categoria nova, 03/11/2026) ---
+Espionage:
+  IntelNews: https://intelnews.org/feed/
+  Nordic Monitor: https://nordicmonitor.com/feed/
+  The Spy Collection: https://medium.com/feed/@thespycollection
 
 # ============================================================
 # FONTES MORTAS / BLOQUEADAS — nao sao feeds; sao LICAO DE AULA.
-# (Deixadas comentadas de proposito. Testadas em 17/10/2026.)
+# Testadas em 03/11/2026. Agrupadas pelo TIPO de morte, que e o
+# que interessa ensinar: cada tipo exige uma resposta diferente.
 #
-#  NVD Recent CVEs (nvd-rss.xml)      -> 404: o NIST APOSENTOU o RSS.
-#     Hoje a fonte oficial e a API 2.0 (JSON):
-#     https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=5   (200, JSON)
+# ------------------------------------------------------------
+# TIPO 1 — HTTP 403: o WAF te barra. 8 feeds, a categoria Threat
+#          Intel INTEIRA. NAO se resolve trocando User-Agent
+#          (testado: navegador tambem toma 403).
+#   https://www.cisa.gov/cybersecurity-advisories/all.xml
+#   https://www.cisa.gov/cybersecurity-advisories/ics-advisories.xml
+#   https://www.cisa.gov/cybersecurity-advisories/ics-medical-advisories.xml
+#   https://www.cisa.gov/ncas/current-activity.xml
+#   https://www.cisa.gov/ncas/alerts.xml
+#   https://www.cisa.gov/ncas/analysis-reports.xml
+#   https://www.cisa.gov/uscert/ncas/alerts.xml
+#   https://euvsdisinfo.eu/category/blog/feed/
+#   -> resposta: API oficial, ou outra saida de rede. Nao insista no RSS.
 #
-#  CISA Advisories / US-CERT (.xml)   -> 403: bloqueio no WAF (Akamai).
-#     NAO se resolve trocando User-Agent (testado: navegador tambem toma 403).
-#     Exigiria a API oficial ou outra saida de rede.  <-- ponto de aula forte.
+# ------------------------------------------------------------
+# TIPO 2 — HTTP 404: o endpoint mudou. 6 feeds. O site esta vivo,
+#          o RSS e que saiu do ar ou mudou de lugar.
+#   https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml   (NIST APOSENTOU o RSS)
+#   https://abuse.ch/feed/
+#   https://www.elastic.co/security-labs/feed/
+#   https://www.proofpoint.com/us/blog/feed
+#   https://www.scmagazine.com/feed/topic/threats
+#   https://holdsecurity.com/index.xml
+#   -> resposta: procurar o novo endereco, ou trocar de fonte.
 #
-#  CISA KEV (Known Exploited Vulns)   -> 200, mas em JSON (nao RSS). E a fonte
-#     PREMIUM de CVE: so o que esta sendo ATIVAMENTE explorado. Vale um
-#     coletor proprio (fetch JSON), encaixa direto no relatorio de exposicao:
-#     https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+# ------------------------------------------------------------
+# TIPO 3 — HTTP 200 com ZERO entradas. 3 feeds. ESTE E O PIOR,
+#          porque o coletor diz "OK" e nao traz nada. Se voce so
+#          olha o status code, ele passa despercebido para sempre.
+#   https://msrc.microsoft.com/blog/feed/      XML malformado (linha 125)
+#   https://decoded.avast.io/feed/             200, 0 entradas
+#   https://thecyberwire.com/feeds/rss.xml     XML malformado (linha 2)
+#   -> resposta: validar CONTAGEM DE ENTRADAS, nunca so o status.
 #
-#  abuse.ch /feed/                    -> 404 (endpoint mudou).
-#  Elastic Security Labs /feed/       -> 404 (endpoint mudou).
-#  Microsoft MSRC /blog/feed/         -> XML malformado (0 entradas).
-#  arXiv cs.AI                        -> 0 entradas (formato RSS do arXiv mudou).
+# ------------------------------------------------------------
+# TIPO 4 — conexao recusada / DNS. 2 feeds.
+#   https://publicintelligence.net/feed/
+#   https://cybersecuritynews.com/feed/
+#   -> resposta: pode ser temporario. Reteste antes de remover.
+#
+# ------------------------------------------------------------
+# NAO E RSS, mas vale um coletor proprio:
+#   CISA KEV (Known Exploited Vulns) -> 200, em JSON. E a fonte PREMIUM
+#   de CVE: so o que esta sendo ATIVAMENTE explorado.
+#   https://www.cisa.gov/sites/default/files/feeds/known_exploited_vulnerabilities.json
+#
+#   NVD API 2.0 (substituiu o RSS aposentado):
+#   https://services.nvd.nist.gov/rest/json/cves/2.0?resultsPerPage=5
 # ============================================================

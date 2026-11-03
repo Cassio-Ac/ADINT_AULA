@@ -42,4 +42,4 @@ logger.level: INFO
 # subíndices do coletor: _coletor_httpx/_naabu/_certs/_san/_nuclei), do índice de
 # vazamentos e dos índices de feeds RSS. Sem isso, os subíndices do coletor NÃO são
 # criados e httpx/naabu/certs/san/nuclei nunca chegam ao Elasticsearch.
-action.auto_create_index: analise_superficie_*,vazamentos_dados,rss-feeds*,.monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*
+action.auto_create_index: analise_superficie_*,vazamentos_dados,rss-feeds*,telegram_*,apt_*,.monitoring*,.watches,.triggered_watches,.watcher-history*,.ml*

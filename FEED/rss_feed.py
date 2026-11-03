@@ -251,15 +251,30 @@ class RSSToELK:
 
         # ILM: hot -> rollover; delete -> expurgo. Ajuste os numeros se o seu
         # laboratorio for pequeno (ex.: max_age 7d / min_age 30d).
+        # ATENCAO AO NOME DOS ARGUMENTOS. No cliente 8.x a assinatura e
+        #     put_lifecycle(*, name: str, policy: Mapping, ...)
+        # ou seja: `name` e o NOME da politica e `policy` e o CORPO dela.
+        # A versao antiga disto passava policy="rss-feeds-ilm" (o nome!) mais
+        # um body={"policy": ...}. O cliente via dois valores para `policy`,
+        # devolvia "Received multiple values for 'policy'", e o except abaixo
+        # engolia como WARNING — entao o `setup` dizia que tinha concluido e a
+        # POLITICA NUNCA ERA CRIADA. O template apontava para ela, o indice
+        # entrava em ILM step=ERROR ("policy does not exist") e ficava la,
+        # sem rollover e sem expurgo, por tempo indeterminado. Achado em
+        # 03/11/2026, 17 dias depois. Classico: a falha nao grita, ela cala.
         try:
-            self.es.ilm.put_lifecycle(policy="rss-feeds-ilm", body={
-                "policy": {"phases": {
+            self.es.ilm.put_lifecycle(
+                name="rss-feeds-ilm",
+                policy={"phases": {
                     "hot": {"actions": {"rollover": {"max_age": "30d", "max_size": "20gb"}}},
                     "delete": {"min_age": "180d", "actions": {"delete": {}}}
-                }}
-            })
+                }},
+            )
+            log.info("♻️  politica ILM criada/atualizada: rss-feeds-ilm")
         except Exception as e:
-            log.warning(f"ILM: {e}")
+            # Em lab sem privilegio de ILM isto falha e o template ainda vale a
+            # pena — mas o aviso precisa ser VISIVEL, nao um warning no meio do log.
+            log.warning(f"ILM NAO configurado ({e}) — sem rollover nem expurgo!")
 
         # Template: vale para todo indice que casar com `rss-feeds-*`. Mexer no
         # template NAO reescreve indice que ja existe — so vale para os novos.

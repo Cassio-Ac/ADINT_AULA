@@ -55,3 +55,18 @@ SHODAN/*.json
 COLETOR/*.json
 COLETOR/dominios.txt
 !docs/samples/*.json
+
+# ===== TRABALHO DE CLIENTE - NAO PERTENCE A ESTE REPOSITORIO =====
+# Este repo e material de AULA. Trabalho de Red Team de cliente nao entra
+# aqui: nem dado, nem script, nem relatorio, nem nome de cliente.
+# Os padroes com nome real ficam em .git/info/exclude (local, nao publicado).
+recon-*/
+templates-cliente*/
+purple-*.sh
+recon-massa.sh
+TIMELINE-*
+*-CONSOLIDADO.txt
+cname-pendurados.txt
+zona-dns.txt
+whois-bloco-proprio.txt
+nuclei-final.jsonl
