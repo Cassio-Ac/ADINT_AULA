@@ -1,82 +1,95 @@
-# Vazamentos para ELK - Documentação
+# Módulo Telegram — ADINT 2026
 
-Este projeto contém scripts para processar arquivos de vazamentos de dados e enviá-los para o Elasticsearch.
+Coleta em canais públicos de Telegram e indexação no Elasticsearch.
 
-## Requisitos
+Os scripts são **didáticos**: curtos, lineares, um assunto cada. Rode na ordem.
 
-- Python 3.x
-- Elasticsearch
-- Dependências Python: elasticsearch, tqdm
+---
 
-## Estrutura do Projeto
-
-- `upload_to_elk.py`: Script principal para processar os arquivos e enviar para o Elasticsearch
-- `run_upload.sh`: Script de conveniência para executar o upload
-- `downloads_omega_cloud/`: Diretório contendo os arquivos de vazamentos
-- `telegram_venv/`: Ambiente virtual Python com as dependências instaladas
-
-## Como Usar
-
-### Configuração
-
-1. Certifique-se de que o Elasticsearch está rodando
-2. Ajuste as configurações no script `run_upload.sh` se necessário:
-   - `ELK_HOST`: Host do Elasticsearch (padrão: localhost)
-   - `ELK_PORT`: Porta do Elasticsearch (padrão: 9200)
-   - `ELK_USER`: Usuário do Elasticsearch (opcional)
-   - `ELK_PASSWORD`: Senha do Elasticsearch (opcional)
-   - `ELK_INDEX`: Nome do índice no Elasticsearch (padrão: vazamentos)
-   - `BATCH_SIZE`: Tamanho do lote para upload (padrão: 1000)
-   - `DIRECTORY`: Diretório com os arquivos (padrão: downloads_omega_cloud)
-
-### Execução
+## Antes de começar
 
 ```bash
-./run_upload.sh
+pip install -r TELEGRAM/requirements.txt
 ```
 
-Ou execute o script Python diretamente:
+Crie o app em <https://my.telegram.org/apps> e preencha o `.env` **na raiz do projeto**:
 
 ```bash
-source ../telegram_venv/bin/activate
-python upload_to_elk.py --host localhost --port 9200 --index vazamentos
+TELEGRAM_API_ID=12345678
+TELEGRAM_API_HASH=<32 caracteres hexadecimais>
+TELEGRAM_PHONE=+5511999999999
+TELEGRAM_SESSION=sessao_adint          # só o NOME, sem caminho
+ADINT_DOWNLOADS=~/adint_downloads      # opcional; é o default
+ES_URL=http://localhost:9200           # opcional; é o default
 ```
 
-### Parâmetros do Script Python
+> No `my.telegram.org`, **App title** e **Short name** aceitam só letras e números,
+> 5 a 32 caracteres. Acento, espaço ou pontuação fazem o site devolver um erro
+> genérico sem dizer qual campo está errado.
 
-```
-usage: upload_to_elk.py [-h] [--host HOST] [--port PORT] [--user USER]
-                        [--password PASSWORD] [--index INDEX] [--batch BATCH]
-                        [--directory DIRECTORY]
+O `.env` e os `*.session` estão no `.gitignore`. **Não commite nenhum dos dois.**
 
-Upload de dados para o Elasticsearch
+---
 
-options:
-  -h, --help            show this help message and exit
-  --host HOST           Host do Elasticsearch
-  --port PORT           Porta do Elasticsearch
-  --user USER           Usuário do Elasticsearch
-  --password PASSWORD   Senha do Elasticsearch
-  --index INDEX         Nome do índice no Elasticsearch
-  --batch BATCH         Tamanho do lote para upload
-  --directory DIRECTORY
-                        Diretório com os arquivos
-```
+## A ordem
 
-## Estrutura dos Dados no Elasticsearch
+| # | script | o que ensina |
+|---|---|---|
+| 1 | `criar_sessao.py` | cria o `.session`; por que `getpass` e não `input` |
+| 2 | `usar_sessao.py` | usar a sessão: sem telefone, sem código, sem senha |
+| 3 | `usar_sessao_id_fake.py` | **a sessão é a credencial** — entra com `api_id=1` |
+| 4 | `campos_mensagem.py` | os campos de uma mensagem, em 5 famílias, e um JSON |
+| 5 | `url_escondida.py` | `m.message` × `m.text`: a URL que some se indexar errado |
+| 6 | `baixa_arquivo_aberto.py` | álbum: 6 arquivos num post, escolhe 1 e abre |
+| 7 | `baixa_arquivo.py` | arquivo cifrado: baixa, mostra a senha, **não abre** |
+| 8 | `manda_combo_elastic.py` | credencial vazada vira política de senha |
+| 9 | `coletor_cve_leak.py` | as mensagens → `telegram_cve` / `telegram_leak` |
 
-Cada documento no Elasticsearch terá a seguinte estrutura:
+Apoio:
 
-```json
-{
-  "id": "hash_md5_do_arquivo_e_linha",
-  "linha": "conteúdo_da_linha_original",
-  "arquivo_origem": "nome_do_arquivo"
-}
-```
+- `criar_sessao_completo.py` — a versão endurecida do passo 1 (validação, guardas
+  de caminho, tratamento por exceção). Use como referência de "vira produção".
+- `nome_grupos.py` — lista os diálogos da conta e seus IDs.
+- `parse_combo.py` / `gera_combo_ficticio.py` — base **fictícia** de combo e o
+  parser dos 6 formatos de linha. Domínios `.invalid` / `.example` (RFC 2606).
 
-O script filtra apenas linhas que contenham `:` ou `|`, que são as divisórias das colunas nos arquivos de vazamento.
+---
 
-## Logs
+## Três regras que o código executa
 
-Os logs são salvos no arquivo `elk_upload.log` e também exibidos no console durante a execução.
+**A sessão nasce em `~/.adint/telegram/`, nunca na pasta do projeto.**
+Em `/mnt/c` o `chmod 600` é silenciosamente ignorado pelo DrvFs; no ext4 funciona.
+O `criar_sessao_completo.py` recusa gravar em OneDrive, Dropbox ou dentro de um
+repositório git — procurando `.git` árvore acima.
+
+**`connect()`, nunca `start()`.**
+`start()` pergunta o telefone no `stdin`. Em `cron`, container ou pipe ele espera
+para sempre e parece problema de rede.
+
+**Nada é baixado sem passar por um portão.**
+O tamanho é conferido **antes** do download, e em `baixa_arquivo.py` a recusa é
+por procedência, não só por tamanho — um `.csv` de 2 KB de canal real continua
+sendo dado de vítima.
+
+---
+
+## Onde os arquivos caem
+
+`ADINT_DOWNLOADS` (padrão `~/adint_downloads`). **Fora do repositório.**
+Arquivo de canal de crime contém dado de terceiro: não commite, não sincronize
+em nuvem, não projete em tela. Os scripts mascaram usuário e senha na saída —
+o domínio é preservado de propósito, porque ele é o achado, não a vítima.
+
+Nenhum script abre, extrai ou descompacta o que baixa.
+
+---
+
+## Índices gerados
+
+| índice | origem | serve para |
+|---|---|---|
+| `telegram_cve` | `@CVEDetector` | CVEs com `cve_ids` extraídos |
+| `telegram_leak` | `@breachdetect` | mensagens de vazamento |
+| `telegram_combo_br` | arquivo de combo | e-mail, domínio, senha, termo-base |
+
+Todos com mapeamento explícito e `_id` determinístico: **rodar duas vezes não duplica.**
