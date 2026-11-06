@@ -1,0 +1,2277 @@
+##############################################################################
+#  ADINT 2026 — DIA 2 — TODOS OS COMANDOS
+#
+#  Copie e cole na ordem. Comandos rodam DENTRO do WSL (Ubuntu),
+#  salvo onde estiver marcado "(PowerShell)".
+#
+#  Gerado a partir de: COMANDOS_AULA_DIA2.md, D2-01a, D2-02, D2-02a, D2-02b
+##############################################################################
+
+==============================================================================
+  VARIAVEIS — COLE ISTO PRIMEIRO, EM CADA TERMINAL NOVO
+==============================================================================
+
+# Sem estas duas linhas, os comandos abaixo falham EM SILENCIO:
+#   $ES vazio  -> curl: (3) URL rejected: No host part   (o -s esconde)
+#   $S  vazio  -> --data-binary: error reading a file
+
+cd /mnt/c/ADINT/ADINT_AULA          # a raiz do projeto
+export ES="${ES:-http://localhost:9200}"
+export S="${ADINT_SAMPLES:-$PWD/docs/samples}"
+
+# confira antes de seguir:
+echo "ES=$ES"; echo "S=$S"
+curl -s "$ES" | head -3        # tem que responder com o cluster_name
+ls "$S" | head -5              # tem que listar os ndjson
+
+==============================================================================
+  AMBIENTE — SUBIR E CONFERIR
+==============================================================================
+
+# --------------------------------------------------------------------------
+# [0] Véspera
+# --------------------------------------------------------------------------
+
+/opt/adint-venv/bin/python3 -c "import feedparser, requests, yaml, elasticsearch; \
+print('feedparser', feedparser.__version__); print('elasticsearch', elasticsearch.__version__)"
+#   feedparser 6.0.14
+#   elasticsearch (8, 19, 3)
+
+cd /mnt/c/ADINT/ADINT_AULA
+docker compose up -d es kibana
+docker compose ps
+
+/usr/bin/curl -s localhost:9200 | /usr/bin/jq -r '.version.number, .version.build_type'
+#   8.15.3
+#   docker
+
+/usr/bin/grep -cE '^\s{2}[^#].*https?://' /mnt/c/ADINT/ADINT_AULA/FEED/feeds.yaml
+#   38
+
+cd /mnt/c/ADINT/ADINT_AULA && /opt/adint-venv/bin/python3 FEED/rss_feed.py collect \
+  --feeds-file FEED/feeds.yaml --output-dir /tmp/rss_vespera --days 2 2>&1 \
+  | /usr/bin/grep -E "salvo|Categoria"
+
+==============================================================================
+  RSS
+==============================================================================
+
+# --------------------------------------------------------------------------
+# O feed cru, no terminal (slide 7)
+# --------------------------------------------------------------------------
+
+/usr/bin/curl -s https://feeds.feedburner.com/TheHackersNews | head -40
+
+/usr/bin/curl -s https://feeds.feedburner.com/TheHackersNews \
+  | /usr/bin/grep -oE '</?(rss|channel|item|title|link|pubDate|description)>' | head -20
+
+/usr/bin/curl -s https://feeds.feedburner.com/TheHackersNews | /usr/bin/grep -c "<item>"
+#   48   <- este número está ERRADO, de propósito. Deixe o aluno achar.
+
+# --------------------------------------------------------------------------
+# Atom × RSS (slide 8)
+# --------------------------------------------------------------------------
+
+/usr/bin/curl -s https://www.theregister.com/security/headlines.atom | head -12
+#   VEM VAZIO. Nenhuma linha, nenhum erro, exit code 0.
+
+# --------------------------------------------------------------------------
+# O script de seis linhas (slide 9)
+# --------------------------------------------------------------------------
+
+cat > /tmp/rss_demo.py <<'EOF'
+import requests, feedparser
+
+url = "https://feeds.feedburner.com/TheHackersNews"
+print("Buscando feed RSS...")
+response = requests.get(url, timeout=20)
+feed = feedparser.parse(response.content)
+
+primeira_entrada = feed.entries[0]
+print(f"Titulo: {primeira_entrada.title}")
+print(f"Link:   {primeira_entrada.link}")
+print(f"Data:   {primeira_entrada.published}")
+print(f"Resumo: {primeira_entrada.summary[:100]}...")
+
+print(f"\nTotal de noticias no feed: {len(feed.entries)}")
+EOF
+/opt/adint-venv/bin/python3 /tmp/rss_demo.py
+
+# --------------------------------------------------------------------------
+# Achar o feed de um site que não anuncia (slide 10)
+# --------------------------------------------------------------------------
+
+/usr/bin/curl -s https://krebsonsecurity.com \
+  | /usr/bin/grep -oE '<link[^>]*application/(rss|atom)\+xml[^>]*>' | head -3
+#   o endereço do feed está declarado no <head>, mesmo sem link visível
+
+for p in /feed/ /rss.xml /index.xml /atom.xml /feed.xml; do
+  printf '%-12s ' "$p"
+  /usr/bin/curl -s -o /dev/null -w '%{http_code}\n' "https://krebsonsecurity.com$p"
+done
+
+# --------------------------------------------------------------------------
+# O teste de dois passos, antes de confiar
+# --------------------------------------------------------------------------
+
+/usr/bin/curl -sIL https://securityaffairs.com/feed | /usr/bin/grep -E '^HTTP'  # quer 200
+/usr/bin/curl -sL  https://securityaffairs.com/feed | head -5                   # quer XML com <item>
+
+# --------------------------------------------------------------------------
+# HTTP 200 não basta (slide 11)
+# --------------------------------------------------------------------------
+
+cat > /tmp/testa_feed.py <<'EOF'
+import sys, requests, feedparser
+UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/131.0 Safari/537.36"
+for url in sys.argv[1:]:
+    try:
+        r = requests.get(url, timeout=20, headers={"User-Agent": UA})
+        n = len(feedparser.parse(r.content).entries) if r.status_code == 200 else 0
+        estado = f"OK  {n:4d} entradas" if n else f"MORTO  HTTP {r.status_code}, {n} entradas"
+    except Exception as e:
+        estado = f"MORTO  {type(e).__name__}"
+    print(f"{estado:28} {url}")
+EOF
+
+/opt/adint-venv/bin/python3 /tmp/testa_feed.py \
+  https://feeds.feedburner.com/TheHackersNews \
+  https://www.cisa.gov/cybersecurity-advisories/all.xml \
+  https://nvd.nist.gov/feeds/xml/cve/misc/nvd-rss.xml \
+  https://msrc.microsoft.com/blog/feed/ \
+  https://export.arxiv.org/rss/cs.AI
+
+/usr/bin/curl -s -o /dev/null -w 'sem UA:  %{http_code}\n' https://www.cisa.gov/ncas/alerts.xml
+/usr/bin/curl -s -o /dev/null -w 'com UA:  %{http_code}\n' -A "Mozilla/5.0" https://www.cisa.gov/ncas/alerts.xml
+#   403 nos dois
+
+# --------------------------------------------------------------------------
+# [3] RSS — o arquivo de fontes
+# --------------------------------------------------------------------------
+
+/usr/bin/head -30 /mnt/c/ADINT/ADINT_AULA/FEED/feeds.yaml
+
+/opt/adint-venv/bin/python3 -c "
+import yaml
+d = yaml.safe_load(open('/mnt/c/ADINT/ADINT_AULA/FEED/feeds.yaml', encoding='utf-8'))
+for cat, feeds in d.items(): print(f'  {cat:<16} {len(feeds)}')
+print(f'  {\"TOTAL\":<16} {sum(len(v) for v in d.values())}')"
+
+/usr/bin/grep -A40 "FONTES MORTAS" /mnt/c/ADINT/ADINT_AULA/FEED/feeds.yaml | head -30
+
+/opt/adint-venv/bin/python3 -c "
+import yaml
+d = yaml.safe_load(open('/mnt/c/ADINT/ADINT_AULA/FEED/feeds.yaml', encoding='utf-8'))
+for cat, feeds in d.items():
+    for nome, url in feeds.items(): print(f'{cat:<16} {nome}')
+" | grep -i cisa
+#   silêncio = ela está só nos comentários. É a resposta certa.
+
+# --------------------------------------------------------------------------
+# [4] RSS — o coletor de produção
+# --------------------------------------------------------------------------
+
+cd /mnt/c/ADINT/ADINT_AULA
+/opt/adint-venv/bin/python3 FEED/rss_feed.py --help
+
+# --------------------------------------------------------------------------
+# setup — ILM + template + índice com alias
+# --------------------------------------------------------------------------
+
+/opt/adint-venv/bin/python3 FEED/rss_feed.py setup \
+  --feeds-file FEED/feeds.yaml --es-host localhost --es-port 9200
+#   ♻️  politica ILM criada/atualizada: rss-feeds-ilm
+#   🧩 template criado/atualizado
+
+/usr/bin/curl -s "localhost:9200/_ilm/policy/rss-feeds-ilm?pretty" | head -8
+/usr/bin/curl -s "localhost:9200/_cat/aliases/rss-feeds?v"
+/usr/bin/curl -s "localhost:9200/_cat/indices/rss-feeds*?v&h=health,index,docs.count,store.size"
+
+# --------------------------------------------------------------------------
+# collect — baixa e salva em disco (slide 15)
+# --------------------------------------------------------------------------
+
+/opt/adint-venv/bin/python3 FEED/rss_feed.py collect \
+  --feeds-file FEED/feeds.yaml --output-dir rss_feeds --days 1
+
+/opt/adint-venv/bin/python3 FEED/rss_feed.py collect \
+  --feeds-file FEED/feeds.yaml --output-dir rss_feeds --days 1 2>&1 \
+  | /usr/bin/grep "(0 entradas)"
+
+# --------------------------------------------------------------------------
+# send — manda os JSONs pro Elastic
+# --------------------------------------------------------------------------
+
+/opt/adint-venv/bin/python3 FEED/rss_feed.py send \
+  --feeds-file FEED/feeds.yaml --input rss_feeds \
+  --es-host localhost --es-port 9200
+#   🎉 concluido: 208 documentos indexados (com sucesso)
+
+/opt/adint-venv/bin/python3 FEED/rss_feed.py send \
+  --feeds-file FEED/feeds.yaml --input rss_feeds \
+  --es-host localhost --es-port 9200 | tail -1
+#   🎉 concluido: 0 documentos indexados
+
+# --------------------------------------------------------------------------
+# collect-send — os dois numa rodada
+# --------------------------------------------------------------------------
+
+/opt/adint-venv/bin/python3 FEED/rss_feed.py collect-send \
+  --feeds-file FEED/feeds.yaml --output-dir rss_feeds --days 7 \
+  --es-host localhost --es-port 9200
+
+# --------------------------------------------------------------------------
+# [5] RSS — o que chegou no Elastic
+# --------------------------------------------------------------------------
+
+/usr/bin/tree -L 2 /mnt/c/ADINT/ADINT_AULA/rss_feeds 2>/dev/null \
+  || /usr/bin/find /mnt/c/ADINT/ADINT_AULA/rss_feeds -name '*.json' | head -20
+/usr/bin/find /mnt/c/ADINT/ADINT_AULA/rss_feeds -name '*.json' | wc -l
+/usr/bin/du -sh /mnt/c/ADINT/ADINT_AULA/rss_feeds
+
+/usr/bin/curl -s -X POST "localhost:9200/rss-feeds/_refresh" > /dev/null
+/usr/bin/curl -s "localhost:9200/rss-feeds/_count?pretty"
+
+/usr/bin/curl -s -X POST "localhost:9200/rss-feeds/_search?pretty" \
+  -H 'Content-Type: application/json' -d '{
+  "size": 0,
+  "aggs": { "categoria": { "terms": { "field": "category", "size": 10 } } }
+}'
+#   Cybersecurity 259 | CVEs 250 | AI 212 | Vendors 75 | Vazamentos 21
+
+/usr/bin/curl -s -X POST "localhost:9200/rss-feeds/_search?pretty" \
+  -H 'Content-Type: application/json' -d '{
+  "size": 5,
+  "sort": [{"published": {"order": "desc"}}],
+  "_source": ["title", "category", "feed_name", "published"]
+}'
+
+/usr/bin/curl -s -X POST "localhost:9200/rss-feeds/_search?pretty" \
+  -H 'Content-Type: application/json' -d '{
+  "size": 0,
+  "aggs": { "fonte": { "terms": { "field": "feed_name", "size": 8 } } }
+}'
+
+# --------------------------------------------------------------------------
+# O wc, que é o que todo mundo usa (slide 20)
+# --------------------------------------------------------------------------
+
+/usr/bin/find /mnt/c/ADINT/ADINT_AULA/rss_feeds -name '*.json' -exec cat {} \; > /tmp/feed.txt
+/usr/bin/ls -lh /tmp/feed.txt
+/usr/bin/wc /tmp/feed.txt
+#   se vier 0 0 0 -> falta rodar o collect
+
+# --------------------------------------------------------------------------
+# E o quanto ele erra — medido com tokenizer de verdade
+# --------------------------------------------------------------------------
+
+/opt/adint-venv/bin/pip install -q tiktoken      # uma vez só
+
+/opt/adint-venv/bin/python3 -c "
+import tiktoken
+t = open('/tmp/feed.txt', encoding='utf-8', errors='replace').read()
+enc = tiktoken.get_encoding('cl100k_base')
+pal, ch = len(t.split()), len(t)
+tok = len(enc.encode(t))
+print(f'  palavras (o wc) : {pal:,}')
+print(f'  TOKENS de verdade: {tok:,}')
+print(f'  1 palavra = {tok/pal:.2f} tokens   |   erro do wc: {(pal-tok)/tok*100:+.0f}%')
+print(f'  o que aproxima bem: chars / {ch/tok:.2f}')"
+
+# --------------------------------------------------------------------------
+# A conta que decide o desenho do pipeline
+# --------------------------------------------------------------------------
+
+/opt/adint-venv/bin/python3 -c "
+import glob, json, tiktoken
+enc = tiktoken.get_encoding('cl100k_base')
+itens = []
+for f in glob.glob('/mnt/c/ADINT/ADINT_AULA/rss_feeds/*/*.json'):
+    try: itens += json.load(open(f, encoding='utf-8'))
+    except Exception: pass
+cru = json.dumps(itens, ensure_ascii=False)
+mag = '\n'.join(f\"{i.get('published','')[:16]} | {i.get('title','')}\" for i in itens)
+a, b = len(enc.encode(cru)), len(enc.encode(mag))
+print(f'  JSON cru do coletor : {a:>8,} tokens')
+print(f'  so titulo + data    : {b:>8,} tokens')
+print(f'                        {a/b:.1f}x MENOS')"
+
+# --------------------------------------------------------------------------
+# [7] Kit de conserto ao vivo
+# --------------------------------------------------------------------------
+
+cd /mnt/c/ADINT/ADINT_AULA && docker compose up -d es kibana && docker compose ps
+
+/usr/bin/curl -s "localhost:9200/_cat/indices/rss-feeds*?v"
+/usr/bin/curl -s "localhost:9200/_cat/aliases/rss-feeds?v"
+
+/usr/bin/curl -s "localhost:9200/rss-feeds-000001/_ilm/explain?pretty" \
+  | /usr/bin/grep -E '"managed"|"policy"|"phase"|"step"|"reason"'
+#   quer ver step: check-rollover-ready
+#   se vier step: ERROR, leia o reason
+
+/usr/bin/curl -s -X POST "localhost:9200/rss-feeds-000001/_ilm/retry"
+
+/opt/adint-venv/bin/python3 /tmp/testa_feed.py https://a-url-do-feed/
+
+==============================================================================
+  TELEGRAM
+==============================================================================
+
+# --------------------------------------------------------------------------
+# 8.0 Sem sessão nenhuma — o tamanho do objeto (slide 40)
+# --------------------------------------------------------------------------
+
+# roda DENTRO do WSL (Ubuntu) — bash
+/opt/adint-venv/bin/python3 - <<'PY'
+import inspect
+from telethon.tl.custom.message import Message
+from telethon.tl.types import Message as RawMessage
+import telethon.tl.types as T
+crus  = [p for p in inspect.signature(RawMessage.__init__).parameters if p != 'self']
+props = [n for n,o in inspect.getmembers(Message) if not n.startswith('_') and isinstance(o,property)]
+mets  = [n for n,o in inspect.getmembers(Message, inspect.isfunction) if not n.startswith('_')]
+print('campos crus (TL) ....... %d' % len(crus))
+print('propriedades Telethon .. %d' % len(props))
+print('metodos ................ %d' % len(mets))
+print('tipos de MessageMedia .. %d' % len([n for n in dir(T) if n.startswith('MessageMedia')]))
+PY
+
+/opt/adint-venv/bin/python3 -c "
+import inspect; from telethon.tl.custom.message import Message
+p=sorted(n for n,o in inspect.getmembers(Message) if not n.startswith('_') and isinstance(o,property))
+[print('  '.join('%-18s'%x for x in p[i:i+4])) for i in range(0,len(p),4)]"
+
+# --------------------------------------------------------------------------
+# 8.0c Criar a sessão — criar_sessao.py
+# --------------------------------------------------------------------------
+
+# roda DENTRO do WSL (Ubuntu) — bash
+# 1) config no .env da raiz (ou export na mao)
+#    TELEGRAM_API_ID / TELEGRAM_API_HASH / TELEGRAM_PHONE / TELEGRAM_SESSION
+
+# 2) confere a config SEM fazer login
+/opt/adint-venv/bin/python3 /mnt/c/ADINT/ADINT_AULA/TELEGRAM/criar_sessao.py --conferir
+
+# 3) cria de verdade
+/opt/adint-venv/bin/python3 /mnt/c/ADINT/ADINT_AULA/TELEGRAM/criar_sessao.py
+
+# --------------------------------------------------------------------------
+# 8.0d Ver TODOS os tipos de dado — tipos_de_dados.py
+# --------------------------------------------------------------------------
+
+# roda DENTRO do WSL (Ubuntu) — bash
+export TG_SESSION=~/.adint/telegram/sessao_adint
+export TG_API_ID=...  TG_API_HASH=...
+
+# por @nome (gasta ResolveUsername — cuidado com FloodWait)
+/opt/adint-venv/bin/python3 /mnt/c/ADINT/ADINT_AULA/TELEGRAM/tipos_de_dados.py @TelegramTips
+
+# por ID marcado (NAO gasta resolve — prefira em demo)
+/opt/adint-venv/bin/python3 .../tipos_de_dados.py -1001224624669 --limite 60
+
+# AO PROJETAR: esconde texto, nomes e arquivos
+/opt/adint-venv/bin/python3 .../tipos_de_dados.py @canal --mascarar --json saida.json
+
+# --------------------------------------------------------------------------
+# 8.1 Apontar para a sessão (sem escrever o caminho em claro)
+# --------------------------------------------------------------------------
+
+# roda DENTRO do WSL (Ubuntu) — bash
+# ajuste para o SEU caminho; não cole isto em slide, não commite
+export TG_API_ID='...'
+export TG_API_HASH='...'
+export TG_SESSION="$HOME/.secrets/minha_sessao"     # SEM o sufixo .session
+
+# confirma que existe, sem imprimir o conteúdo
+test -f "$TG_SESSION.session" && echo "sessao presente: $(stat -c%s "$TG_SESSION.session") bytes" || echo "NAO achei"
+
+# --------------------------------------------------------------------------
+# 8.2 Canal público sem ser membro (o comando que salva o bloco)
+# --------------------------------------------------------------------------
+
+# roda DENTRO do WSL (Ubuntu) — bash
+CANAL=CVEDetector /opt/adint-venv/bin/python3 - <<'PY'
+import asyncio, os
+from telethon import TelegramClient
+async def main():
+    c = TelegramClient(os.environ['TG_SESSION'], int(os.environ['TG_API_ID']), os.environ['TG_API_HASH'])
+    await c.connect()
+    assert await c.is_user_authorized(), 'sessao morta'
+    e = await c.get_entity(os.environ['CANAL'])
+    print('title ......... %s' % e.title)
+    print('id ............ %s' % e.id)
+    print('broadcast ..... %s   (canal de uma via)' % e.broadcast)
+    print('megagroup ..... %s   (grupo de conversa)' % e.megagroup)
+    print('left .......... %s   <-- True = NAO SOU MEMBRO' % e.left)
+    print('restricted .... %s' % e.restricted)
+    n = 0
+    async for m in c.iter_messages(e, limit=3):
+        n += 1
+    print('mensagens lidas %d   SEM entrar no canal' % n)
+    await c.disconnect()
+asyncio.run(main())
+PY
+
+# --------------------------------------------------------------------------
+# 8.3 Dissecar UMA mensagem — todos os campos que importam
+# --------------------------------------------------------------------------
+
+# roda DENTRO do WSL (Ubuntu) — bash
+CANAL=CVEDetector /opt/adint-venv/bin/python3 - <<'PY'
+import asyncio, os
+from telethon import TelegramClient
+async def main():
+    c = TelegramClient(os.environ['TG_SESSION'], int(os.environ['TG_API_ID']), os.environ['TG_API_HASH'])
+    await c.connect()
+    m = (await c.get_messages(os.environ['CANAL'], limit=1))[0]
+    rem = await m.get_sender()
+    print('--- IDENTIDADE ---')
+    print('m.id .............. %s   (so unico DENTRO deste chat)' % m.id)
+    print('m.chat_id ......... %s' % m.chat_id)
+    print('m.sender_id ....... %s' % m.sender_id)
+    print('m.from_id ......... %s   <-- None em CANAL' % m.from_id)
+    print('get_sender() ...... %s / %s' % (type(rem).__name__, getattr(rem,'title',None) or getattr(rem,'first_name',None)))
+    print('m.post_author ..... %s' % m.post_author)
+    print('--- TEMPO ---')
+    print('m.date ............ %s  (tz=%s)' % (m.date, m.date.tzinfo))
+    print('m.edit_date ....... %s' % m.edit_date)
+    print('--- CONTEUDO ---')
+    print('len(m.message) .... %s' % len(m.message or ''))
+    print('raw_text == text? . %s  <-- False quando ha negrito/link' % (m.raw_text == m.text))
+    print('m.entities ........ %s' % [type(e).__name__ for e in (m.entities or [])][:6])
+    print('--- ALCANCE ---')
+    print('views / forwards .. %s / %s' % (m.views, m.forwards))
+    print('m.grouped_id ...... %s  (album)' % m.grouped_id)
+    print('--- ANEXO ---')
+    f = m.file
+    print('m.media ........... %s' % (type(m.media).__name__ if m.media else None))
+    print('nome / bytes / mime %s / %s / %s' % (getattr(f,'name',None), getattr(f,'size',None), getattr(f,'mime_type',None)))
+    await c.disconnect()
+asyncio.run(main())
+PY
+
+# --------------------------------------------------------------------------
+# 8.4 O contraste canal × supergrupo, lado a lado
+# --------------------------------------------------------------------------
+
+# roda DENTRO do WSL (Ubuntu) — bash
+/opt/adint-venv/bin/python3 - <<'PY'
+import asyncio, os
+from telethon import TelegramClient
+from telethon.tl.types import User
+async def main():
+    c = TelegramClient(os.environ['TG_SESSION'], int(os.environ['TG_API_ID']), os.environ['TG_API_HASH'])
+    await c.connect()
+    for nome in ('CVEDetector', 'BotTalk'):
+        e = await c.get_entity(nome)
+        m = (await c.get_messages(e, limit=1))[0]
+        rem = await m.get_sender()
+        quem = ('%s' % getattr(rem,'title',None)) if not isinstance(rem, User) else '(pessoa)'
+        print('%-14s megagroup=%-5s from_id=%-10s sender_id=%-15s sender=%s %s'
+              % (nome, e.megagroup, type(m.from_id).__name__ if m.from_id else 'None',
+                 m.sender_id, type(rem).__name__, quem))
+    await c.disconnect()
+asyncio.run(main())
+PY
+
+# --------------------------------------------------------------------------
+# 8.5 O anexo — nome, tamanho e tipo sem baixar um byte
+# --------------------------------------------------------------------------
+
+# roda DENTRO do WSL (Ubuntu) — bash
+CANAL=CVEDetector /opt/adint-venv/bin/python3 - <<'PY'
+import asyncio, os
+from telethon import TelegramClient
+async def main():
+    c = TelegramClient(os.environ['TG_SESSION'], int(os.environ['TG_API_ID']), os.environ['TG_API_HASH'])
+    await c.connect()
+    print('%-9s %-7s %-22s %-14s %s' % ('msg_id','chars','anexo','bytes','nome'))
+    async for m in c.iter_messages(os.environ['CANAL'], limit=25):
+        f = m.file
+        print('%-9s %-7s %-22s %-14s %s'
+              % (m.id, len(m.message or ''),
+                 type(m.media).__name__ if m.media else '-',
+                 getattr(f,'size',None) or '-', (getattr(f,'name',None) or '-')[:40]))
+    await c.disconnect()
+asyncio.run(main())
+PY
+
+# --------------------------------------------------------------------------
+# 8.5b O PAR — a senha do .rar está no texto da mensagem
+# --------------------------------------------------------------------------
+
+# roda DENTRO do WSL (Ubuntu) — inspeciona o convite SEM aderir
+HASH=xxxxxxxxxxxxxxxx /opt/adint-venv/bin/python3 - <<'PY'
+import asyncio, os
+from telethon import TelegramClient, functions, types
+async def main():
+    c = TelegramClient(os.environ['TG_SESSION'], int(os.environ['TG_API_ID']),
+                       os.environ['TG_API_HASH'])
+    await c.connect()
+    r = await c(functions.messages.CheckChatInviteRequest(hash=os.environ['HASH']))
+    print('resposta ....', type(r).__name__)
+    if isinstance(r, types.ChatInvitePeek):
+        print('PEEK: leitura sem entrar, expira', r.expires)
+        print('canal:', r.chat.title, '| left =', r.chat.left)
+    elif isinstance(r, types.ChatInvite):
+        print('VIVO: %s · %s membros · exige aprovacao=%s'
+              % (r.title, r.participants_count, bool(getattr(r,'request_needed',False))))
+    elif isinstance(r, types.ChatInviteAlready):
+        print('JA SOU MEMBRO de', r.chat.title)
+    await c.disconnect()
+asyncio.run(main())
+PY
+
+# --------------------------------------------------------------------------
+# 8.6 A lista de CTI envelhece — meça na frente deles
+# --------------------------------------------------------------------------
+
+# roda DENTRO do WSL (Ubuntu) — bash
+curl -sL https://raw.githubusercontent.com/fastfire/deepdarkCTI/main/telegram_infostealer.md \
+  -o /tmp/ddcti.md
+wc -l /tmp/ddcti.md
+grep -c '^|https://t.me/' /tmp/ddcti.md          # total de entradas
+grep -c '^|https://t.me/+\|^|https://t.me/joinchat/' /tmp/ddcti.md   # so por convite
+
+# --------------------------------------------------------------------------
+# 8.7 Kit de conserto ao vivo
+# --------------------------------------------------------------------------
+
+# a sessão ainda vale? (não imprime nada sensível)
+/opt/adint-venv/bin/python3 -c "
+import asyncio,os
+from telethon import TelegramClient
+async def m():
+    c=TelegramClient(os.environ['TG_SESSION'],int(os.environ['TG_API_ID']),os.environ['TG_API_HASH'])
+    await c.connect(); print('VIVA' if await c.is_user_authorized() else 'MORTA'); await c.disconnect()
+asyncio.run(m())"
+
+# --------------------------------------------------------------------------
+# 9.1 A medição que derruba a premissa: zero .txt
+# --------------------------------------------------------------------------
+
+# roda DENTRO do WSL (Ubuntu) — inspeciona SO metadado, nao baixa nada
+CANAL=berserklogs /opt/adint-venv/bin/python3 - <<'PY'
+import asyncio, os
+from collections import Counter
+from telethon import TelegramClient
+
+async def main():
+    c = TelegramClient(os.environ['TG_SESSION'], int(os.environ['TG_API_ID']),
+                       os.environ['TG_API_HASH'])
+    await c.connect()
+    ext, menor, maior, ndoc = Counter(), None, 0, 0
+    async for m in c.iter_messages(os.environ['CANAL'], limit=200):
+        if m.document is None:
+            continue                       # WebPage/foto nao e arquivo
+        ndoc += 1
+        f = m.file
+        e = (f.ext or '?').lower().lstrip('.')
+        sz = f.size or 0
+        ext[e] += 1
+        maior = max(maior, sz)
+        if menor is None or sz < menor[0]:
+            menor = (sz, f.name)
+    print('documentos ... %d' % ndoc)
+    print('extensoes .... %s' % dict(ext))
+    print('maior ........ %.1f MB' % (maior / 1048576.0))
+    if menor:
+        print('menor ........ %.1f MB  %s' % (menor[0] / 1048576.0, menor[1]))
+    await c.disconnect()
+
+asyncio.run(main())
+PY
+
+# --------------------------------------------------------------------------
+# 9.1b A aritmética por metadado — o print que vale a seção
+# --------------------------------------------------------------------------
+
+# e o mesmo, pelo terminal, com os bytes exatos
+CANAL=COMBOWORKON /opt/adint-venv/bin/python3 - <<'PY'
+import asyncio, os, re
+from telethon import TelegramClient
+RX = re.compile(r'(\d[\d\.]*)\s*(?:\(\d+\))?\s*\.txt$', re.I)
+async def main():
+    c = TelegramClient(os.environ['TG_SESSION'], int(os.environ['TG_API_ID']),
+                       os.environ['TG_API_HASH'])
+    await c.connect()
+    razoes = []
+    print('%-38s %10s %8s %9s' % ('ARQUIVO', 'BYTES', 'alegado', 'B/linha'))
+    async for m in c.iter_messages(os.environ['CANAL'], limit=60):
+        if m.document is None or not (m.file.name or '').lower().endswith('.txt'):
+            continue
+        mm = RX.search(m.file.name)
+        if not mm:
+            continue
+        n = int(mm.group(1).replace('.', ''))
+        r = m.file.size / float(n)
+        razoes.append(r)
+        print('%-38s %10d %8d %9.1f' % (m.file.name[:37], m.file.size, n, r))
+    if razoes:
+        print('min %.1f  max %.1f  media %.1f  (n=%d)'
+              % (min(razoes), max(razoes), sum(razoes)/len(razoes), len(razoes)))
+    await c.disconnect()
+asyncio.run(main())
+PY
+
+# --------------------------------------------------------------------------
+# 9.2 --dry-run: ver o que viria, sem baixar nada
+# --------------------------------------------------------------------------
+
+# roda DENTRO do WSL (Ubuntu) — bash
+cd /mnt/c/ADINT/ADINT_AULA/TELEGRAM
+/opt/adint-venv/bin/python3 download_Combo.py --dry-run --limit 10
+
+# --------------------------------------------------------------------------
+# 9.3 Os seis formatos de linha (slide 32) — e a base fictícia
+# --------------------------------------------------------------------------
+
+# gerar (semente fixa: a mesma base toda vez, aula reproduzivel)
+/opt/adint-venv/bin/python3 /mnt/c/ADINT/ADINT_AULA/TELEGRAM/gera_combo_ficticio.py \
+    $S/ULP_MIX_FICTICIO_2026.txt 2000
+
+# --------------------------------------------------------------------------
+# 9.5 O parser, e a medida dele contra o gabarito
+# --------------------------------------------------------------------------
+
+# roda DENTRO do WSL (Ubuntu) — bash
+/opt/adint-venv/bin/python3 /mnt/c/ADINT/ADINT_AULA/TELEGRAM/parse_combo.py \
+    $S/ULP_MIX_FICTICIO_2026.txt \
+    --ndjson $S/combo_bulk.ndjson --mostrar 4
+
+# --------------------------------------------------------------------------
+# 9.6 Jogar no Elastic — começando pela armadilha
+# --------------------------------------------------------------------------
+
+# roda DENTRO do WSL (Ubuntu) — bash
+/usr/bin/curl -s -X DELETE "localhost:9200/combo_ficticio" > /dev/null
+/usr/bin/curl -s -X PUT "localhost:9200/combo_ficticio" -H 'Content-Type: application/json' -d '{
+  "mappings": {
+    "_source": { "excludes": ["senha"] },
+    "properties": {
+      "url":               { "type": "keyword", "ignore_above": 1024 },
+      "usuario":           { "type": "keyword", "ignore_above": 256  },
+      "senha":             { "type": "keyword", "index": false, "doc_values": false },
+      "formato":           { "type": "keyword" },
+      "fonte":             { "type": "keyword" },
+      "usuario_eh_email":  { "type": "boolean" }
+    }
+  }
+}'
+
+# agora sim o bulk
+/usr/bin/curl -s -H 'Content-Type: application/x-ndjson' \
+  -X POST "localhost:9200/combo_ficticio/_bulk?refresh=wait_for" \
+  --data-binary @$S/combo_bulk.ndjson \
+  | grep -o '"errors":[a-z]*'
+/usr/bin/curl -s "localhost:9200/combo_ficticio/_count"
+
+# quais formatos dominam?
+/usr/bin/curl -s "localhost:9200/combo_ficticio/_search?size=0" -H 'Content-Type: application/json' -d '{
+  "aggs": { "por_formato": { "terms": { "field": "formato", "size": 10 } } }
+}'
+
+==============================================================================
+  ELASTIC — INSTALACAO E CONFIG
+==============================================================================
+
+# --------------------------------------------------------------------------
+# 1) O que você está instalando, de fato
+# --------------------------------------------------------------------------
+
+# WSL (bash) — qual JVM e qual heap o SEU Elastic pegou
+/usr/bin/curl -s "localhost:9200/_nodes/jvm?pretty" | grep -E '"version"|heap_init_in_bytes|heap_max_in_bytes|compressed'
+# (PowerShell)
+
+# Windows (PowerShell)
+$n = (Invoke-RestMethod "http://localhost:9200/_nodes/jvm").nodes.PSObject.Properties.Value[0]
+"JVM {0} | heap {1} GB | compressed oops: {2}" -f $n.jvm.version,
+  [math]::Round($n.jvm.mem.heap_max_in_bytes/1GB,2), $n.jvm.using_compressed_ordinary_object_pointers
+
+# --------------------------------------------------------------------------
+# 2) Caminho 1 — direto na máquina (o jeito "nativo")
+# --------------------------------------------------------------------------
+
+# 1) a chave GPG do repositório da Elastic
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch \
+  | sudo gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+
+# 2) o repositório, amarrado NAQUELA chave (signed-by)
+echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/9.x/apt stable main" \
+  | sudo tee /etc/apt/sources.list.d/elastic-9.x.list
+
+# 3) agora sim
+sudo apt-get update && sudo apt-get install elasticsearch
+
+sudo /bin/systemctl daemon-reload
+sudo /bin/systemctl enable elasticsearch.service    # sobe junto com a maquina
+sudo systemctl start elasticsearch.service
+
+# --------------------------------------------------------------------------
+# 2b) O Caminho 1 dentro do WSL — o nativo que não suja o Windows
+# --------------------------------------------------------------------------
+# (PowerShell)
+
+# Windows (PowerShell) — onde o Ubuntu inteiro mora
+$k = Get-ChildItem "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Lxss" |
+     ForEach-Object { Get-ItemProperty $_.PSPath } |
+     Where-Object { $_.DistributionName -eq "Ubuntu-24.04" }
+$k.BasePath
+"{0:N2} GB" -f ((Get-Item (Join-Path $k.BasePath "ext4.vhdx")).Length/1GB)
+
+# e o que existe de Elastic no WINDOWS:
+Get-Service -Name "*elastic*" -ErrorAction SilentlyContinue
+Test-Path "$env:ProgramFiles\Elastic"
+
+# WSL (bash)
+cat /etc/wsl.conf          # tem de ter [boot] systemd=true
+systemctl is-system-running
+
+# --------------------------------------------------------------------------
+# Os três ajustes obrigatórios para conviver com o lab Docker
+# --------------------------------------------------------------------------
+
+# WSL (bash) — quem ja escuta na 9200 DENTRO do WSL?
+ss -ltn | grep 9200
+curl -s localhost:9200 | grep build_type      # -> "docker"
+
+# /etc/elasticsearch/jvm.options.d/adint-heap.options
+-Xms1g
+-Xmx1g
+
+# --------------------------------------------------------------------------
+# O prêmio: os dois Elastics na mesma tela
+# --------------------------------------------------------------------------
+
+# WSL (bash) — rode os dois, um embaixo do outro
+PASS=$(sudo cat /root/.es-elastic-pass)
+/usr/bin/curl -s -k -u "elastic:$PASS" https://localhost:9201 | grep -E 'cluster_name|number|build_type'
+/usr/bin/curl -s http://localhost:9200                        | grep -E 'cluster_name|number|build_type'
+
+# --------------------------------------------------------------------------
+# 3) Caminho 2 — Docker (é o do nosso lab)
+# --------------------------------------------------------------------------
+
+curl -fsSL https://elastic.co/start-local | sh
+
+# WSL (bash) — as tres camadas, de fora para dentro
+free -h | head -2                                    # quanto o WSL2 ve
+/usr/bin/curl -s "localhost:9200/_nodes/jvm?pretty" | grep heap_max_in_bytes
+
+# --------------------------------------------------------------------------
+# 6) A precedência de configuração — e o bug que estava no MEU lab
+# --------------------------------------------------------------------------
+
+# WSL (bash) — o que o processo REALMENTE recebeu por ambiente
+docker exec adint-es sh -c "env | grep -i auto_create"
+
+# WSL (bash) — o que o cluster diz que vale
+/usr/bin/curl -s "localhost:9200/_cluster/settings?pretty&flat_settings=true"
+
+# WSL (bash) — null REMOVE o override e devolve a palavra ao compose
+/usr/bin/curl -s -X PUT "localhost:9200/_cluster/settings?pretty" \
+  -H 'Content-Type: application/json' \
+  -d '{"persistent":{"action.auto_create_index":null}}'
+# (PowerShell)
+
+# Windows (PowerShell)
+Invoke-RestMethod -Uri "http://localhost:9200/_cluster/settings" -Method Put `
+  -ContentType "application/json" `
+  -Body '{"persistent":{"action.auto_create_index":null}}'
+
+# --------------------------------------------------------------------------
+# Demo 1 — "de qual caminho veio este Elastic?" (60 s)
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+/usr/bin/curl -s "localhost:9200?pretty" | grep -E 'number|build_type|build_flavor'
+# (PowerShell)
+
+# Windows (PowerShell)
+(Invoke-RestMethod "http://localhost:9200").version | Select-Object number, build_type, build_flavor
+
+# --------------------------------------------------------------------------
+# Parte 0 — Preparação na véspera (root, com internet)
+# --------------------------------------------------------------------------
+# (PowerShell)
+
+# Windows (PowerShell) — 0.1  o terreno: systemd, disco, portas
+wsl -d Ubuntu-24.04 -- bash -c "cat /etc/wsl.conf; systemctl is-system-running; df -h / | tail -1; free -h | head -2; cat /proc/sys/vm/max_map_count"
+wsl -d Ubuntu-24.04 -- bash -c "ss -ltn | grep 920 || echo 'nenhuma porta 920x ocupada'"
+
+# WSL (bash) como ROOT — entre com:  wsl -d Ubuntu-24.04 -u root
+# 0.2  dependencias do apt
+apt-get install -y apt-transport-https wget gnupg
+
+# 0.3  chave GPG da Elastic
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch \
+  | gpg --dearmor -o /usr/share/keyrings/elasticsearch-keyring.gpg
+chmod 644 /usr/share/keyrings/elasticsearch-keyring.gpg
+
+# 0.4  CONFIRA a impressao digital (tem de bater com a doc oficial)
+gpg --no-default-keyring --keyring /usr/share/keyrings/elasticsearch-keyring.gpg --fingerprint
+#   esperado: 4609 5ACC 8548 582C 1A26  99A9 D27D 666C D88E 42B4
+
+# 0.5  repositorio, amarrado AQUELA chave
+echo "deb [signed-by=/usr/share/keyrings/elasticsearch-keyring.gpg] https://artifacts.elastic.co/packages/9.x/apt stable main" \
+  > /etc/apt/sources.list.d/elastic-9.x.list
+
+# 0.6  atualizar e ver qual versao o repo oferece
+apt-get update
+apt-cache policy elasticsearch
+
+# 0.7  INSTALAR  (840 MB de download, 1494 MB em disco, ~2 min)
+#      ATENCAO: a senha do usuario `elastic` vai ser IMPRESSA aqui. Copie.
+apt-get install -y elasticsearch
+
+# WSL (bash) como ROOT — 0.8  configurar para conviver com o lab Docker
+YML=/etc/elasticsearch/elasticsearch.yml
+cp -n "$YML" "$YML.original-autoconfig"          # backup antes de mexer
+
+# tira as linhas antigas e escreve as nossas
+sed -i -E '/^[[:space:]]*#?[[:space:]]*(cluster\.name|node\.name|http\.port):/d' "$YML"
+cat >> "$YML" <<'EOF'
+
+# ---- ADINT: aula (nativo no WSL, convivendo com o lab Docker) ----
+cluster.name: adint-nativo-wsl
+node.name: no-wsl-01
+http.port: 9201
+discovery.type: single-node
+EOF
+
+# CRITICO: o autoconfig escreveu o initial_master_nodes com o hostname do Windows.
+# Com node.name renomeado, ele IMPEDE o cluster de formar. Comente:
+sed -i -E 's/^(cluster\.initial_master_nodes:.*)$/# \1   # ADINT: ver discovery.type/' "$YML"
+
+# confira o resultado
+grep -nE '^#?\s*(cluster\.|node\.name|http\.port|discovery\.)' "$YML"
+
+# WSL (bash) como ROOT — 0.9  heap travado em 1 GB
+cat > /etc/elasticsearch/jvm.options.d/adint-heap.options <<'EOF'
+# Laboratorio: sem isto o Elastic se dimensiona e pega vários GB dos 30 do WSL.
+-Xms1g
+-Xmx1g
+EOF
+
+# 0.10  subir pelo systemd
+systemctl daemon-reload
+systemctl enable elasticsearch.service
+systemctl start elasticsearch.service
+
+# 0.11  ESPERE O GREEN NO LOG — nao espere a porta (ver §2b, armadilha 1)
+until grep -aq 'current.health' /var/log/elasticsearch/adint-nativo-wsl.log; do sleep 3; done
+grep -aE 'discovery type|current.health' /var/log/elasticsearch/adint-nativo-wsl.log | tail -3
+
+# 0.12  rotacionar a senha (a do passo 0.7 passou pelo stdout do apt)
+/usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic -b -a -s > /root/.es-elastic-pass
+chmod 600 /root/.es-elastic-pass
+
+# 0.13  teste de vida
+PASS=$(cat /root/.es-elastic-pass)
+curl -s -k -u "elastic:$PASS" https://localhost:9201 | grep -E 'cluster_name|number|build_type'
+# (PowerShell)
+
+# Windows (PowerShell) — 0.14  impedir que o WSL desligue a distro e mate o Elastic
+#   Doc: https://learn.microsoft.com/en-us/windows/wsl/wsl-config
+@'
+[general]
+instanceIdleTimeout = -1
+'@ | Set-Content -Path "$env:USERPROFILE\.wslconfig" -Encoding utf8
+
+# 0.15  so vale depois de um shutdown — e ele DERRUBA o Docker Desktop tambem.
+#       Faca AGORA, na vespera. Nunca no meio da aula.
+wsl --shutdown
+# depois reabra o Docker Desktop e suba o lab:
+#   cd C:\ADINT\ADINT_AULA ; docker compose up -d es kibana
+
+# --------------------------------------------------------------------------
+# Parte 1 — Os comandos da aula
+# --------------------------------------------------------------------------
+# (PowerShell)
+
+# Windows (PowerShell) — 1.1  ANTES de comecar: os dois estao no ar?
+wsl -l --running
+wsl -d Ubuntu-24.04 -u root -- systemctl is-active elasticsearch
+Invoke-RestMethod "http://localhost:9200" | Select-Object -ExpandProperty version
+
+# WSL (bash) — 1.2  §1: a JVM e o heap que ESTE Elastic pegou
+/usr/bin/curl -s "localhost:9200/_nodes/jvm?pretty" \
+  | grep -E '"version"|heap_init_in_bytes|heap_max_in_bytes|compressed'
+
+# 1.3  §2b: onde o Ubuntu mora (rode no PowerShell, item 1.4) e o que o pacote espalhou
+ls -la /etc/elasticsearch/
+du -sh /usr/share/elasticsearch /var/lib/elasticsearch /var/log/elasticsearch
+# (PowerShell)
+
+# Windows (PowerShell) — 1.4  §2b: a prova de que o Windows nao foi sujado
+$k = Get-ChildItem "HKCU:\SOFTWARE\Microsoft\Windows\CurrentVersion\Lxss" |
+     ForEach-Object { Get-ItemProperty $_.PSPath } |
+     Where-Object { $_.DistributionName -eq "Ubuntu-24.04" }
+$k.BasePath
+"{0:N2} GB" -f ((Get-Item (Join-Path $k.BasePath "ext4.vhdx")).Length/1GB)
+Get-Service -Name "*elastic*" -ErrorAction SilentlyContinue
+Test-Path "$env:ProgramFiles\Elastic"
+
+# WSL (bash) — 1.5  §3: as tres camadas de memoria (63 GB -> 30 GB -> 1 GB)
+free -h | head -2
+/usr/bin/curl -s "localhost:9200/_nodes/jvm?pretty" | grep heap_max_in_bytes
+grep ES_JAVA_OPTS /mnt/c/ADINT/ADINT_AULA/docker-compose.yml
+
+# 1.6  §5: de qual caminho veio este Elastic? (a pergunta de prova)
+/usr/bin/curl -s "localhost:9200?pretty" | grep -E 'number|build_type|build_flavor'
+systemctl status elasticsearch --no-pager | head -3
+docker ps | grep -i elastic
+
+# WSL (bash) — 1.7  §6 BEAT DE OURO: a precedencia de configuracao
+# (a) o que o processo do container RECEBEU por ambiente
+docker exec adint-es sh -c "env | grep -i auto_create"
+
+# (b) o que o CLUSTER diz que vale  <-- compare as duas listas na tela
+/usr/bin/curl -s "localhost:9200/_cluster/settings?pretty&flat_settings=true"
+
+# (c) o sintoma, se a lista do cluster for a velha
+/usr/bin/curl -s -X POST "localhost:9200/contas/_bulk" -H 'Content-Type: application/x-ndjson' \
+  --data-binary @$S/accounts.json | head -c 300
+
+# (d) o conserto: null REMOVE o override (nao e "false", e null)
+/usr/bin/curl -s -X PUT "localhost:9200/_cluster/settings?pretty" \
+  -H 'Content-Type: application/json' \
+  -d '{"persistent":{"action.auto_create_index":null}}'
+
+# (e) confirme que a prateleira ficou limpa
+/usr/bin/curl -s "localhost:9200/_cluster/settings?pretty&flat_settings=true"
+
+# WSL (bash) — 1.8  O PREMIO: os dois Elastics lado a lado
+PASS=$(sudo cat /root/.es-elastic-pass)
+echo "--- NATIVO (deb, 9201, https) ---"
+/usr/bin/curl -s -k -u "elastic:$PASS" https://localhost:9201 \
+  | grep -E 'cluster_name|"number"|build_type'
+echo "--- DOCKER (docker, 9200, http) ---"
+/usr/bin/curl -s http://localhost:9200 \
+  | grep -E 'cluster_name|"number"|build_type'
+
+# 1.9  saude do nativo
+/usr/bin/curl -s -k -u "elastic:$PASS" "https://localhost:9201/_cluster/health?pretty" | head -6
+
+# 1.10  o experimento do version pinning, AO VIVO
+/opt/adint-venv/bin/python -c "
+from elasticsearch import Elasticsearch; import elasticsearch
+print('cliente:', elasticsearch.__version__)
+pw = open('/root/.es-elastic-pass').read().strip()
+es9 = Elasticsearch('https://localhost:9201', basic_auth=('elastic',pw),
+                    verify_certs=False, ssl_show_warn=False)
+print('contra servidor 9.x ->', es9.info()['version']['number'])
+print('contra servidor 8.x ->', Elasticsearch('http://localhost:9200').info()['version']['number'])
+"
+
+# --------------------------------------------------------------------------
+# Parte 2 — Kit de conserto ao vivo
+# --------------------------------------------------------------------------
+
+# WSL (bash) como ROOT
+# 2.1  o servico esta no ar de verdade? (porta aberta NAO e resposta)
+systemctl is-active elasticsearch
+grep -aE 'discovery type|current.health|elected-as-master' \
+  /var/log/elasticsearch/adint-nativo-wsl.log | tail -5
+
+# 2.2  java orfao segurando o node.lock (LockObtainFailedException)
+systemctl stop elasticsearch
+pkill -u elasticsearch ; sleep 5 ; pkill -9 -u elasticsearch
+systemctl start elasticsearch
+
+# 2.3  o log inteiro, quando o systemctl nao diz nada
+tail -f /var/log/elasticsearch/adint-nativo-wsl.log
+journalctl -u elasticsearch --no-pager -n 30
+
+# 2.4  token do Kibana venceu (dura 30 min)
+/usr/share/elasticsearch/bin/elasticsearch-create-enrollment-token -s kibana
+
+# 2.5  esqueci / perdi a senha
+/usr/share/elasticsearch/bin/elasticsearch-reset-password -u elastic
+# (PowerShell)
+
+# Windows (PowerShell)
+# 2.6  "estava no ar e parou" -> a distro desligou e levou o Elastic
+wsl -l --running
+Start-Process wsl.exe -WindowStyle Hidden -ArgumentList `
+  "-d","Ubuntu-24.04","-u","root","--","bash","-c","systemctl start elasticsearch; exec sleep infinity"
+
+# 2.7  o lab Docker caiu
+cd C:\ADINT\ADINT_AULA ; docker compose up -d es kibana ; docker compose ps
+
+==============================================================================
+  ELASTIC — MAO NA MASSA
+==============================================================================
+
+# --------------------------------------------------------------------------
+# 2) Subir o laboratório
+# --------------------------------------------------------------------------
+
+# WSL (bash) — sim, o docker esta sendo chamado de DENTRO do WSL;
+# o daemon e o mesmo Docker Desktop do Windows, por isso funciona igual
+cd /mnt/c/ADINT/ADINT_AULA
+docker compose up -d
+docker compose ps
+# (PowerShell)
+
+# Windows (PowerShell), com o Docker Desktop JA aberto
+cd C:\ADINT\ADINT_AULA
+docker compose up -d
+docker compose ps
+
+# WSL (bash)
+/usr/bin/curl localhost:9200
+# (PowerShell)
+
+# Windows (PowerShell)
+Invoke-RestMethod -Uri "http://localhost:9200"
+
+# --------------------------------------------------------------------------
+# 3) Preparação: variáveis e o jeito certo de chamar
+# --------------------------------------------------------------------------
+
+ES=http://localhost:9200
+echo $ES
+# (PowerShell)
+
+$ES = "http://localhost:9200"
+
+# Função auxiliar: resolve UTF-8 (acento) + evita ConvertTo-Json em JSON aninhado
+function Es-Send {
+  param(
+    [string]$Method,          # Get, Post, Put, Delete
+    [string]$Path,            # ex: "/apt_groups/_search?pretty"
+    [string]$Json = $null     # o corpo, como TEXTO (here-string)
+  )
+  $args = @{ Method = $Method; Uri = "$ES$Path" }
+  if ($Json) {
+    $args.ContentType = "application/json; charset=utf-8"
+    $args.Body        = [System.Text.Encoding]::UTF8.GetBytes($Json)
+  }
+  Invoke-RestMethod @args | ConvertTo-Json -Depth 20
+}
+# (PowerShell)
+
+$body = @'
+{ "query": { "match": { "pais_origem": "China" } } }
+'@
+
+# --------------------------------------------------------------------------
+# Passo 1 — POST: criar o primeiro documento (e o índice, de graça)
+# --------------------------------------------------------------------------
+
+/usr/bin/curl -s -X POST "$ES/apt_groups/_doc/1?pretty" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "id": 1,
+    "nome": "APT28",
+    "pais_origem": "Russia",
+    "ativo": true,
+    "nivel_sofisticacao": 8.5,
+    "primeiro_avistamento": "2006-01-01"
+  }'
+# (PowerShell)
+
+$body = @'
+{
+  "id": 1,
+  "nome": "APT28",
+  "pais_origem": "Russia",
+  "ativo": true,
+  "nivel_sofisticacao": 8.5,
+  "primeiro_avistamento": "2006-01-01"
+}
+'@
+Es-Send -Method Post -Path "/apt_groups/_doc/1?pretty" -Json $body
+
+# --------------------------------------------------------------------------
+# Passo 2 — GET _mapping: o dynamic mapping na sua frente
+# --------------------------------------------------------------------------
+
+/usr/bin/curl -s "$ES/apt_groups/_mapping?pretty"
+# (PowerShell)
+
+Es-Send -Method Get -Path "/apt_groups/_mapping"
+
+# --------------------------------------------------------------------------
+# Passo 3 — segundo documento com campos NOVOS: remapeamento dinâmico
+# --------------------------------------------------------------------------
+
+/usr/bin/curl -s -X POST "$ES/apt_groups/_doc/2?pretty" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "id": 2,
+    "nome": "APT41",
+    "pais_origem": "China",
+    "ativo": true,
+    "nivel_sofisticacao": 9.0,
+    "primeiro_avistamento": "2012-01-01",
+    "alvos": ["saude", "telecom", "games"],
+    "motivacao": "espionagem e lucro",
+    "ttps_conhecidas": 47,
+    "ultima_atividade": "2026-09-30"
+  }'
+# (PowerShell)
+
+$body = @'
+{
+  "id": 2,
+  "nome": "APT41",
+  "pais_origem": "China",
+  "ativo": true,
+  "nivel_sofisticacao": 9.0,
+  "primeiro_avistamento": "2012-01-01",
+  "alvos": ["saude", "telecom", "games"],
+  "motivacao": "espionagem e lucro",
+  "ttps_conhecidas": 47,
+  "ultima_atividade": "2026-09-30"
+}
+'@
+Es-Send -Method Post -Path "/apt_groups/_doc/2?pretty" -Json $body
+
+# --------------------------------------------------------------------------
+# Passo 4 — _bulk com ndjson: 20 documentos de uma vez
+# --------------------------------------------------------------------------
+
+# WSL (bash) — com o caminho completo no @, nao importa de que pasta voce roda
+# O INDICE VEM NA URL: as linhas de acao do apt_bulk.ndjson sao {"index":{"_id":"1"}},
+# sem _index. Em "$ES/_bulk" isso devolve HTTP 400 "index is missing" 36 vezes.
+/usr/bin/curl -s -X POST "$ES/apt_groups/_bulk?pretty" \
+  -H 'Content-Type: application/x-ndjson' \
+  --data-binary @$S/apt_bulk.ndjson
+# (PowerShell)
+
+# caminho absoluto: nao depende de onde a pessoa esta
+$bytes = [System.IO.File]::ReadAllBytes("$S\apt_bulk.ndjson")
+Invoke-RestMethod -Method Post -Uri "$ES/apt_groups/_bulk" `
+  -ContentType "application/x-ndjson" -Body $bytes
+
+# --------------------------------------------------------------------------
+# Passo 5 — _count: quantos documentos tem aí?
+# --------------------------------------------------------------------------
+
+/usr/bin/curl -s "$ES/apt_groups/_count?pretty"
+# (PowerShell)
+
+Es-Send -Method Get -Path "/apt_groups/_count"
+
+# WSL (bash)
+/usr/bin/curl -s "$ES/analise_superficie_coletor_naabu/_count?pretty"
+/usr/bin/curl -s "$ES/telegram_cve/_count?pretty"        # ~507
+/usr/bin/curl -s "$ES/telegram_leak/_count?pretty"       # ~581
+/usr/bin/curl -s "$ES/rss-feeds/_count?pretty"           # 610
+
+# --------------------------------------------------------------------------
+# Passo 6 — _search?size=N: olhar os documentos
+# --------------------------------------------------------------------------
+
+/usr/bin/curl -s "$ES/apt_groups/_search?size=3&pretty"
+# (PowerShell)
+
+Es-Send -Method Get -Path "/apt_groups/_search?size=3"
+
+# --------------------------------------------------------------------------
+# Passo 7 — query match: a primeira busca de verdade
+# --------------------------------------------------------------------------
+
+/usr/bin/curl -s -X POST "$ES/apt_groups/_search?pretty" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "query": { "match": { "pais_origem": "China" } }
+  }'
+# (PowerShell)
+
+$body = @'
+{ "query": { "match": { "pais_origem": "China" } } }
+'@
+Es-Send -Method Post -Path "/apt_groups/_search?pretty" -Json $body
+
+# WSL (bash)
+# text: acha pedaço, ignora caixa  →  traz resultados
+/usr/bin/curl -s -X POST "$ES/apt_groups/_search?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"match":{"pais_origem":"coreia"}}}'
+
+# keyword: tem que ser EXATO  →  ZERO resultados (a caixa está errada)
+/usr/bin/curl -s -X POST "$ES/apt_groups/_search?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"term":{"pais_origem.keyword":"coreia do norte"}}}'
+
+# keyword com o valor exato  →  AGORA traz
+/usr/bin/curl -s -X POST "$ES/apt_groups/_search?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"term":{"pais_origem.keyword":"Coreia do Norte"}}}'
+
+# --------------------------------------------------------------------------
+# Passo 8 — agregação com .keyword: contar por categoria
+# --------------------------------------------------------------------------
+
+/usr/bin/curl -s -X POST "$ES/apt_groups/_search?pretty" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "size": 0,
+    "aggs": {
+      "por_pais": {
+        "terms": { "field": "pais_origem.keyword", "size": 20 }
+      }
+    }
+  }'
+# (PowerShell)
+
+$body = @'
+{
+  "size": 0,
+  "aggs": {
+    "por_pais": { "terms": { "field": "pais_origem.keyword", "size": 20 } }
+  }
+}
+'@
+Es-Send -Method Post -Path "/apt_groups/_search?pretty" -Json $body
+
+# WSL (bash)
+# distribuição de status code dos 40 endpoints vivos da ADINT
+/usr/bin/curl -s -X POST "$ES/analise_superficie_coletor_httpx/_search?pretty" \
+  -H 'Content-Type: application/json' \
+  -d '{"size":0,"aggs":{"por_status":{"terms":{"field":"status_code","size":20}}}}'
+
+# top portas abertas — aqui tem que aparecer 3306 e 21
+/usr/bin/curl -s -X POST "$ES/analise_superficie_coletor_naabu/_search?pretty" \
+  -H 'Content-Type: application/json' \
+  -d '{"size":0,"aggs":{"top_portas":{"terms":{"field":"port","size":15}}}}'
+
+# categorias do canal de vazamento: "Data leak" x "ransomware"
+# (e aqui o sufixo voltou — `categoria` e texto. Leu o mapping, acertou o campo.)
+/usr/bin/curl -s -X POST "$ES/telegram_leak/_search?pretty" \
+  -H 'Content-Type: application/json' \
+  -d '{"size":0,"aggs":{"por_categoria":{"terms":{"field":"categoria.keyword","size":20}}}}'
+
+# --------------------------------------------------------------------------
+# Passo 9 — _delete_by_query: apagar pelo que o dado É
+# --------------------------------------------------------------------------
+
+/usr/bin/curl -s -X POST "$ES/apt_groups/_delete_by_query?pretty" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "query": { "term": { "ativo": false } }
+  }'
+# (PowerShell)
+
+$body = @'
+{ "query": { "term": { "ativo": false } } }
+'@
+Es-Send -Method Post -Path "/apt_groups/_delete_by_query?pretty" -Json $body
+
+# WSL (bash)
+/usr/bin/curl -s -X POST "$ES/apt_groups/_delete_by_query?pretty" \
+  -H 'Content-Type: application/json' \
+  -d '{"query":{"term":{"pais_origem.keyword":"Coreia do Norte"}}}'
+
+# --------------------------------------------------------------------------
+# Passo 10 — DELETE do índice inteiro
+# --------------------------------------------------------------------------
+
+/usr/bin/curl -s -X DELETE "$ES/apt_groups?pretty"
+# (PowerShell)
+
+Es-Send -Method Delete -Path "/apt_groups?pretty"
+
+# WSL (bash)
+/usr/bin/curl -s "$ES/apt_groups/_search?pretty"
+
+# --------------------------------------------------------------------------
+# Passo 11 — PUT com mapping personalizado: fazendo do jeito profissional
+# --------------------------------------------------------------------------
+
+/usr/bin/curl -s -X PUT "$ES/apt_groups?pretty" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "mappings": {
+      "properties": {
+        "nome":                 { "type": "text",
+                                  "fields": { "keyword": { "type": "keyword", "ignore_above": 256 } } },
+        "pais_origem":          { "type": "keyword" },
+        "ativo":                { "type": "boolean" },
+        "nivel_sofisticacao":   { "type": "float" },
+        "primeiro_avistamento": { "type": "date" },
+        "ip_c2":                { "type": "ip" },
+        "coordenadas":          { "type": "geo_point" },
+        "notas_analista":       { "type": "text" }
+      }
+    }
+  }'
+# (PowerShell)
+
+$body = @'
+{
+  "mappings": {
+    "properties": {
+      "nome":                 { "type": "text",
+                                "fields": { "keyword": { "type": "keyword", "ignore_above": 256 } } },
+      "pais_origem":          { "type": "keyword" },
+      "ativo":                { "type": "boolean" },
+      "nivel_sofisticacao":   { "type": "float" },
+      "primeiro_avistamento": { "type": "date" },
+      "ip_c2":                { "type": "ip" },
+      "coordenadas":          { "type": "geo_point" },
+      "notas_analista":       { "type": "text" }
+    }
+  }
+}
+'@
+Es-Send -Method Put -Path "/apt_groups?pretty" -Json $body
+
+# WSL (bash) — indice na URL: o ndjson nao traz _index nas linhas de acao
+/usr/bin/curl -s -X POST "$ES/apt_groups/_bulk?pretty" \
+  -H 'Content-Type: application/x-ndjson' \
+  --data-binary @$S/apt_bulk.ndjson | head -5
+/usr/bin/curl -s -X POST "$ES/apt_groups/_refresh" > /dev/null
+/usr/bin/curl -s "$ES/apt_groups/_count?pretty"      # tem que dar 36
+# (PowerShell)
+
+# Windows (PowerShell)
+$bytes = [System.IO.File]::ReadAllBytes("$S\apt_bulk.ndjson")
+Invoke-RestMethod -Method Post -Uri "$ES/apt_groups/_bulk" `
+  -ContentType "application/x-ndjson" -Body $bytes
+Es-Send -Method Get -Path "/apt_groups/_count"
+
+# --------------------------------------------------------------------------
+# A pergunta socrática
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+/usr/bin/curl -s -X POST "$ES/telegram_leak/_search?pretty" \
+  -H 'Content-Type: application/json' \
+  -d '{"size":5,"_source":["titulo","categoria"],"query":{"match":{"texto":"ransomware"}}}'
+# (PowerShell)
+
+# Windows (PowerShell)
+$body = @'
+{ "size": 5, "_source": ["titulo","categoria"], "query": { "match": { "texto": "ransomware" } } }
+'@
+Es-Send -Method Post -Path "/telegram_leak/_search?pretty" -Json $body
+
+# --------------------------------------------------------------------------
+# Famílias de query: com score × exatas
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+# endpoints da ADINT que respondem erro de cliente (4xx) e NÃO são o domínio parkeado
+/usr/bin/curl -s -X POST "$ES/analise_superficie_coletor_httpx/_search?pretty" \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "size": 10,
+    "query": {
+      "bool": {
+        "filter":   [ { "range": { "status_code": { "gte": 400, "lt": 500 } } } ],
+        "must":     [ { "term":  { "company_slug.keyword": "adint" } } ],
+        "must_not": [ { "match": { "title": "parked" } } ]
+      }
+    }
+  }'
+# (PowerShell)
+
+# Windows (PowerShell)
+$body = @'
+{
+  "size": 10,
+  "query": {
+    "bool": {
+      "filter":   [ { "range": { "status_code": { "gte": 400, "lt": 500 } } } ],
+      "must":     [ { "term":  { "company_slug.keyword": "adint" } } ],
+      "must_not": [ { "match": { "title": "parked" } } ]
+    }
+  }
+}
+'@
+Es-Send -Method Post -Path "/analise_superficie_coletor_httpx/_search?pretty" -Json $body
+
+# --------------------------------------------------------------------------
+# Checklist dos comandos (entregue impresso / no .md)
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+/usr/bin/curl -s "$ES/_cat/indices?v&s=index"
+/usr/bin/curl -s "$ES/_cat/health?v"
+# (PowerShell)
+
+# Windows (PowerShell)
+# _cat devolve TEXTO, nao JSON — aqui NAO use a Es-Send (o ConvertTo-Json dela
+# transformaria a tabela numa unica linha com \n no meio)
+Invoke-RestMethod -Uri "$ES/_cat/indices?v&s=index"
+Invoke-RestMethod -Uri "$ES/_cat/health?v"
+
+==============================================================================
+  ELASTIC — DADOS DE EXEMPLO
+==============================================================================
+
+# --------------------------------------------------------------------------
+# 2) accounts — subir, criar o índice, e a maior pegadinha do dia
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+ES=http://localhost:9200
+S="${ADINT_SAMPLES:-docs/samples}"   # rode da raiz do projeto
+/usr/bin/curl -s -X POST "$ES/contas/_bulk" -H 'Content-Type: application/x-ndjson' \
+  --data-binary @"$S/accounts.json" | head -c 400
+
+# WSL (bash)
+/usr/bin/curl -s -X PUT "$ES/contas?pretty"
+# (PowerShell)
+
+# Windows (PowerShell)
+Invoke-RestMethod -Uri "http://localhost:9200/contas" -Method Put
+
+# WSL (bash) — o -w mostra tamanho e tempo, e isso impressiona a turma
+/usr/bin/curl -s -X POST "$ES/contas/_bulk" -H 'Content-Type: application/x-ndjson' \
+  --data-binary @"$S/accounts.json" -o /tmp/bulk.json \
+  -w 'HTTP %{http_code}  %{size_upload} bytes  %{time_total}s\n'
+grep -o '"errors":[a-z]*' /tmp/bulk.json | head -1
+
+# WSL (bash)
+/usr/bin/curl -s "$ES/contas/_count?pretty"
+
+# WSL (bash)
+/usr/bin/curl -s "$ES/contas/_mapping?pretty"
+
+# WSL (bash) — saldo medio por estado, top 5
+/usr/bin/curl -s -X POST "$ES/contas/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 0,
+  "aggs": { "por_estado": {
+      "terms": { "field": "state.keyword", "size": 5, "order": { "saldo_medio": "desc" } },
+      "aggs":  { "saldo_medio": { "avg": { "field": "balance" } } }
+  }}
+}'
+
+# --------------------------------------------------------------------------
+# 3) ALTERAR o mapping — o que não dá, o que dá, e o jeito certo
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+/usr/bin/curl -s -X PUT "$ES/contas/_mapping?pretty" -H 'Content-Type: application/json' -d '{
+  "properties": { "balance": { "type": "integer" } }
+}'
+
+# WSL (bash)
+/usr/bin/curl -s -X PUT "$ES/contas/_mapping?pretty" -H 'Content-Type: application/json' -d '{
+  "properties": { "risco": { "type": "keyword" } }
+}'
+
+# WSL (bash)
+/usr/bin/curl -s -X PUT "$ES/contas_v2?pretty" -H 'Content-Type: application/json' -d '{
+  "settings": { "number_of_shards": 1, "number_of_replicas": 0 },
+  "mappings": { "properties": {
+      "account_number": { "type": "integer" },
+      "balance":        { "type": "integer" },
+      "age":            { "type": "byte"    },
+      "gender":         { "type": "keyword" },
+      "state":          { "type": "keyword" },
+      "city":           { "type": "keyword" },
+      "employer":       { "type": "keyword" },
+      "email":          { "type": "keyword" },
+      "address":        { "type": "text"    },
+      "firstname":      { "type": "keyword" },
+      "lastname":       { "type": "keyword" }
+  }}
+}'
+
+# WSL (bash)
+/usr/bin/curl -s -X POST "$ES/_reindex?pretty" -H 'Content-Type: application/json' -d '{
+  "source": { "index": "contas"    },
+  "dest":   { "index": "contas_v2" }
+}'
+
+# WSL (bash)
+/usr/bin/curl -s "$ES/_cat/indices/contas*?v&h=health,index,rep,docs.count,store.size"
+
+# WSL (bash) — repare: "field": "state", SEM o sufixo
+/usr/bin/curl -s -X POST "$ES/contas_v2/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 0,
+  "aggs": { "por_estado": {
+      "terms": { "field": "state", "size": 3, "order": { "saldo_medio": "desc" } },
+      "aggs":  { "saldo_medio": { "avg": { "field": "balance" } } } }}
+}'
+
+# --------------------------------------------------------------------------
+# 4) logs — index template, geo_point, e o beat de ouro
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+grep -o '"_index":"[^"]*"' $S/logs.jsonl | sort -u
+
+# WSL (bash)
+/usr/bin/curl -s -X PUT "$ES/_index_template/adint_logs_web?pretty" \
+  -H 'Content-Type: application/json' -d '{
+  "index_patterns": ["logstash-*"],
+  "template": {
+    "settings": { "number_of_shards": 1, "number_of_replicas": 0 },
+    "mappings": { "properties": {
+      "@timestamp": { "type": "date" },
+      "geo": { "properties": {
+          "coordinates": { "type": "geo_point" },
+          "src":  { "type": "keyword" },
+          "dest": { "type": "keyword" } }},
+      "clientip":  { "type": "ip"      },
+      "ip":        { "type": "ip"      },
+      "response":  { "type": "keyword" },
+      "extension": { "type": "keyword" },
+      "bytes":     { "type": "long"    },
+      "host":      { "type": "keyword" },
+      "url":       { "type": "keyword" },
+      "machine": { "properties": {
+          "os":  { "type": "keyword" },
+          "ram": { "type": "long"    } }}
+    }}
+  }
+}'
+
+# WSL (bash)
+for d in 2015.05.18 2015.05.19 2015.05.20; do
+  /usr/bin/curl -s -X PUT "$ES/logstash-$d" ; echo
+done
+
+# conferir que o geo_point pegou — ANTES de carregar 53 MB
+/usr/bin/curl -s "$ES/logstash-2015.05.18/_mapping/field/geo.coordinates?pretty"
+
+# WSL (bash)
+/usr/bin/curl -s -X POST "$ES/_bulk" -H 'Content-Type: application/x-ndjson' \
+  --data-binary @"$S/logs.jsonl" -o /tmp/logs.json \
+  -w 'HTTP %{http_code}  %{size_upload} bytes  %{time_total}s\n'
+/usr/bin/curl -s -X POST "$ES/logstash-*/_refresh" > /dev/null
+/usr/bin/curl -s "$ES/_cat/indices/logstash-*?v&h=health,index,rep,docs.count,store.size&s=index"
+
+# WSL (bash)
+# (a) geo_distance: acessos a 2000 km de Denver — SO funciona com geo_point
+/usr/bin/curl -s -X POST "$ES/logstash-*/_count?pretty" -H 'Content-Type: application/json' -d '{
+  "query": { "geo_distance": { "distance": "2000km",
+             "geo.coordinates": { "lat": 39.74, "lon": -104.99 } } } }'
+
+# (b) CIDR num campo type:ip — compare com fazer isso em string
+/usr/bin/curl -s -X POST "$ES/logstash-*/_count?pretty" -H 'Content-Type: application/json' -d '{
+  "query": { "term": { "clientip": "185.0.0.0/8" } } }'
+
+# (c) range de data num campo type:date
+/usr/bin/curl -s -X POST "$ES/logstash-*/_count?pretty" -H 'Content-Type: application/json' -d '{
+  "query": { "range": { "@timestamp": { "gte": "2015-05-18", "lt": "2015-05-21" } } } }'
+
+# (d) distribuicao de status code (response e keyword)
+/usr/bin/curl -s -X POST "$ES/logstash-*/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 0, "aggs": { "status": { "terms": { "field": "response", "size": 10 } } } }'
+
+# --------------------------------------------------------------------------
+# O beat de ouro: a coordenada que mente
+# --------------------------------------------------------------------------
+
+# WSL (bash) — de onde vem o trafego deste servidor?
+/usr/bin/curl -s -X POST "$ES/logstash-*/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 0, "aggs": { "pais": { "terms": { "field": "geo.src", "size": 8 } } } }'
+
+# WSL (bash)
+/usr/bin/curl -s -X POST "$ES/logstash-*/_count?pretty" -H 'Content-Type: application/json' -d '{
+  "query": { "geo_bounding_box": { "geo.coordinates": {
+      "top_left":     { "lat":  13.0, "lon": -82.0 },
+      "bottom_right": { "lat": -56.0, "lon": -34.0 } } } } }'
+
+# WSL (bash)
+/usr/bin/curl -s -X POST "$ES/logstash-*/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 4, "query": { "term": { "geo.src": "BR" } },
+  "_source": ["geo.src","geo.dest","geo.coordinates","clientip"] }'
+
+# --------------------------------------------------------------------------
+# 5) shakespeare — volume de verdade e o BM25 na tela
+# --------------------------------------------------------------------------
+
+# WSL (bash) — indice com mapping explicito, do jeito certo desde o inicio
+/usr/bin/curl -s -X PUT "$ES/shakespeare?pretty" -H 'Content-Type: application/json' -d '{
+  "settings": { "number_of_shards": 1, "number_of_replicas": 0 },
+  "mappings": { "properties": {
+      "type":          { "type": "keyword" },
+      "line_id":       { "type": "integer" },
+      "play_name":     { "type": "keyword" },
+      "speech_number": { "type": "integer" },
+      "line_number":   { "type": "keyword" },
+      "speaker":       { "type": "keyword" },
+      "text_entry":    { "type": "text"    }
+  }}
+}'
+
+/usr/bin/curl -s -X POST "$ES/_bulk" -H 'Content-Type: application/x-ndjson' \
+  --data-binary @"$S/shakespeare.json" -o /tmp/shk.json \
+  -w 'HTTP %{http_code}  %{size_upload} bytes  %{time_total}s\n'
+/usr/bin/curl -s -X POST "$ES/shakespeare/_refresh" > /dev/null
+/usr/bin/curl -s "$ES/_cat/indices/shakespeare?v&h=health,index,docs.count,store.size"
+
+# WSL (bash) — match: OR dos termos, ordenado por relevancia
+/usr/bin/curl -s -X POST "$ES/shakespeare/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 3,
+  "query": { "match": { "text_entry": "to be or not to be" } },
+  "_source": ["play_name","speaker","text_entry"] }'
+
+# WSL (bash)
+/usr/bin/curl -s -X POST "$ES/shakespeare/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 2,
+  "query": { "match_phrase": { "text_entry": "to be or not to be" } },
+  "_source": ["play_name","speaker","text_entry"] }'
+
+# WSL (bash)
+/usr/bin/curl -s -X POST "$ES/shakespeare/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 0, "aggs": { "faladores": { "terms": { "field": "speaker", "size": 5 } } } }'
+
+# --------------------------------------------------------------------------
+# 6) DELETAR — a lápide, o disco que não volta, e o wildcard recusado
+# --------------------------------------------------------------------------
+
+# WSL (bash) — apaga as contas com saldo abaixo de 10.000
+/usr/bin/curl -s -X POST "$ES/contas/_delete_by_query?refresh=true" \
+  -H 'Content-Type: application/json' -d '{
+  "query": { "range": { "balance": { "lt": 10000 } } } }'
+
+# WSL (bash)
+/usr/bin/curl -s -X POST "$ES/contas/_forcemerge?only_expunge_deletes=true"
+
+# WSL (bash) — o indice inteiro, nome exato
+/usr/bin/curl -s -X DELETE "$ES/contas_v2?pretty"
+
+# WSL (bash)
+/usr/bin/curl -s -X DELETE "$ES/contas*?pretty"
+
+# --------------------------------------------------------------------------
+# Parte 0 — Véspera: baixar e descompactar (uma vez)
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+mkdir -p $S && cd $S
+/usr/bin/curl -sO https://download.elastic.co/demos/kibana/gettingstarted/8.x/accounts.zip
+/usr/bin/curl -sO https://download.elastic.co/demos/kibana/gettingstarted/8.x/shakespeare.json
+/usr/bin/curl -sO https://download.elastic.co/demos/kibana/gettingstarted/8.x/logs.jsonl.gz
+unzip -o accounts.zip
+gunzip -kf logs.jsonl.gz
+ls -la
+wc -l accounts.json shakespeare.json logs.jsonl
+# esperado: 2.000 / 222.792 / 28.010 linhas
+
+# --------------------------------------------------------------------------
+# Parte 1 — accounts: subir, criar índice, e o _count zerado
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+# 1.1  o _bulk SEM criar o indice — deixe FALHAR, e leia o 404 dentro do HTTP 200
+/usr/bin/curl -s -X POST "$ES/contas/_bulk" -H 'Content-Type: application/x-ndjson' \
+  --data-binary @"$S/accounts.json" | head -c 400
+
+# 1.2  por que a URL leva o nome do indice: olhe a 1a linha do arquivo
+head -2 "$S/accounts.json"
+
+# 1.3  criar o indice vazio
+/usr/bin/curl -s -X PUT "$ES/contas?pretty"
+
+# 1.4  agora o _bulk passa — o -w mostra tamanho e tempo
+/usr/bin/curl -s -X POST "$ES/contas/_bulk" -H 'Content-Type: application/x-ndjson' \
+  --data-binary @"$S/accounts.json" -o /tmp/bulk.json \
+  -w 'HTTP %{http_code}  %{size_upload} bytes  %{time_total}s\n'
+grep -o '"errors":[a-z]*' /tmp/bulk.json | head -1
+
+# 1.5  CONTE IMEDIATAMENTE — vai dar ZERO (near real-time)
+/usr/bin/curl -s "$ES/contas/_count?pretty"
+
+# 1.6  conte de novo, sem reenviar nada — agora da 1000
+/usr/bin/curl -s "$ES/contas/_count?pretty"
+
+# 1.7  as tres formas de nao depender da sorte
+/usr/bin/curl -s -X POST "$ES/contas/_refresh"                      # forca agora
+# em script, o certo e:  POST .../_doc?refresh=wait_for
+
+# 1.8  o mapping que o dynamic mapping inventou
+/usr/bin/curl -s "$ES/contas/_mapping?pretty"
+
+# 1.9  agregacao: saldo medio por estado (SO funciona com .keyword)
+/usr/bin/curl -s -X POST "$ES/contas/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 0,
+  "aggs": { "por_estado": {
+      "terms": { "field": "state.keyword", "size": 5, "order": { "saldo_medio": "desc" } },
+      "aggs":  { "saldo_medio": { "avg": { "field": "balance" } } } }}
+}'
+#  LEIA NA RESPOSTA: "sum_other_doc_count": 923  e  "doc_count_error_upper_bound": -1
+# (PowerShell)
+
+# Windows (PowerShell) — equivalentes dos passos criticos
+# 1.3p  criar o indice
+Invoke-RestMethod -Uri "$ES/contas" -Method Put
+
+# 1.4p  _bulk: use curl.exe, NAO Invoke-RestMethod (o corpo e bytes de arquivo ndjson)
+curl.exe -s -X POST "$ES/contas/_bulk" -H "Content-Type: application/x-ndjson" `
+  --data-binary "@$S\accounts.json" -o "$env:TEMP\bulk.json" `
+  -w "HTTP %{http_code}  %{size_upload} bytes  %{time_total}s`n"
+
+# 1.5p  contar
+Invoke-RestMethod -Uri "$ES/contas/_count"
+
+# 1.8p  mapping
+Invoke-RestMethod -Uri "$ES/contas/_mapping" | ConvertTo-Json -Depth 6
+
+# 1.9p  agregacao
+$q = '{"size":0,"aggs":{"por_estado":{"terms":{"field":"state.keyword","size":5,"order":{"saldo_medio":"desc"}},"aggs":{"saldo_medio":{"avg":{"field":"balance"}}}}}}'
+Invoke-RestMethod -Uri "$ES/contas/_search" -Method Post -Body $q -ContentType "application/json" |
+  ForEach-Object { $_.aggregations.por_estado.buckets } |
+  Select-Object key, doc_count, @{n='saldo_medio';e={[math]::Round($_.saldo_medio.value,2)}}
+
+# --------------------------------------------------------------------------
+# Parte 2 — ALTERAR o mapping: o que não dá, e o _reindex
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+# 2.1  mudar o TIPO de um campo que existe -> ERRO 400
+/usr/bin/curl -s -X PUT "$ES/contas/_mapping?pretty" -H 'Content-Type: application/json' \
+  -d '{"properties":{"balance":{"type":"integer"}}}'
+
+# 2.2  tirar o .keyword de um text -> MESMO ERRO
+/usr/bin/curl -s -X PUT "$ES/contas/_mapping?pretty" -H 'Content-Type: application/json' \
+  -d '{"properties":{"state":{"type":"keyword"}}}'
+
+# 2.3  ADICIONAR um campo novo -> ISTO ELE ACEITA
+/usr/bin/curl -s -X PUT "$ES/contas/_mapping?pretty" -H 'Content-Type: application/json' \
+  -d '{"properties":{"risco":{"type":"keyword"}}}'
+
+# 2.4  o jeito certo: indice novo com o mapping que eu QUERIA
+/usr/bin/curl -s -X PUT "$ES/contas_v2?pretty" -H 'Content-Type: application/json' -d '{
+  "settings": { "number_of_shards": 1, "number_of_replicas": 0 },
+  "mappings": { "properties": {
+      "account_number": { "type": "integer" },
+      "balance":        { "type": "integer" },
+      "age":            { "type": "byte"    },
+      "gender":         { "type": "keyword" },
+      "state":          { "type": "keyword" },
+      "city":           { "type": "keyword" },
+      "employer":       { "type": "keyword" },
+      "email":          { "type": "keyword" },
+      "address":        { "type": "text"    },
+      "firstname":      { "type": "keyword" },
+      "lastname":       { "type": "keyword" }
+  }}
+}'
+
+# 2.5  _reindex
+/usr/bin/curl -s -X POST "$ES/_reindex?pretty" -H 'Content-Type: application/json' \
+  -d '{"source":{"index":"contas"},"dest":{"index":"contas_v2"}}'
+
+# 2.6  OLHE AGORA — vai dizer 0 documentos, com 63 KB em disco
+/usr/bin/curl -s "$ES/_cat/indices/contas*?v&h=health,index,rep,docs.count,store.size"
+
+# 2.7  refresh e olhe de novo: 372,8 KB -> 257,2 KB  (31% menos disco)
+/usr/bin/curl -s -X POST "$ES/contas_v2/_refresh"
+/usr/bin/curl -s "$ES/_cat/indices/contas*?v&h=health,index,rep,docs.count,store.size"
+
+# 2.8  a mesma agregacao, agora SEM .keyword
+/usr/bin/curl -s -X POST "$ES/contas_v2/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 0,
+  "aggs": { "por_estado": {
+      "terms": { "field": "state", "size": 3, "order": { "saldo_medio": "desc" } },
+      "aggs":  { "saldo_medio": { "avg": { "field": "balance" } } } }}
+}'
+
+# 2.9  verde x amarelo: a coluna rep explica TUDO
+/usr/bin/curl -s "$ES/_cat/indices?v&h=health,index,rep,docs.count&s=health,index"
+
+# 2.10  e muda a quente (amarelo -> verde na sua frente)
+/usr/bin/curl -s -X PUT "$ES/contas/_settings" -H 'Content-Type: application/json' \
+  -d '{"index":{"number_of_replicas":0}}'
+/usr/bin/curl -s "$ES/_cat/indices/contas?v&h=health,index,rep"
+
+# --------------------------------------------------------------------------
+# Parte 3 — logs: index template, geo_point e ip
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+# 3.1  o arquivo manda o nome do indice — e sao tres
+grep -o '"_index":"[^"]*"' "$S/logs.jsonl" | sort -u
+
+# 3.2  por que o dynamic mapping nao serve: olhe o campo geo
+head -2 "$S/logs.jsonl" | tail -1 | head -c 300
+
+# 3.3  o index template (molde para todo logstash-* FUTURO)
+/usr/bin/curl -s -X PUT "$ES/_index_template/adint_logs_web?pretty" \
+  -H 'Content-Type: application/json' -d '{
+  "index_patterns": ["logstash-*"],
+  "template": {
+    "settings": { "number_of_shards": 1, "number_of_replicas": 0 },
+    "mappings": { "properties": {
+      "@timestamp": { "type": "date" },
+      "geo": { "properties": {
+          "coordinates": { "type": "geo_point" },
+          "src":  { "type": "keyword" },
+          "dest": { "type": "keyword" } }},
+      "clientip":  { "type": "ip"      },
+      "ip":        { "type": "ip"      },
+      "response":  { "type": "keyword" },
+      "extension": { "type": "keyword" },
+      "bytes":     { "type": "long"    },
+      "host":      { "type": "keyword" },
+      "url":       { "type": "keyword" },
+      "machine": { "properties": {
+          "os":  { "type": "keyword" },
+          "ram": { "type": "long"    } }}
+    }}
+  }
+}'
+
+# 3.4  criar os tres indices (o template aplica na CRIACAO)
+for dia in 2015.05.18 2015.05.19 2015.05.20; do
+  /usr/bin/curl -s -X PUT "$ES/logstash-$dia" ; echo
+done
+
+# 3.5  CONFIRA o geo_point ANTES de carregar 53 MB
+/usr/bin/curl -s "$ES/logstash-2015.05.18/_mapping/field/geo.coordinates?pretty"
+
+# 3.6  _bulk — URL PELADA, porque o _index vem no arquivo
+/usr/bin/curl -s -X POST "$ES/_bulk" -H 'Content-Type: application/x-ndjson' \
+  --data-binary @"$S/logs.jsonl" -o /tmp/logs.json \
+  -w 'HTTP %{http_code}  %{size_upload} bytes  %{time_total}s\n'
+grep -o '"errors":[a-z]*' /tmp/logs.json | head -1
+
+# 3.7  refresh e contagem (4631 / 4624 / 4750 = 14.005)
+/usr/bin/curl -s -X POST "$ES/logstash-*/_refresh"
+/usr/bin/curl -s "$ES/_cat/indices/logstash-*?v&h=health,index,rep,docs.count,store.size&s=index"
+
+# WSL (bash) — 3.8  as quatro consultas que SO funcionam com o mapping certo
+# (a) geo_distance: 2000 km de Denver -> 9.939
+/usr/bin/curl -s -X POST "$ES/logstash-*/_count?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"geo_distance":{"distance":"2000km","geo.coordinates":{"lat":39.74,"lon":-104.99}}}}'
+
+# (b) CIDR num campo type:ip -> 127
+/usr/bin/curl -s -X POST "$ES/logstash-*/_count?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"term":{"clientip":"185.0.0.0/8"}}}'
+
+# (c) range de data, janela CERTA -> 14.005
+/usr/bin/curl -s -X POST "$ES/logstash-*/_count?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"range":{"@timestamp":{"gte":"2015-05-18","lt":"2015-05-21"}}}}'
+
+# (d) range de data, janela ERRADA (o default do Kibana) -> ZERO
+/usr/bin/curl -s -X POST "$ES/logstash-*/_count?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"range":{"@timestamp":{"gte":"now-15m"}}}}'
+
+# (e) distribuicao de status code -> 200:12871  404:693  503:441
+/usr/bin/curl -s -X POST "$ES/logstash-*/_search?pretty" -H 'Content-Type: application/json' \
+  -d '{"size":0,"aggs":{"status":{"terms":{"field":"response","size":10}}}}'
+
+# (f) top hosts por bytes
+/usr/bin/curl -s -X POST "$ES/logstash-*/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 0, "aggs": { "por_host": {
+    "terms": { "field": "host", "size": 5, "order": { "total": "desc" } },
+    "aggs": { "total": { "sum": { "field": "bytes" } } } }}}'
+
+# WSL (bash) — 3.9  🥇 O BEAT DE OURO: a coordenada que mente
+# (a) de onde vem o trafego? -> CN 2550, IN 2325, US 1160, ID 473, BR 376...
+/usr/bin/curl -s -X POST "$ES/logstash-*/_search?pretty" -H 'Content-Type: application/json' \
+  -d '{"size":0,"aggs":{"pais":{"terms":{"field":"geo.src","size":8}}}}'
+
+# (b) bounding box da America do Sul inteira -> ZERO
+/usr/bin/curl -s -X POST "$ES/logstash-*/_count?pretty" -H 'Content-Type: application/json' -d '{
+  "query": { "geo_bounding_box": { "geo.coordinates": {
+      "top_left":     { "lat":  13.0, "lon": -82.0 },
+      "bottom_right": { "lat": -56.0, "lon": -34.0 } } } } }'
+
+# (c) abra os documentos e LEIA linha por linha
+/usr/bin/curl -s -X POST "$ES/logstash-*/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 4, "query": { "term": { "geo.src": "BR" } },
+  "_source": ["geo.src","geo.dest","geo.coordinates","clientip"] }'
+#   src=BR  dest=BR  lat=40.296  lon=-78.320  <- PENSILVANIA
+#   clientip=78.127.116.90                    <- faixa europeia
+
+# 3.10  o bonus de seguranca: o campo xss do proprio sample
+/usr/bin/curl -s -X POST "$ES/logstash-*/_search?pretty" -H 'Content-Type: application/json' \
+  -d '{"size":1,"_source":["xss","host","response"]}'
+
+# --------------------------------------------------------------------------
+# Parte 4 — shakespeare: volume e BM25
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+# 4.1  indice com mapping explicito, do jeito certo desde o inicio
+/usr/bin/curl -s -X PUT "$ES/shakespeare?pretty" -H 'Content-Type: application/json' -d '{
+  "settings": { "number_of_shards": 1, "number_of_replicas": 0 },
+  "mappings": { "properties": {
+      "type":          { "type": "keyword" },
+      "line_id":       { "type": "integer" },
+      "play_name":     { "type": "keyword" },
+      "speech_number": { "type": "integer" },
+      "line_number":   { "type": "keyword" },
+      "speaker":       { "type": "keyword" },
+      "text_entry":    { "type": "text"    }
+  }}
+}'
+
+# 4.2  _bulk: 25 MB, 111.396 docs, ~1 segundo
+/usr/bin/curl -s -X POST "$ES/_bulk" -H 'Content-Type: application/x-ndjson' \
+  --data-binary @"$S/shakespeare.json" -o /tmp/shk.json \
+  -w 'HTTP %{http_code}  %{size_upload} bytes  %{time_total}s\n'
+grep -o '"errors":[a-z]*' /tmp/shk.json | head -1
+/usr/bin/curl -s -X POST "$ES/shakespeare/_refresh"
+/usr/bin/curl -s "$ES/_cat/indices/shakespeare?v&h=health,index,docs.count,store.size"
+
+# 4.3  match: OR dos termos -> Hamlet 17,42 / Winters Tale 14,88 / Twelfth Night 14,78
+/usr/bin/curl -s -X POST "$ES/shakespeare/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 3,
+  "query": { "match": { "text_entry": "to be or not to be" } },
+  "_source": ["play_name","speaker","text_entry"] }'
+
+# 4.4  match_phrase: a frase EXATA -> 1 hit, score 13,89 (MENOR, no MESMO documento)
+/usr/bin/curl -s -X POST "$ES/shakespeare/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 2,
+  "query": { "match_phrase": { "text_entry": "to be or not to be" } },
+  "_source": ["play_name","speaker","text_entry"] }'
+
+# 4.5  quem fala mais? -> GLOUCESTER 1920, HAMLET 1582, IAGO 1161...
+/usr/bin/curl -s -X POST "$ES/shakespeare/_search?pretty" -H 'Content-Type: application/json' \
+  -d '{"size":0,"aggs":{"faladores":{"terms":{"field":"speaker","size":5}}}}'
+
+# --------------------------------------------------------------------------
+# Parte 5 — Sample do Kibana (dashboard pronto) e DELETAR
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+# 5.1  listar os samples embutidos
+/usr/bin/curl -s "localhost:5601/api/sample_data" -H 'kbn-xsrf: true' | head -c 400
+
+# 5.2  instalar o de e-commerce: 4.675 docs + 8 objetos salvos, em 2 segundos
+/usr/bin/curl -s -X POST "localhost:5601/api/sample_data/ecommerce" -H 'kbn-xsrf: true'
+
+# 5.3  o mapping PROFISSIONAL — leia campo por campo e compare com o do passo 1.8
+/usr/bin/curl -s "$ES/kibana_sample_data_ecommerce/_mapping?pretty" | head -60
+
+# 5.4  os timestamps dele sao relativos a HOJE (ao contrario do logs.jsonl, de 2015)
+/usr/bin/curl -s -X POST "$ES/kibana_sample_data_ecommerce/_search?pretty" \
+  -H 'Content-Type: application/json' \
+  -d '{"size":0,"aggs":{"min_d":{"min":{"field":"order_date"}},"max_d":{"max":{"field":"order_date"}}}}'
+
+# WSL (bash)
+# 5.5  _delete_by_query: apagar pelo que o dado E
+/usr/bin/curl -s -X POST "$ES/contas/_delete_by_query?refresh=true" \
+  -H 'Content-Type: application/json' -d '{"query":{"range":{"balance":{"lt":10000}}}}'
+
+# 5.6  A SURPRESA: docs.count caiu, docs.deleted = 336 (o DOBRO), store.size CRESCEU
+/usr/bin/curl -s "$ES/_cat/indices/contas?v&h=index,docs.count,docs.deleted,store.size"
+
+# 5.7  de onde vem o 336: dois segmentos, um deles so com lapide
+/usr/bin/curl -s "$ES/_cat/segments/contas?v&h=index,segment,docs.count,docs.deleted,size"
+
+# 5.8  o disco volta no merge — 382,5 KB -> 319,8 KB
+#      NUNCA em indice quente de producao: e I/O pesado
+/usr/bin/curl -s -X POST "$ES/contas/_forcemerge?only_expunge_deletes=true"
+/usr/bin/curl -s "$ES/_cat/indices/contas?v&h=index,docs.count,docs.deleted,store.size"
+
+# 5.9  DELETE do indice inteiro: instantaneo, sem confirmacao
+/usr/bin/curl -s -X DELETE "$ES/contas_v2?pretty"
+
+# 5.10  DELETE com asterisco: RECUSADO — e isso e a sua rede de protecao
+/usr/bin/curl -s -X DELETE "$ES/contas*?pretty"
+#   "reason": "Wildcard expressions or all indices are not allowed"
+
+# 5.11  confira que a protecao esta ligada (default: true)
+/usr/bin/curl -s "$ES/_cluster/settings?include_defaults=true&flat_settings=true" \
+  | grep -o '"action.destructive_requires_name":"[a-z]*"'
+
+# 5.12  DELETE de indice que nao existe -> 404 (nao e silencioso)
+/usr/bin/curl -s -X DELETE "$ES/contas_v2?pretty"
+#   para um laco idempotente, acrescente ?ignore_unavailable=true
+
+# --------------------------------------------------------------------------
+# Parte 6 — Limpeza do laboratório
+# --------------------------------------------------------------------------
+
+# WSL (bash) — NOMEIE cada indice. Nenhum indice do projeto nesta lista.
+for i in contas contas_v2 shakespeare \
+         logstash-2015.05.18 logstash-2015.05.19 logstash-2015.05.20 \
+         kibana_sample_data_ecommerce; do
+  printf '%-34s -> ' "$i"
+  /usr/bin/curl -s -X DELETE "$ES/$i?ignore_unavailable=true"
+  echo
+done
+
+# o template tambem, senao ele aplica em logstash-* para sempre
+/usr/bin/curl -s -X DELETE "$ES/_index_template/adint_logs_web"
+
+# os 8 objetos salvos do Kibana nao saem com o DELETE do indice
+/usr/bin/curl -s -X DELETE "localhost:5601/api/sample_data/ecommerce" -H 'kbn-xsrf: true'
+
+# CONFIRA COM OS OLHOS o que sobrou — tem de ter os 13 indices do projeto
+/usr/bin/curl -s "$ES/_cat/indices?v&h=health,index,docs.count&s=index"
+
+# --------------------------------------------------------------------------
+# Perguntas que a turma faz
+# --------------------------------------------------------------------------
+
+/usr/bin/curl -s -X PUT "$ES/contas/_settings" -H 'Content-Type: application/json' \
+  -d '{"index":{"number_of_replicas":0}}'
+
+==============================================================================
+  ELASTIC — BASE FICTICIA DE APTS
+==============================================================================
+
+# --------------------------------------------------------------------------
+# Parte 0 — Preparação (uma vez, antes da aula)
+# --------------------------------------------------------------------------
+# (PowerShell)
+
+# Windows (PowerShell) — 0.1  a config da aula PRECISA permitir apt_*
+#   sem isto, o slide 27 devolve 404 e a aula para no primeiro comando
+copy "C:\ADINT\ADINT_AULA\ELK\elastisearch.yml" "C:\elasticsearch-9.1.3\config\elasticsearch.yml"
+# (PowerShell)
+
+# Windows (PowerShell) — 0.2  subir o Elastic
+C:\ADINT\ADINT_AULA\ELK\start-elasticsearch-aula.bat
+
+# 0.3  teste de vida
+curl.exe -s "http://localhost:9200?pretty"
+
+# WSL (bash) — 0.4  gerar a base (ou só conferir que os arquivos estão lá)
+python3 $S/gera_apt.py
+ls -la $S/apt_*
+
+# WSL (bash) — 0.5  o cabeçalho que vale para o bloco inteiro
+ES=http://localhost:9200
+S="${ADINT_SAMPLES:-docs/samples}"   # rode da raiz do projeto
+
+# --------------------------------------------------------------------------
+# Parte 1 — Fase 1: o índice dinâmico (slides 27 a 45)
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+# [slide 27]  POST: cria o documento E o índice, de graça
+/usr/bin/curl -s -X POST "$ES/apt_groups/_doc/1?pretty" -H 'Content-Type: application/json' -d '{
+  "id": 1, "nome": "APT-901", "pais_origem": "Rússia", "ativo": true,
+  "nivel_sofisticacao": 9.4, "primeiro_avistamento": "2006-01-15T08:00:00Z"
+}'
+#   -> "result": "created"
+
+# [slide 27b] o mapping que ele ADIVINHOU — projete e leia
+/usr/bin/curl -s "$ES/apt_groups/_mapping?pretty"
+
+# [slide 28]  PUT com o documento COMPLETO: campos novos aparecem sozinhos
+/usr/bin/curl -s -X PUT "$ES/apt_groups/_doc/2?pretty" -H 'Content-Type: application/json' -d '{
+  "id": 2, "nome": "APT-902", "nome_original": "Glacial Panda", "pais_origem": "China",
+  "ativo": true, "nivel_sofisticacao": 9.1, "numero_ataques": 1203,
+  "coordenadas_base": {"lat": 39.9042, "lon": 116.4074},
+  "ip_origem": "223.5.12.41",
+  "periodo_atividade": {"gte": "2008-01-01", "lte": "2026-12-31"},
+  "faixa_danos": {"gte": 5000000.0, "lte": 100000000.0},
+  "tecnicas_mitre": ["T1566.002", "T1190", "T1078"],
+  "alvos_principais": [{"setor":"Governo","pais":"Ucrânia","prioridade":10}]
+}'
+
+# [slide 28b] o remapeamento dinâmico aconteceu — compare com o de antes
+/usr/bin/curl -s "$ES/apt_groups/_mapping?pretty"
+
+# WSL (bash)
+# [slide 29]  _bulk: os 36 grupos de uma vez
+ls -lh "$S/apt_bulk.ndjson"
+/usr/bin/curl -s -X POST "$ES/apt_groups/_bulk" \
+  -H 'Content-Type: application/x-ndjson' \
+  --data-binary @"$S/apt_bulk.ndjson" -o /tmp/bulk.json \
+  -w 'HTTP %{http_code}  %{size_upload} bytes  %{time_total}s\n'
+grep -o '"errors":[a-z]*' /tmp/bulk.json | head -1
+#   -> HTTP 200  60380 bytes  0.13s   "errors":false
+
+# [slide 30]  _count   (conte IMEDIATAMENTE: pode dar 0 — ver Armadilhas)
+/usr/bin/curl -s -X POST "$ES/apt_groups/_refresh" > /dev/null
+/usr/bin/curl -s "$ES/apt_groups/_count?pretty"
+#   -> "count": 36
+
+# WSL (bash)
+# [slide 32]  match num campo de texto
+/usr/bin/curl -s -X POST "$ES/apt_groups/_search?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"match":{"pais_origem":"China"}}}'
+#   -> 6 hits
+
+# [slide 33]  olhe o _score na resposta
+/usr/bin/curl -s -X POST "$ES/apt_groups/_search?pretty" -H 'Content-Type: application/json' \
+  -d '{"size":1,"query":{"match":{"pais_origem":"China"}}}' | head -20
+#   -> "max_score": 1.7749388
+
+# WSL (bash) — [slides 34, 35, 36]  TF, IDF e TF-IDF, com NÚMERO na tela
+# IDF: em quantos documentos cada termo aparece?
+for termo in "malware" "ataques ciberneticos" "exfiltracao" "APT-901"; do
+  n=$(/usr/bin/curl -s -X POST "$ES/apt_groups/_count" -H 'Content-Type: application/json' \
+      -d "{\"query\":{\"match_phrase\":{\"relatorio\":\"$termo\"}}}" \
+      | grep -o '"count":[0-9]*' | cut -d: -f2)
+  printf '  %-24s em %2s de 36 docs\n' "\"$termo\"" "$n"
+done
+#   "malware"                em 36 de 36   <- IDF ~ 0
+#   "ataques ciberneticos"   em 14 de 36
+#   "exfiltracao"            em  5 de 36   <- IDF alto
+#   "APT-901"                em  1 de 36   <- o mais raro
+
+# TF: o mesmo termo, frequências diferentes -> scores diferentes
+/usr/bin/curl -s -X POST "$ES/apt_groups/_search?pretty" -H 'Content-Type: application/json' \
+  -d '{"size":36,"query":{"match":{"relatorio":"ataques ciberneticos"}},"_source":["nome"]}' \
+  | grep -E '"_score"|"nome"'
+#   -> 9 scores distintos, de 3,40 (6 ocorrências) a 1,78 (1 ocorrência)
+
+# IDF na prática: o termo que está em TODOS vale quase nada
+/usr/bin/curl -s -X POST "$ES/apt_groups/_search?pretty" -H 'Content-Type: application/json' \
+  -d '{"size":1,"query":{"match":{"relatorio":"malware"}}}' | grep max_score
+#   -> "max_score": 0.014
+
+# TF-IDF = TF x IDF, exatamente o cálculo do slide 36
+/usr/bin/curl -s -X POST "$ES/apt_groups/_search?pretty" -H 'Content-Type: application/json' \
+  -d '{"size":3,"query":{"match":{"relatorio":"APT-901 exfiltracao"}},"_source":["nome"]}' \
+  | grep -E '"_score"|"nome"'
+#   -> APT-901  8.8203     <- TF alto E IDF alto
+#      APT-922  1.8896
+#      APT-903  1.8209
+
+# WSL (bash) — [slides 37, 38]  match x term
+# match: analisado, acha pedaço, ignora caixa
+/usr/bin/curl -s -X POST "$ES/apt_groups/_count?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"match":{"nome_original":"bear"}}}'
+#   -> 6   (os seis "... Bear")
+
+# term num campo TEXT: não acha nada, porque o termo indexado é "bear", não "Bear"
+/usr/bin/curl -s -X POST "$ES/apt_groups/_count?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"term":{"nome_original":"Vermillion Bear"}}}'
+#   -> 0
+
+# term no .keyword, valor EXATO: acha
+/usr/bin/curl -s -X POST "$ES/apt_groups/_count?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"term":{"nome_original.keyword":"Vermillion Bear"}}}'
+#   -> 1
+
+# filtro exato por país
+/usr/bin/curl -s -X POST "$ES/apt_groups/_count?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"term":{"pais_origem.keyword":"Rússia"}}}'
+#   -> 4
+
+# WSL (bash) — [slide 39]  range
+# por número
+/usr/bin/curl -s -X POST "$ES/apt_groups/_count?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"range":{"nivel_sofisticacao":{"gte":9.0,"lte":10.0}}}}'
+#   -> 3
+
+# por data
+/usr/bin/curl -s -X POST "$ES/apt_groups/_count?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"range":{"ultimo_ataque":{"gte":"2024-01-01","lte":"2024-12-31"}}}}'
+#   -> 1
+
+# WSL (bash) — [slides 40 a 42]  contar, buscar e AGREGAR
+/usr/bin/curl -s "$ES/apt_groups/_count?pretty"
+/usr/bin/curl -s "$ES/apt_groups/_search?size=3&pretty"
+
+# agregação por país — note o .keyword, que SÓ existe no índice dinâmico
+/usr/bin/curl -s -X POST "$ES/apt_groups/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 0,
+  "aggs": { "por_pais": { "terms": { "field": "pais_origem.keyword" } } }
+}'
+#   China 6 · Irã 5 · Coreia do Norte 4 · Rússia 4 · Vietnã 3 · Índia 3 ...
+
+# sofisticação média por país
+/usr/bin/curl -s -X POST "$ES/apt_groups/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 0,
+  "aggs": { "p": { "terms": { "field": "pais_origem.keyword", "size": 3, "order": {"m":"desc"} },
+            "aggs": { "m": { "avg": { "field": "nivel_sofisticacao" } } } } }
+}'
+#   Coreia do Norte 8,55 · Rússia 8,48 · China 8,08
+
+# WSL (bash) — [slides 43, 44, 45]  deletar
+# 7.1  por ID
+/usr/bin/curl -s -X DELETE "$ES/apt_groups/_doc/1?pretty"
+
+# 7.2  por query: os grupos inativos
+/usr/bin/curl -s -X POST "$ES/apt_groups/_count?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"term":{"ativo":false}}}'        # -> 6, confira ANTES de apagar
+/usr/bin/curl -s -X POST "$ES/apt_groups/_delete_by_query?refresh=true&pretty" \
+  -H 'Content-Type: application/json' -d '{"query":{"term":{"ativo":false}}}'
+
+# 7.3  por país
+/usr/bin/curl -s -X POST "$ES/apt_groups/_delete_by_query?refresh=true&pretty" \
+  -H 'Content-Type: application/json' -d '{"query":{"match":{"pais_origem":"Coreia do Norte"}}}'
+#   -> 4
+
+# 8.2  o índice inteiro
+/usr/bin/curl -s -X DELETE "$ES/apt_groups?pretty"
+
+# --------------------------------------------------------------------------
+# Parte 2 — Fase 2: o mapping personalizado (slide 46)
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+# [slide 46]  agora EU decido os tipos
+/usr/bin/curl -s -X PUT "$ES/apt_groups?pretty" -H 'Content-Type: application/json' \
+  --data-binary @"$S/apt_mapping.json"
+
+# recarrega
+/usr/bin/curl -s -X POST "$ES/apt_groups/_bulk" -H 'Content-Type: application/x-ndjson' \
+  --data-binary @"$S/apt_bulk.ndjson" -o /tmp/b2.json \
+  -w 'HTTP %{http_code}  %{time_total}s\n'
+/usr/bin/curl -s -X POST "$ES/apt_groups/_refresh" > /dev/null
+
+# WSL (bash)
+# geo_point: quem opera a menos de 3000 km de Brasília?
+/usr/bin/curl -s -X POST "$ES/apt_groups/_count?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"geo_distance":{"distance":"3000km","coordenadas_base":{"lat":-15.79,"lon":-47.88}}}}'
+#   -> 2
+
+# ip: CIDR direto na query
+/usr/bin/curl -s -X POST "$ES/apt_groups/_count?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"term":{"ip_origem":"85.0.0.0/8"}}}'
+#   -> 4
+
+# nested: quem ataca Energia?
+/usr/bin/curl -s -X POST "$ES/apt_groups/_count?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"nested":{"path":"alvos_principais","query":{"term":{"alvos_principais.setor":"Energia"}}}}}'
+#   -> 12
+
+# float_range: quem pode causar um prejuízo de US$ 60 milhões?
+/usr/bin/curl -s -X POST "$ES/apt_groups/_count?pretty" -H 'Content-Type: application/json' \
+  -d '{"query":{"range":{"faixa_danos":{"relation":"contains","gte":60000000,"lte":60000000}}}}'
+#   -> 20
+
+# completion: o aluno digitou "Gla"
+/usr/bin/curl -s -X POST "$ES/apt_groups/_search?pretty" -H 'Content-Type: application/json' \
+  -d '{"suggest":{"s":{"prefix":"Gla","completion":{"field":"autocomplete_busca","size":3}}}}'
+#   -> "Glacial Panda"
+
+# dense_vector: os 3 grupos de comportamento mais parecido
+/usr/bin/curl -s -X POST "$ES/apt_groups/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "knn": {"field":"vetor_comportamental","query_vector":[0.9,0.9,0.8,0.85,0.9],
+          "k":3,"num_candidates":36},
+  "_source": ["nome"]
+}'
+
+# --------------------------------------------------------------------------
+# Parte 3 — O índice de incidentes (volume, para o Kibana)
+# --------------------------------------------------------------------------
+
+# WSL (bash)
+/usr/bin/curl -s -X PUT "$ES/apt_incidentes?pretty" -H 'Content-Type: application/json' -d '{
+  "settings": {"number_of_shards": 1, "number_of_replicas": 0},
+  "mappings": {"properties": {
+    "incidente_id": {"type":"keyword"}, "@timestamp": {"type":"date"},
+    "grupo": {"type":"keyword"}, "grupo_codinome": {"type":"keyword"},
+    "pais_origem": {"type":"keyword"}, "origem_geo": {"type":"geo_point"},
+    "ip_atacante": {"type":"ip"}, "tipo": {"type":"keyword"},
+    "tecnica_mitre": {"type":"keyword"}, "setor_alvo": {"type":"keyword"},
+    "pais_alvo": {"type":"keyword"}, "severidade": {"type":"byte"},
+    "prejuizo_usd": {"type":"double"}, "status": {"type":"keyword"},
+    "bloqueado": {"type":"boolean"}
+  }}}'
+
+/usr/bin/curl -s -X POST "$ES/apt_incidentes/_bulk" -H 'Content-Type: application/x-ndjson' \
+  --data-binary @"$S/apt_incidentes.ndjson" -o /tmp/inc.json \
+  -w 'HTTP %{http_code}  %{size_upload} bytes  %{time_total}s\n'
+/usr/bin/curl -s -X POST "$ES/apt_incidentes/_refresh" > /dev/null
+/usr/bin/curl -s "$ES/_cat/indices/apt_*?v&h=health,index,docs.count,store.size&s=index"
+
+# série temporal por trimestre
+/usr/bin/curl -s -X POST "$ES/apt_incidentes/_search?pretty" -H 'Content-Type: application/json' -d '{
+  "size": 0,
+  "aggs": {"por_tri": {"date_histogram": {"field":"@timestamp","calendar_interval":"quarter"},
+           "aggs": {"prej": {"sum": {"field":"prejuizo_usd"}}}}}
+}'
+
+# --------------------------------------------------------------------------
+# Parte 4 — Limpeza
+# --------------------------------------------------------------------------
+
+# WSL (bash) — NOMEIE cada índice. O Elastic recusa wildcard, e isso é proteção.
+for i in apt_groups apt_incidentes apt_dyn; do
+  printf '%-18s -> ' "$i"
+  /usr/bin/curl -s -X DELETE "$ES/$i?ignore_unavailable=true"
+  echo
+done
+/usr/bin/curl -s "$ES/_cat/indices?v&s=index"

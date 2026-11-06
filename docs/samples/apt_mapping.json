@@ -1,0 +1,107 @@
+{
+  "settings": {
+    "number_of_shards": 1,
+    "number_of_replicas": 0
+  },
+  "mappings": {
+    "properties": {
+      "id": {
+        "type": "integer"
+      },
+      "nome": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "nome_original": {
+        "type": "text",
+        "fields": {
+          "keyword": {
+            "type": "keyword"
+          }
+        }
+      },
+      "pais_origem": {
+        "type": "keyword"
+      },
+      "ativo": {
+        "type": "boolean"
+      },
+      "primeiro_avistamento": {
+        "type": "date"
+      },
+      "ultimo_ataque": {
+        "type": "date"
+      },
+      "nivel_sofisticacao": {
+        "type": "float"
+      },
+      "numero_ataques": {
+        "type": "integer"
+      },
+      "coordenadas_base": {
+        "type": "geo_point"
+      },
+      "ip_origem": {
+        "type": "ip"
+      },
+      "periodo_atividade": {
+        "type": "date_range"
+      },
+      "faixa_danos": {
+        "type": "float_range"
+      },
+      "tecnicas_mitre": {
+        "type": "keyword"
+      },
+      "alvos_principais": {
+        "type": "nested",
+        "properties": {
+          "setor": {
+            "type": "keyword"
+          },
+          "pais": {
+            "type": "keyword"
+          },
+          "prioridade": {
+            "type": "integer"
+          }
+        }
+      },
+      "relatorio": {
+        "type": "text"
+      },
+      "metadados": {
+        "properties": {
+          "classificacao": {
+            "type": "keyword"
+          },
+          "analista_responsavel": {
+            "type": "keyword"
+          },
+          "fonte_inteligencia": {
+            "type": "keyword"
+          }
+        }
+      },
+      "hash_malware": {
+        "type": "keyword"
+      },
+      "autocomplete_busca": {
+        "type": "completion"
+      },
+      "vetor_comportamental": {
+        "type": "dense_vector",
+        "dims": 5,
+        "index": true,
+        "similarity": "cosine"
+      },
+      "documento_classificado": {
+        "type": "binary"
+      }
+    }
+  }
+}

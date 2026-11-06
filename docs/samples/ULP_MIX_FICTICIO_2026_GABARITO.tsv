@@ -1,0 +1,2374 @@
+http://vpn.test/portal/entrar:ana.dias@contaonline.test:Brasil217	URL:USER:PASS
+http://admin.example/login.php:carla_teixeira:123456	URL:USER:PASS
+sofia4587:Girassol:72:http://faturamento-sp.test/users/sign_in	USER:PASS:URL
+http://faturamento.invalid/wp-login.php:queila_cunha:Chocolate@95	URL:USER:PASS
+https://intranet-br.example/auth/login:ursulapinto86:Girassol@70	URL:USER:PASS
+joaolima8:93nfk5pw62	USER:PASS (sem URL)
+nelson.costa@intranet.example:Estrela45!:https://extranet.invalid/signin	USER:PASS:URL
+sofia3086:Acesso_48!	USER:PASS (sem URL)
+http://clientes.test/signin	URL only
+http://intranet.invalid/portal/entrar:queila_braga:Praia602	URL:USER:PASS
+https://faturamento.example/login:paulo1038	URL:USER (sem PASS)
+http://vpn-app.invalid:gisele1311:64vkf557f	URL:USER:PASS
+rh-br.invalid/portal/entrar:elisa1515:Chocolate@49	URL(sem esquema):USER:PASS
+https://clientes-app.test/portal/entrar:lucas7896:Cachorro653	URL:USER:PASS
+https://admin-br.example/auth/login	URL only
+http://admin-sp.invalid/signin	URL only
+http://vpn-sp.example/login:olivia_cunha	URL:USER (sem PASS)
+cobranca.invalid/users/sign_in:nelson7179:Acesso-56!	URL(sem esquema):USER:PASS
+https://contaonline-web.example/users/sign_in:fabio.teixeira@cobranca-app.invalid:Estrela755	URL:USER:PASS
+nelson5070:Verao@46:http://extranet-web.invalid/signin	USER:PASS:URL
+http://clientes.invalid/wp-login.php:carla_rocha:cscp6hz3j6u	URL:USER:PASS
+http://admin.invalid/login.php	URL only
+https://suporte.invalid/admin:brunobarros92:qwerty123	URL:USER:PASS
+https://suporte-app.test/wp-login.php	URL only
+https://ead.invalid/auth/login:elisabarros30:Girassol52!	URL:USER:PASS
+https://intranet-web.invalid/portal/entrar:carlafarias18:kx686hvx	URL:USER:PASS
+https://webmail-br.invalid/login:elisacosta45:Girassol719	URL:USER:PASS
+https://clientes-sp.example/auth/login:ana_braga:i74u2p56t	URL:USER:PASS
+https://portalbanco-web.example:8443/login.php	URL only
+http://extranet.test/login.php:fabio.barros@faturamento-sp.example:Senha132	URL:USER:PASS
+http://extranet-app.test/#/login:fabio.farias@ead-app.example:Musica:42	URL:USER:PASS
+https://vpn-sp.test/portal/entrar:marina5386:Senha@80	URL:USER:PASS
+tiago9341:Cachorro524:https://crm.example/users/sign_in	USER:PASS:URL
+http://vpn-br.invalid/admin:olivia.dias@admin-app.invalid:Praia224	URL:USER:PASS
+http://rh.example/signin:nelsonlima1:Praia_61!	URL:USER:PASS
+http://admin.example/signin:ursula3490:Estrela:83	URL:USER:PASS
+http://lojamodelo-app.invalid/login.php:sofia.silva@intranet.test	URL:USER (sem PASS)
+queila.pinto@lojamodelo.invalid:123456	USER:PASS (sem URL)
+https://ead-br.test/login.php	URL only
+clientes.invalid/signin:bruno7010:Musica:77	URL(sem esquema):USER:PASS
+marina_rocha:Acesso482:https://cobranca.example/login	USER:PASS:URL
+https://webmail.test/portal/entrar:joaocunha19	URL:USER (sem PASS)
+http://intranet.invalid/login	URL only
+nelson.pinto@crm-br.invalid:Musica_96!	USER:PASS (sem URL)
+http://webmail.invalid/admin	URL only
+http://ead.invalid/#/login:ana.costa@lojamodelo.invalid	URL:USER (sem PASS)
+https://contaonline.test:3000/login.php	URL only
+https://intranet.test/login:queila_farias:Brasil_89!	URL:USER:PASS
+http://rh.test:fabioteixeira3:ewrgsafg88	URL:USER:PASS
+hugo1320:Futebol941:http://lojamodelo.test/admin	USER:PASS:URL
+https://admin-web.example/wp-login.php:hugocunha28:Senha157	URL:USER:PASS
+https://faturamento.invalid/auth/login:brunocosta48:Montanha218	URL:USER:PASS
+https://ead-sp.invalid/login	URL only
+http://portalbanco.test/portal/entrar:tiago_pinto:Praia273	URL:USER:PASS
+https://suporte.example/auth/login:olivia7604:Brasil416	URL:USER:PASS
+admin-web.example/users/sign_in:lucasrocha6:Montanha22	URL(sem esquema):USER:PASS
+http://admin-sp.example/#/login:marinateixeira3:Musica817	URL:USER:PASS
+oliviabraga26:Cachorro@23:https://vpn-app.test/login	USER:PASS:URL
+marina_cunha:Estrela239:http://faturamento-sp.example/login	USER:PASS:URL
+http://cobranca.test/login.php:tiago.rocha@admin.test:Cachorro_74!	URL:USER:PASS
+https://faturamento-br.test/portal/entrar	URL only
+https://cobranca.invalid/login.php:ursula.lima@crm.invalid:Musica@17	URL:USER:PASS
+ana.silva@portalbanco.example:Estrela352:http://webmail.test	USER:PASS:URL
+http://suporte.test/users/sign_in:hugo.farias@crm.invalid:Cachorro528	URL:USER:PASS
+https://webmail.test/portal/entrar:hugo.barros@lojamodelo.example:Verao118	URL:USER:PASS
+https://crm.invalid/wp-login.php:joao.alves@admin.example	URL:USER (sem PASS)
+tiago.silva@intranet-sp.example:Cachorro_31!:https://suporte-sp.test/login	USER:PASS:URL
+vitoralves70:Senha@38:https://intranet.test/login.php	USER:PASS:URL
+https://cobranca-app.example:8080/#/login	URL only
+https://intranet-app.test/login.php:marina4121	URL:USER (sem PASS)
+http://faturamento.test/wp-login.php:vitor848:Girassol-55!	URL:USER:PASS
+http://suporte-app.example:diego1694:Montanha@27	URL:USER:PASS
+queila_braga:Estrela202:http://suporte-sp.invalid/#/login	USER:PASS:URL
+http://intranet.example/signin:nelson.braga@vpn-sp.invalid	URL:USER (sem PASS)
+crm.example/wp-login.php:karina.braga@portalbanco.example:Praia296	URL(sem esquema):USER:PASS
+lojamodelo.test/login:olivia.cunha@ead.example:Chocolate@59	URL(sem esquema):USER:PASS
+marinaalves68:qwerty123	USER:PASS (sem URL)
+hugo.cunha@intranet.test:102030:http://webmail-web.test/users/sign_in	USER:PASS:URL
+karina.silva@contaonline.invalid:f6t5tmz3sm9kz:http://intranet-app.example/portal/entrar	USER:PASS:URL
+http://cobranca.invalid/login.php:tiago.dias@extranet-br.invalid:Montanha:34	URL:USER:PASS
+http://contaonline-app.invalid/login.php:olivia.silva@intranet-web.invalid:ciwmttpj	URL:USER:PASS
+https://ead.example/login.php:karina_barros:Musica977	URL:USER:PASS
+http://intranet-app.test/admin:joao.farias@cobranca.invalid:ifz3a39c8t53e5	URL:USER:PASS
+http://clientes.test:fabio.teixeira@vpn.example:Estrela:99	URL:USER:PASS
+elisa.cunha@rh-br.test:Chocolate@33:http://lojamodelo-br.test/signin	USER:PASS:URL
+http://faturamento.test/login.php	URL only
+https://portalbanco-web.test/login.php:ursula5051:senha123	URL:USER:PASS
+https://portalbanco.example/#/login:ursula.lima@extranet.example:Cachorro_41!	URL:USER:PASS
+carla2308:Musica:24	USER:PASS (sem URL)
+http://vpn.example/#/login:joao.pinto@crm-br.invalid:Cachorro18!	URL:USER:PASS
+paulo_lima:Futebol32!:http://rh-app.invalid/admin	USER:PASS:URL
+http://crm.test/#/login:ana_moraes:qwerty123	URL:USER:PASS
+inesalves89:Praia:10	USER:PASS (sem URL)
+tiagocosta97:Brasil980:https://webmail.invalid/#/login	USER:PASS:URL
+https://webmail-br.test/users/sign_in:sofia.teixeira@rh.invalid	URL:USER (sem PASS)
+http://suporte-web.example/wp-login.php	URL only
+webmail-app.test/auth/login:fabio.silva@cobranca-br.example:Chocolate@72	URL(sem esquema):USER:PASS
+brunosouza18:Montanha353:https://vpn-app.test/admin	USER:PASS:URL
+http://rh.example:giselemoraes37:senha123	URL:USER:PASS
+http://clientes.invalid/signin:diegopinto51:Senha-6!	URL:USER:PASS
+http://portalbanco-app.invalid/signin:elisa.silva@clientes-web.test:Futebol@94	URL:USER:PASS
+https://webmail.invalid/signin:sofia.braga@vpn-web.test:Girassol923	URL:USER:PASS
+vpn.invalid/login:nelsonfarias87:Verao-79!	URL(sem esquema):USER:PASS
+https://vpn.test/login:rafaelsilva73:Brasil-6!	URL:USER:PASS
+https://extranet.example/login	URL only
+joaopinto24:Brasil:97:https://extranet-br.example/admin	USER:PASS:URL
+https://lojamodelo.example/#/login:marina.pinto@suporte.example:123456	URL:USER:PASS
+https://crm-sp.invalid/wp-login.php:olivia.alves@cobranca-app.invalid:Futebol80!	URL:USER:PASS
+https://crm-app.test/users/sign_in:hugo.rocha@contaonline-sp.test:Montanha@93	URL:USER:PASS
+http://contaonline.invalid/login.php:rafael.moraes@extranet.example:Futebol-77!	URL:USER:PASS
+https://rh.test/login:ursula_rocha:Brasil259	URL:USER:PASS
+https://clientes.test/auth/login:fabiocunha87:123456	URL:USER:PASS
+hugo.farias@lojamodelo.test:Brasil@79:https://cobranca-app.invalid/signin	USER:PASS:URL
+https://portalbanco-web.test/auth/login:karina_souza:senha123	URL:USER:PASS
+http://lojamodelo-br.test/signin	URL only
+https://rh-app.example:ines.lima@faturamento-app.example:Acesso@25	URL:USER:PASS
+diego7340:Musica615:https://webmail-sp.test/auth/login	USER:PASS:URL
+vitor.rocha@admin-br.invalid:Chocolate686:https://vpn.invalid/portal/entrar	USER:PASS:URL
+http://contaonline.test/users/sign_in:diego.cunha@extranet-app.example:123456	URL:USER:PASS
+http://suporte-web.invalid/login.php:rafael.silva@webmail.test:Cachorro@37	URL:USER:PASS
+https://admin-app.example:nelsonbraga24:Verao-94!	URL:USER:PASS
+olivia.silva@extranet-app.example:Futebol-12!	USER:PASS (sem URL)
+https://rh.invalid/signin:rafael.costa@contaonline-sp.invalid:Estrela@28	URL:USER:PASS
+https://vpn-sp.invalid/portal/entrar:nelson.dias@webmail.example:Girassol:60	URL:USER:PASS
+olivia7022:Praia963	USER:PASS (sem URL)
+diego_costa:123456	USER:PASS (sem URL)
+diegobarros37:Praia@65	USER:PASS (sem URL)
+https://suporte-sp.example/#/login:elisa.rocha@lojamodelo.invalid:Senha-28!	URL:USER:PASS
+tiagosilva38:Senha:22	USER:PASS (sem URL)
+nelson3321:Senha706:https://admin.invalid/portal/entrar	USER:PASS:URL
+https://portalbanco.invalid/#/login	URL only
+https://vpn-app.example:sofia.costa@admin-sp.invalid:i8y2ewvegjzp	URL:USER:PASS
+queila.braga@rh-sp.test:Futebol388:http://intranet.test/auth/login	USER:PASS:URL
+https://portalbanco-br.test:ursula.farias@faturamento.test:Musica-41!	URL:USER:PASS
+suporte-web.test/login:karinateixeira93:Cachorro:88	URL(sem esquema):USER:PASS
+https://portalbanco-web.invalid/wp-login.php:olivia.souza@webmail-app.test:Futebol@30	URL:USER:PASS
+https://cobranca-br.invalid/signin:diego.moraes@extranet-web.test:Montanha:66	URL:USER:PASS
+https://webmail-web.test/wp-login.php:elisa_cunha:Brasil@98	URL:USER:PASS
+http://portalbanco-sp.test/auth/login:joaopinto31:Estrela258	URL:USER:PASS
+pauloalves18:Senha212	USER:PASS (sem URL)
+karina_teixeira:Verao925	USER:PASS (sem URL)
+https://vpn.example/login.php	URL only
+http://lojamodelo.test/users/sign_in:lucas.dias@portalbanco.example:Musica:66	URL:USER:PASS
+https://clientes.test/auth/login:karina.souza@lojamodelo-app.test:Estrela@53	URL:USER:PASS
+carla_pinto:Praia70!	USER:PASS (sem URL)
+paulo.alves@rh.test:Brasil-61!:https://portalbanco-br.invalid/admin	USER:PASS:URL
+sofia_braga:Girassol:15	USER:PASS (sem URL)
+tiago.alves@crm-web.test:Chocolate:54:https://clientes-app.invalid/portal/entrar	USER:PASS:URL
+cobranca.example/wp-login.php:hugo.lima@webmail.test:Futebol_34!	URL(sem esquema):USER:PASS
+http://cobranca-sp.example/wp-login.php:queilamoraes42:Futebol412	URL:USER:PASS
+elisa_lima:admin:http://crm.invalid/auth/login	USER:PASS:URL
+https://intranet-web.test/portal/entrar:karina.silva@lojamodelo-web.example	URL:USER (sem PASS)
+http://cobranca.example:paulocosta44:Verao630	URL:USER:PASS
+https://rh-br.example/#/login	URL only
+vitor.souza@cobranca-app.example:Cachorro@40:https://intranet.invalid/auth/login	USER:PASS:URL
+http://ead-br.test:8000/login	URL only
+http://ead.test/portal/entrar	URL only
+elisa.silva@suporte-br.invalid:Acesso@53:https://vpn-br.test/login.php	USER:PASS:URL
+http://vpn.invalid/users/sign_in:inescosta99:Girassol:17	URL:USER:PASS
+diego3641:123456:http://portalbanco.test/login.php	USER:PASS:URL
+nelson.alves@rh-app.example:Estrela257	USER:PASS (sem URL)
+http://extranet.example/#/login:hugorocha99:qwerty123	URL:USER:PASS
+https://webmail.test/portal/entrar	URL only
+vitor3467:Praia754	USER:PASS (sem URL)
+http://contaonline-sp.invalid/wp-login.php:olivia.silva@rh-web.test:Verao908	URL:USER:PASS
+http://admin.test/signin:lucassouza30	URL:USER (sem PASS)
+http://vpn.invalid/admin	URL only
+http://crm-app.example/portal/entrar:sofia_cunha:Praia:96	URL:USER:PASS
+hugo.moraes@crm.test:Musica157:http://portalbanco.invalid/auth/login	USER:PASS:URL
+https://extranet-br.example:8000/portal/entrar	URL only
+oliviateixeira81:Senha@17:http://cobranca.example/login	USER:PASS:URL
+http://clientes-web.test/wp-login.php:marinalima70	URL:USER (sem PASS)
+http://crm.invalid/signin:marina.silva@contaonline-app.example:123456	URL:USER:PASS
+http://contaonline.invalid/portal/entrar:nelson.dias@portalbanco-app.test:Brasil663	URL:USER:PASS
+http://rh.invalid/login:fabio.lima@webmail-sp.invalid:Chocolate@74	URL:USER:PASS
+diego9333:Acesso349	USER:PASS (sem URL)
+paulo.dias@lojamodelo-sp.example:Verao665:http://admin.example	USER:PASS:URL
+https://portalbanco-web.example/users/sign_in:olivia882	URL:USER (sem PASS)
+http://suporte-app.example/auth/login:diego.cunha@admin-br.test:Estrela:51	URL:USER:PASS
+elisa.braga@cobranca.example:Verao_12!	USER:PASS (sem URL)
+https://faturamento.example/admin:hugocosta3	URL:USER (sem PASS)
+http://admin-web.example/portal/entrar:bruno.farias@lojamodelo.test:102030	URL:USER:PASS
+lucas.braga@admin-sp.example:Brasil327	USER:PASS (sem URL)
+https://ead-br.invalid/wp-login.php:nelson_lima:Musica-93!	URL:USER:PASS
+http://extranet.invalid/admin:inescunha5:Praia@26	URL:USER:PASS
+http://portalbanco.test/admin:ursula.costa@suporte-web.test:Chocolate948	URL:USER:PASS
+https://contaonline-app.test/login.php:joao7809:Chocolate835	URL:USER:PASS
+http://lojamodelo-web.test/auth/login:olivia_moraes:Brasil@53	URL:USER:PASS
+https://lojamodelo.test/wp-login.php:nelsondias17	URL:USER (sem PASS)
+https://lojamodelo-app.invalid/signin:nelson_barros	URL:USER (sem PASS)
+https://suporte-sp.example/signin:diego.braga@contaonline-sp.example:3x2zrvimp8p	URL:USER:PASS
+elisabraga49:Verao24	USER:PASS (sem URL)
+https://contaonline-sp.invalid:8443/login	URL only
+https://crm.test/signin	URL only
+http://admin-web.example/#/login:ursulacunha51:Senha309	URL:USER:PASS
+http://suporte-app.test/users/sign_in:sofia.alves@vpn-app.test:Musica463	URL:USER:PASS
+https://lojamodelo.invalid/admin:diegodias37:Praia92!	URL:USER:PASS
+bruno8018:Chocolate@34	USER:PASS (sem URL)
+queila.dias@rh.invalid:Verao360:http://extranet.test/admin	USER:PASS:URL
+vpn.invalid/signin:paulo4546:Futebol794	URL(sem esquema):USER:PASS
+https://admin-br.invalid/wp-login.php	URL only
+faturamento-sp.invalid/auth/login:karina3261:Girassol-75!	URL(sem esquema):USER:PASS
+clientes-app.example/admin:lucas.teixeira@portalbanco.invalid:Senha312	URL(sem esquema):USER:PASS
+http://lojamodelo.test/#/login:anamoraes34:4wb5yk25	URL:USER:PASS
+vpn-br.invalid/admin:olivia.teixeira@admin.example:admin	URL(sem esquema):USER:PASS
+http://admin-app.invalid/signin:rafael2076:5y2prnytxd5	URL:USER:PASS
+https://contaonline.example/auth/login:fabio.costa@crm-app.test:Senha@50	URL:USER:PASS
+https://suporte-sp.example/login.php:joao.souza@vpn-sp.example:Acesso@67	URL:USER:PASS
+http://rh.example/users/sign_in:sofiafarias45	URL:USER (sem PASS)
+http://cobranca-br.invalid:lucas.teixeira@webmail.invalid:Senha277	URL:USER:PASS
+http://admin.invalid/#/login:marina.braga@crm.example	URL:USER (sem PASS)
+https://vpn-app.invalid/portal/entrar:vitor_costa:102030	URL:USER:PASS
+https://extranet.invalid/login:joao_alves:Verao_53!	URL:USER:PASS
+olivia.barros@ead.test:Musica@31	USER:PASS (sem URL)
+carla7858:y9phyyvrbbee4s:http://intranet.invalid/#/login	USER:PASS:URL
+https://faturamento.example/admin:ana5315:Verao-65!	URL:USER:PASS
+lucas_rocha:Musica:69:http://rh-br.invalid/signin	USER:PASS:URL
+https://suporte.test/wp-login.php:olivia.cunha@cobranca.example	URL:USER (sem PASS)
+http://portalbanco.test/login.php:paulo.barros@intranet.test:8ivhg2wfhc2cd	URL:USER:PASS
+https://cobranca-br.test/signin:tiagofarias86:Futebol@50	URL:USER:PASS
+http://contaonline-sp.invalid/wp-login.php:marina.souza@contaonline.test:Cachorro93!	URL:USER:PASS
+ursula_farias:Futebol_79!	USER:PASS (sem URL)
+gisele.cunha@clientes-br.test:Musica-83!	USER:PASS (sem URL)
+ursula.farias@cobranca.invalid:Acesso-9!:http://portalbanco.test/admin	USER:PASS:URL
+http://webmail-br.invalid/portal/entrar:lucas.souza@faturamento-sp.invalid:Chocolate687	URL:USER:PASS
+https://clientes.test/portal/entrar:tiago.rocha@portalbanco-br.test:Estrela851	URL:USER:PASS
+joao.pinto@cobranca.example:Girassol357	USER:PASS (sem URL)
+http://cobranca-web.test/wp-login.php:hugobarros36:Girassol571	URL:USER:PASS
+https://webmail.test/signin:carla.lima@portalbanco.example:25dtxugseia	URL:USER:PASS
+https://contaonline.test/signin:carla.silva@portalbanco.invalid:Cachorro:32	URL:USER:PASS
+http://cobranca.invalid/login.php	URL only
+http://webmail-web.example/portal/entrar:tiago7898:Verao_61!	URL:USER:PASS
+https://portalbanco.test/auth/login:rafaelsouza83:Chocolate94!	URL:USER:PASS
+https://suporte-web.example/auth/login:bruno8984:Cachorro796	URL:USER:PASS
+http://admin-app.example/portal/entrar:karina_teixeira:tyciw4gak2w38	URL:USER:PASS
+rafael.moraes@contaonline.example:Chocolate151:http://portalbanco-app.test	USER:PASS:URL
+karina1895:Verao@77:https://cobranca-sp.invalid/portal/entrar	USER:PASS:URL
+http://rh.example/auth/login:elisacunha45:Chocolate55	URL:USER:PASS
+https://crm-app.test/portal/entrar:ursula_moraes:Chocolate@86	URL:USER:PASS
+http://faturamento.example:8443/#/login	URL only
+karina.farias@rh-sp.invalid:Verao452:https://contaonline-app.example	USER:PASS:URL
+http://portalbanco-sp.test/login:nelson_silva:Praia143	URL:USER:PASS
+http://clientes.example/login.php:ana.alves@extranet-sp.test	URL:USER (sem PASS)
+https://admin-br.invalid:olivia5795:Montanha962	URL:USER:PASS
+http://clientes-sp.example/auth/login:bruno1677:Cachorro90!	URL:USER:PASS
+karina_costa:Senha@74	USER:PASS (sem URL)
+https://ead-br.test:fabio.cunha@vpn.test:Musica@67	URL:USER:PASS
+giselebarros29:Estrela@12	USER:PASS (sem URL)
+portalbanco.test/#/login:elisa4476:Musica407	URL(sem esquema):USER:PASS
+https://portalbanco.test/wp-login.php:marina.dias@crm.example:Cachorro:66	URL:USER:PASS
+http://suporte.example/login:olivia.silva@intranet-web.example:periyki43d5eec	URL:USER:PASS
+http://faturamento-web.invalid/users/sign_in:lucas.farias@intranet.test:Musica647	URL:USER:PASS
+http://extranet-br.test:3000/#/login	URL only
+http://ead-web.invalid/signin:hugo_braga:Girassol927	URL:USER:PASS
+http://lojamodelo-br.example/signin:ursula.lima@clientes.invalid:2rgg4pih	URL:USER:PASS
+http://cobranca.test:8080/auth/login	URL only
+http://rh-sp.invalid/users/sign_in:sofia.teixeira@cobranca-web.invalid	URL:USER (sem PASS)
+https://extranet-sp.example/admin:karina.barros@webmail.example:admin	URL:USER:PASS
+https://rh-sp.test/wp-login.php:lucas8100:Estrela_89!	URL:USER:PASS
+http://extranet-web.test/login.php:sofia5528:Estrela184	URL:USER:PASS
+suporte-br.test/admin:paulo.silva@extranet.invalid:Musica@30	URL(sem esquema):USER:PASS
+https://portalbanco.test/login:ursula.cunha@rh.test:Futebol-82!	URL:USER:PASS
+http://portalbanco.invalid/auth/login:nelson.braga@admin.test:Futebol336	URL:USER:PASS
+fabioteixeira65:Montanha554	USER:PASS (sem URL)
+http://cobranca.invalid/portal/entrar:lucas2956:123456	URL:USER:PASS
+anateixeira9:Futebol-3!:https://webmail.example/users/sign_in	USER:PASS:URL
+http://ead.example/wp-login.php:bruno.rocha@lojamodelo-br.invalid:Montanha@15	URL:USER:PASS
+http://clientes.test/portal/entrar	URL only
+http://rh-app.example:8443/admin	URL only
+http://extranet.test:sofia.alves@cobranca.example:Musica:85	URL:USER:PASS
+joao.souza@ead-br.invalid:Estrela_37!	USER:PASS (sem URL)
+https://portalbanco.example/users/sign_in:diego.cunha@webmail.example:Cachorro153	URL:USER:PASS
+joao7021:123456	USER:PASS (sem URL)
+https://vpn.test/portal/entrar:queilasouza64:Brasil:11	URL:USER:PASS
+https://contaonline-app.test/users/sign_in:olivia_dias:Senha681	URL:USER:PASS
+http://contaonline-web.invalid/login	URL only
+https://contaonline.invalid/#/login:fabio.cunha@suporte-app.test:Estrela:10	URL:USER:PASS
+tiago.rocha@lojamodelo-sp.invalid:Girassol@72:http://ead-web.invalid/auth/login	USER:PASS:URL
+http://webmail-sp.test/auth/login:hugomoraes69:Estrela@29	URL:USER:PASS
+lucascosta53:q2x34veuk	USER:PASS (sem URL)
+https://suporte-br.test/admin	URL only
+http://faturamento.test/login.php:lucas.moraes@crm.test:eam32eytxvp	URL:USER:PASS
+https://vpn.example/wp-login.php:lucas.dias@portalbanco-br.test:senha123	URL:USER:PASS
+https://extranet.test/wp-login.php:fabio.costa@admin-br.test	URL:USER (sem PASS)
+http://crm.invalid/signin:carla.alves@vpn-app.example:Senha@57	URL:USER:PASS
+https://portalbanco-sp.invalid/auth/login:joao_dias:Girassol299	URL:USER:PASS
+http://suporte.test/signin:marinasilva61	URL:USER (sem PASS)
+karinabraga90:Acesso_14!	USER:PASS (sem URL)
+admin.invalid/portal/entrar:ursulalima97:Chocolate@29	URL(sem esquema):USER:PASS
+http://vpn.test:8443	URL only
+joao2749:Senha:33:https://suporte-sp.test/#/login	USER:PASS:URL
+ursulateixeira36:Brasil@91:https://rh.example/auth/login	USER:PASS:URL
+https://cobranca-web.example/portal/entrar:hugo.cunha@vpn-br.example	URL:USER (sem PASS)
+http://vpn-sp.invalid/signin:sofia.teixeira@extranet-br.test:Cachorro987	URL:USER:PASS
+https://extranet-app.test/users/sign_in:sofia_pinto:Brasil6	URL:USER:PASS
+https://clientes.test:ursula.pinto@vpn.invalid:Montanha_91!	URL:USER:PASS
+marinacosta61:Praia-70!:http://clientes.test/login.php	USER:PASS:URL
+http://extranet.example/login:tiago.teixeira@lojamodelo.test:Cachorro:77	URL:USER:PASS
+https://cobranca-web.test/auth/login:diego.silva@vpn-web.invalid:tticpp9ihm	URL:USER:PASS
+suporte.invalid/admin:bruno3502:senha123	URL(sem esquema):USER:PASS
+https://suporte.example/users/sign_in:inesmoraes64:Chocolate742	URL:USER:PASS
+http://admin-web.invalid/signin:oliviateixeira28	URL:USER (sem PASS)
+http://faturamento-br.example:3000	URL only
+http://rh-web.test/login:anaalves82	URL:USER (sem PASS)
+fabio.moraes@extranet.invalid:Brasil-86!	USER:PASS (sem URL)
+marinasilva95:Futebol198:https://extranet-br.invalid/signin	USER:PASS:URL
+http://webmail.example/login	URL only
+https://faturamento.test/admin:ines.farias@lojamodelo.example	URL:USER (sem PASS)
+https://intranet-sp.example/admin	URL only
+http://rh.example/#/login:gisele_dias:Acesso-85!	URL:USER:PASS
+https://rh.test/portal/entrar:sofia9397:Montanha83!	URL:USER:PASS
+https://crm.test/wp-login.php:diegomoraes4:Musica:13	URL:USER:PASS
+sofia.rocha@contaonline.example:Acesso743	USER:PASS (sem URL)
+https://extranet-app.test/portal/entrar:diegosouza7	URL:USER (sem PASS)
+sofia_souza:Futebol195:http://lojamodelo-web.invalid/users/sign_in	USER:PASS:URL
+http://suporte-web.invalid/admin	URL only
+http://clientes-sp.test/login.php:ana.alves@webmail.invalid:Futebol:84	URL:USER:PASS
+https://contaonline.invalid/admin:diego1821:Acesso818	URL:USER:PASS
+http://crm.invalid/admin:diegorocha91:Brasil@29	URL:USER:PASS
+portalbanco.invalid/admin:vitor.costa@admin.invalid:Praia642	URL(sem esquema):USER:PASS
+http://cobranca-br.example/login.php:carla6664:Brasil680	URL:USER:PASS
+https://cobranca-web.example/admin:vitor.cunha@lojamodelo-app.example:Estrela142	URL:USER:PASS
+https://cobranca-app.example/admin:karina5523:Cachorro@72	URL:USER:PASS
+rh-web.example:oliviafarias18:Senha@91	URL(sem esquema):USER:PASS
+http://intranet-br.invalid/#/login:nelson.costa@portalbanco.example:senha123	URL:USER:PASS
+elisa.lima@crm-web.invalid:Brasil51!	USER:PASS (sem URL)
+ursula.lima@ead.test:Acesso494	USER:PASS (sem URL)
+bruno.moraes@crm-app.test:Girassol@39	USER:PASS (sem URL)
+https://vpn-app.example/#/login:elisa.barros@rh.example:Girassol:97	URL:USER:PASS
+tiagomoraes18:Estrela:69:http://lojamodelo.invalid/#/login	USER:PASS:URL
+vitor.cunha@vpn-sp.invalid:Futebol_98!	USER:PASS (sem URL)
+http://crm-app.example/#/login:lucas_farias:Brasil68!	URL:USER:PASS
+vitor.cunha@cobranca-br.example:Estrela857	USER:PASS (sem URL)
+https://vpn-br.example/users/sign_in	URL only
+https://portalbanco.example/signin:ines.silva@webmail.example:Estrela961	URL:USER:PASS
+https://extranet.test/login.php:olivia.alves@clientes.test:c6hkmhzcw	URL:USER:PASS
+https://vpn-app.test/admin:fabiopinto35:Brasil556	URL:USER:PASS
+http://cobranca-web.example/wp-login.php	URL only
+https://admin.test/login:bruno_braga:Musica:36	URL:USER:PASS
+http://admin-web.test/users/sign_in:rafael3997:Montanha596	URL:USER:PASS
+ursula_barros:Praia962:https://ead-br.invalid/admin	USER:PASS:URL
+https://portalbanco.example/signin:anarocha70:Verao671	URL:USER:PASS
+http://rh-sp.test/auth/login:olivia659:Verao_99!	URL:USER:PASS
+http://webmail.test/signin:tiagopinto72:hhjyp7rqd5w	URL:USER:PASS
+https://cobranca.example/wp-login.php:ines.rocha@intranet-web.test:Acesso_69!	URL:USER:PASS
+ines.teixeira@cobranca.test:cmqrkue9cayw:https://suporte-br.test/#/login	USER:PASS:URL
+clientes.test/login:joao4541:Futebol:21	URL(sem esquema):USER:PASS
+https://webmail-br.invalid/wp-login.php:paulo.silva@extranet.invalid:Montanha@56	URL:USER:PASS
+https://webmail-sp.invalid/wp-login.php:sofiateixeira48:Senha522	URL:USER:PASS
+http://extranet-sp.example:paulo.farias@vpn.example:Chocolate726	URL:USER:PASS
+bruno.costa@extranet-br.example:Musica@77	USER:PASS (sem URL)
+olivia.alves@extranet-sp.example:z5tgfzn5:https://admin.invalid/signin	USER:PASS:URL
+queila.alves@vpn-app.invalid:Brasil364:https://vpn.example	USER:PASS:URL
+http://extranet-sp.example/users/sign_in:nelsonbarros42:Estrela_30!	URL:USER:PASS
+vitor.dias@clientes-web.example:zmr72jaahye	USER:PASS (sem URL)
+ursulaalves66:Praia:65:http://cobranca-web.test/wp-login.php	USER:PASS:URL
+https://extranet-app.example/users/sign_in:olivia_silva	URL:USER (sem PASS)
+lojamodelo.invalid:rafael3060:Senha990	URL(sem esquema):USER:PASS
+http://rh.example/auth/login:hugoteixeira72:ck3qs87287k9rt	URL:USER:PASS
+http://lojamodelo.invalid/signin:queila.souza@clientes-web.test:Senha_8!	URL:USER:PASS
+https://rh-br.test/auth/login:paulo_barros:Chocolate_69!	URL:USER:PASS
+https://admin.example/admin:vitor.barros@rh-app.invalid:snkmpnappy	URL:USER:PASS
+carla.teixeira@clientes.test:Girassol283:http://contaonline-web.invalid/wp-login.php	USER:PASS:URL
+http://lojamodelo-web.example	URL only
+http://portalbanco.example/login:ana4070:Brasil22!	URL:USER:PASS
+https://suporte.test/wp-login.php:hugo.alves@admin.test	URL:USER (sem PASS)
+joao_rocha:Estrela:32	USER:PASS (sem URL)
+ursula_teixeira:Futebol417	USER:PASS (sem URL)
+gisele.cunha@clientes.test:Girassol8:http://clientes.example/login	USER:PASS:URL
+https://portalbanco.example/auth/login:rafaelpinto15:123456	URL:USER:PASS
+clientes-app.test/#/login:olivia5009:Musica:37	URL(sem esquema):USER:PASS
+http://clientes.example/users/sign_in:elisa.souza@rh-web.example:123456	URL:USER:PASS
+http://rh.invalid/signin:elisa_pinto:Estrela8!	URL:USER:PASS
+http://contaonline.example:tiago.moraes@faturamento-sp.invalid:a3e2ecwf8cvkgg	URL:USER:PASS
+anacunha73:Senha-72!:https://extranet.test/auth/login	USER:PASS:URL
+https://faturamento.example/login:lucas.silva@extranet.invalid:102030	URL:USER:PASS
+intranet-web.invalid/login.php:nelson3729:Girassol:86	URL(sem esquema):USER:PASS
+karina.teixeira@contaonline.test:Acesso201	USER:PASS (sem URL)
+http://extranet.test/portal/entrar:carla_costa:Montanha@76	URL:USER:PASS
+http://cobranca.example/auth/login:rafael.lima@webmail.test:Praia-6!	URL:USER:PASS
+http://extranet.invalid/users/sign_in:carla6233:Girassol541	URL:USER:PASS
+joao1893:Verao:84:https://portalbanco-app.invalid/signin	USER:PASS:URL
+https://clientes.test/signin:bruno.farias@cobranca.invalid:Cachorro993	URL:USER:PASS
+http://intranet-app.invalid:8000/auth/login	URL only
+http://cobranca.invalid:fabiodias61:Praia:92	URL:USER:PASS
+http://webmail-app.example/login.php:marina.farias@faturamento-br.test:Musica899	URL:USER:PASS
+https://vpn.test/login:hugo4947:Senha238	URL:USER:PASS
+https://crm-app.test/wp-login.php:nelsonmoraes11	URL:USER (sem PASS)
+karina.dias@webmail.invalid:Praia@92:http://contaonline-br.example/login.php	USER:PASS:URL
+http://admin-sp.invalid/portal/entrar:fabio.moraes@faturamento-br.example	URL:USER (sem PASS)
+https://crm.invalid/signin:tiago2967:Senha_6!	URL:USER:PASS
+rh.invalid/users/sign_in:ursulabraga10:Verao:78	URL(sem esquema):USER:PASS
+https://cobranca.invalid/users/sign_in:diegobraga95:Musica:17	URL:USER:PASS
+vpn-web.example/admin:lucas_braga:Senha:40	URL(sem esquema):USER:PASS
+karina_pinto:Acesso329:http://vpn.invalid/portal/entrar	USER:PASS:URL
+lojamodelo-sp.test/users/sign_in:paulo_barros:Brasil@11	URL(sem esquema):USER:PASS
+https://suporte-app.invalid/users/sign_in:nelson130	URL:USER (sem PASS)
+https://extranet-br.invalid/login.php:nelson.costa@faturamento-sp.test:Senha@94	URL:USER:PASS
+hugomoraes26:Montanha56!:https://ead.test	USER:PASS:URL
+portalbanco.invalid/wp-login.php:hugo.farias@extranet-web.invalid:Futebol31!	URL(sem esquema):USER:PASS
+http://portalbanco.test/wp-login.php:lucascunha30	URL:USER (sem PASS)
+https://vpn.test/portal/entrar:ursulabarros6:Cachorro:76	URL:USER:PASS
+http://faturamento.invalid:gisele.barros@contaonline-sp.example:Brasil:53	URL:USER:PASS
+rh-app.example/users/sign_in:hugo_costa:kgnwyccuv	URL(sem esquema):USER:PASS
+lucas.costa@webmail-web.example:Girassol_57!	USER:PASS (sem URL)
+http://extranet-br.example:fabio9410:rk4jhyuucrs	URL:USER:PASS
+https://vpn.invalid	URL only
+http://crm.example/auth/login:gisele.silva@extranet-sp.test:Verao660	URL:USER:PASS
+https://cobranca.test/wp-login.php:marinadias7:Cachorro@90	URL:USER:PASS
+https://webmail-web.example/#/login:rafaelpinto79	URL:USER (sem PASS)
+http://cobranca-web.test/signin:ursula.moraes@lojamodelo-app.test:123456	URL:USER:PASS
+admin-sp.example/wp-login.php:hugo.teixeira@vpn-web.test:Brasil138	URL(sem esquema):USER:PASS
+http://vpn.test/signin:marina.farias@clientes-web.invalid:admin	URL:USER:PASS
+contaonline.example/signin:nelson259:vks37ce2wv	URL(sem esquema):USER:PASS
+ines.alves@admin-app.example:Praia@43:http://suporte-app.test/login	USER:PASS:URL
+http://extranet.test/#/login:vitorteixeira17:Chocolate-95!	URL:USER:PASS
+elisa_braga:Montanha:40	USER:PASS (sem URL)
+http://portalbanco-app.test/portal/entrar:marinadias51:Senha:49	URL:USER:PASS
+marina.lima@cobranca.test:senha123:https://clientes-web.test/login	USER:PASS:URL
+paulolima40:Cachorro@56:http://extranet-web.example/auth/login	USER:PASS:URL
+http://portalbanco.invalid/portal/entrar:ines9197:Futebol_22!	URL:USER:PASS
+https://portalbanco-web.example/#/login:queila9478:Senha@61	URL:USER:PASS
+ursula_lima:qwerty123:https://intranet.invalid/admin	USER:PASS:URL
+https://clientes-app.invalid/login.php:nelsonsouza13:qwerty123	URL:USER:PASS
+http://extranet-app.invalid/portal/entrar:sofia8836:Senha@58	URL:USER:PASS
+http://faturamento.invalid/wp-login.php:lucas4352:Chocolate-8!	URL:USER:PASS
+https://webmail.invalid/wp-login.php:nelson.cunha@cobranca.invalid:Senha-92!	URL:USER:PASS
+https://ead.test:vitor_moraes:Estrela:19	URL:USER:PASS
+http://crm.invalid/login:olivia.barros@vpn-app.invalid:Futebol96	URL:USER:PASS
+https://crm-sp.invalid/signin:gisele.dias@ead.test:Estrela_22!	URL:USER:PASS
+giselerocha27:Futebol@84	USER:PASS (sem URL)
+https://contaonline-web.test/auth/login:oliviadias59:Futebol_2!	URL:USER:PASS
+elisa.braga@faturamento.test:Musica683:http://portalbanco-sp.test/signin	USER:PASS:URL
+https://extranet.example/login.php:paulo5353:Chocolate-61!	URL:USER:PASS
+http://lojamodelo.invalid/#/login:sofia.dias@webmail-web.invalid:Cachorro223	URL:USER:PASS
+http://vpn.invalid/signin:queilabarros63	URL:USER (sem PASS)
+https://suporte-br.invalid/admin:tiago.costa@suporte-br.test:Musica927	URL:USER:PASS
+https://vpn.invalid/wp-login.php	URL only
+https://rh-app.test/signin:lucasbraga44:Verao-99!	URL:USER:PASS
+http://extranet.test:joaocosta77:Cachorro99!	URL:USER:PASS
+https://suporte-app.invalid/admin:anadias30:123456	URL:USER:PASS
+diego6275:Cachorro@46:https://vpn.test/login	USER:PASS:URL
+http://contaonline-app.invalid/login:ines.pinto@lojamodelo-app.invalid:Futebol847	URL:USER:PASS
+https://vpn.test/wp-login.php:karina.silva@ead.example:Brasil@97	URL:USER:PASS
+https://lojamodelo.example/wp-login.php:carla_pinto:Acesso470	URL:USER:PASS
+http://intranet.example/#/login:fabio.braga@extranet.invalid:Brasil_51!	URL:USER:PASS
+ursula.silva@cobranca.test:Praia-69!:http://intranet-web.test	USER:PASS:URL
+https://webmail-app.example/wp-login.php:vitorlima54	URL:USER (sem PASS)
+vpn-web.example/portal/entrar:joao9479:Brasil@65	URL(sem esquema):USER:PASS
+https://cobranca-sp.invalid/login:rafael.costa@intranet-app.test:k2htdab7nk	URL:USER:PASS
+http://contaonline-sp.invalid/signin:karina5963:Acesso@30	URL:USER:PASS
+ursulamoraes27:Girassol661:https://intranet-br.test	USER:PASS:URL
+gisele.silva@lojamodelo.example:senha123:https://extranet.example/login.php	USER:PASS:URL
+tiago5429:vc92zgwxux:https://intranet-web.invalid	USER:PASS:URL
+marina_lima:123456	USER:PASS (sem URL)
+https://intranet.test/#/login	URL only
+https://admin.test/users/sign_in:diego.rocha@clientes-sp.invalid	URL:USER (sem PASS)
+elisa.rocha@lojamodelo-br.test:t3cptz4swp:http://cobranca-sp.test/login	USER:PASS:URL
+http://extranet-web.invalid/signin:gisele.farias@intranet-app.test:97p7dv9ksz5eu	URL:USER:PASS
+http://rh.test/#/login:ana.moraes@webmail-app.test:Praia@17	URL:USER:PASS
+https://suporte.test/auth/login:queilabarros94:Acesso-60!	URL:USER:PASS
+ana9942:Acesso153	USER:PASS (sem URL)
+brunocunha70:Montanha806	USER:PASS (sem URL)
+http://rh.example/users/sign_in:karina2435:Brasil:69	URL:USER:PASS
+portalbanco.invalid/portal/entrar:bruno.costa@ead-sp.example:Estrela724	URL(sem esquema):USER:PASS
+https://contaonline.example/login:brunoalves69:Acesso725	URL:USER:PASS
+http://extranet.invalid	URL only
+http://faturamento.test/#/login:ines7781:Futebol@41	URL:USER:PASS
+lojamodelo-sp.invalid:karina.souza@contaonline-web.invalid:Musica22!	URL(sem esquema):USER:PASS
+http://rh.example/users/sign_in	URL only
+fabio.barros@lojamodelo-app.invalid:Musica635	USER:PASS (sem URL)
+lucassilva3:suhh2xrp7:http://admin.invalid/#/login	USER:PASS:URL
+http://rh.test/users/sign_in:fabio5930:Praia@26	URL:USER:PASS
+inesfarias49:vmi8cswgiv94v:http://clientes.example/portal/entrar	USER:PASS:URL
+http://faturamento.invalid/login:ursulateixeira3	URL:USER (sem PASS)
+http://extranet.test/users/sign_in:marina.moraes@ead-app.test:Musica14!	URL:USER:PASS
+diego.souza@contaonline.invalid:Musica:27:http://rh-br.example/admin	USER:PASS:URL
+webmail.invalid/wp-login.php:ursula.alves@faturamento.invalid:Brasil@36	URL(sem esquema):USER:PASS
+extranet-app.test/signin:ana5809:Chocolate1!	URL(sem esquema):USER:PASS
+https://admin.example/auth/login:elisa.teixeira@suporte.test:Acesso@51	URL:USER:PASS
+gisele.cunha@contaonline.example:Futebol@16	USER:PASS (sem URL)
+http://lojamodelo-app.invalid/login:gisele.farias@crm-sp.test	URL:USER (sem PASS)
+paulo.dias@admin-app.test:jyjeug95vy	USER:PASS (sem URL)
+tiago_teixeira:Verao71!:https://portalbanco.test/#/login	USER:PASS:URL
+https://admin.test/login:oliviarocha50:Acesso420	URL:USER:PASS
+https://webmail.example/login.php:vitor6457	URL:USER (sem PASS)
+gisele.moraes@rh.invalid:admin	USER:PASS (sem URL)
+http://portalbanco-sp.example/wp-login.php:ursula.dias@crm-sp.example:Verao@57	URL:USER:PASS
+elisa1527:Montanha:84	USER:PASS (sem URL)
+http://suporte.invalid/login.php:oliviapinto42	URL:USER (sem PASS)
+https://rh.invalid/login:karinasilva20:Verao874	URL:USER:PASS
+karina.barros@suporte-app.test:t3k7irak5v	USER:PASS (sem URL)
+https://webmail.test/signin	URL only
+http://admin.invalid/portal/entrar:tiago4006:Chocolate:51	URL:USER:PASS
+https://ead.test:rafael.costa@lojamodelo.invalid	URL:USER (sem PASS)
+https://ead.example:karina.teixeira@cobranca-app.test:Verao11	URL:USER:PASS
+http://vpn-web.invalid/#/login:vitor.pinto@rh.test:Chocolate-6!	URL:USER:PASS
+https://ead-sp.example/auth/login:anacunha69	URL:USER (sem PASS)
+marina.moraes@portalbanco-app.invalid:Musica156:http://faturamento-sp.test/users/sign_in	USER:PASS:URL
+fabio.cunha@portalbanco.example:Montanha:64:http://cobranca-br.example/users/sign_in	USER:PASS:URL
+http://webmail.invalid/wp-login.php:hugo.rocha@suporte.test:Cachorro:77	URL:USER:PASS
+http://rh-app.example/auth/login:bruno.rocha@portalbanco.example:Musica@43	URL:USER:PASS
+http://vpn.test:karinacunha81:Cachorro909	URL:USER:PASS
+https://crm.example/#/login:tiago2539:Montanha295	URL:USER:PASS
+https://rh-br.test/users/sign_in:carla.farias@portalbanco.test:Montanha@93	URL:USER:PASS
+https://portalbanco-sp.test/login:anabarros3	URL:USER (sem PASS)
+https://admin.example/login	URL only
+vpn.example/portal/entrar:nelson.moraes@contaonline-app.test:Musica998	URL(sem esquema):USER:PASS
+cobranca.example/login.php:lucassilva95:Futebol_14!	URL(sem esquema):USER:PASS
+fabio_pinto:Brasil_26!:https://clientes-br.invalid/users/sign_in	USER:PASS:URL
+suporte-sp.example/auth/login:vitor.farias@crm.test:Praia_6!	URL(sem esquema):USER:PASS
+hugorocha19:Girassol441	USER:PASS (sem URL)
+https://crm.invalid/admin:sofiarocha49:Girassol-62!	URL:USER:PASS
+intranet.test/auth/login:queilafarias97:Brasil@20	URL(sem esquema):USER:PASS
+https://extranet-br.example/portal/entrar:vitor_cunha	URL:USER (sem PASS)
+https://cobranca-app.invalid/login.php:fabio.moraes@vpn.test:Cachorro_25!	URL:USER:PASS
+http://suporte.example/login.php:hugo.braga@lojamodelo.invalid:Girassol_77!	URL:USER:PASS
+http://webmail-sp.test/login.php:lucasteixeira1:Praia92!	URL:USER:PASS
+marina.lima@clientes.invalid:Estrela_55!:http://intranet-app.invalid/admin	USER:PASS:URL
+http://cobranca.example/wp-login.php:queila.barros@ead.example:Girassol-58!	URL:USER:PASS
+https://cobranca.invalid/users/sign_in	URL only
+https://extranet-sp.example/#/login:carla_rocha:Futebol-59!	URL:USER:PASS
+http://ead-web.example/wp-login.php:olivia.alves@rh-app.example:Estrela:72	URL:USER:PASS
+https://vpn-web.example/#/login:elisa.costa@lojamodelo-sp.example:iahm6282ge	URL:USER:PASS
+extranet-sp.invalid/signin:ursula.teixeira@faturamento.example:Brasil@36	URL(sem esquema):USER:PASS
+http://webmail-web.example/login:fabio.moraes@extranet-app.example:Futebol@68	URL:USER:PASS
+http://suporte.invalid/auth/login	URL only
+http://lojamodelo-web.test/login:vitormoraes45:Acesso326	URL:USER:PASS
+gisele191:Acesso@78:https://cobranca-web.example/login.php	USER:PASS:URL
+clientes.test/wp-login.php:fabiobarros53:Chocolate606	URL(sem esquema):USER:PASS
+https://rh.example/login.php:karina.costa@extranet.invalid	URL:USER (sem PASS)
+https://intranet-sp.example/admin:lucas_dias:Girassol_82!	URL:USER:PASS
+https://contaonline-web.test/login.php:karina1984:qwerty123	URL:USER:PASS
+vpn.example/login.php:diegopinto42:Acesso373	URL(sem esquema):USER:PASS
+https://crm.invalid/users/sign_in:oliviafarias38:Futebol312	URL:USER:PASS
+http://cobranca.example:tiago_braga:Futebol89	URL:USER:PASS
+sofia2439:Verao58!:http://lojamodelo-br.test/login.php	USER:PASS:URL
+http://admin.invalid:8443/wp-login.php	URL only
+http://lojamodelo-br.test:ursula.dias@cobranca.example:Verao832	URL:USER:PASS
+https://ead.example:gisele.lima@crm-br.test:Musica@27	URL:USER:PASS
+http://contaonline.example/users/sign_in:ursula.cunha@ead-web.example:Senha309	URL:USER:PASS
+https://lojamodelo.invalid/login:brunoteixeira90:Estrela278	URL:USER:PASS
+http://suporte-web.test/wp-login.php:carlacosta27:Chocolate918	URL:USER:PASS
+http://rh-br.test/#/login	URL only
+https://vpn-sp.test/auth/login:nelson.lima@extranet.test	URL:USER (sem PASS)
+https://crm.test/#/login:queila.souza@intranet-web.test:Futebol:23	URL:USER:PASS
+https://admin.example/portal/entrar:nelson.farias@contaonline.invalid:Chocolate-97!	URL:USER:PASS
+http://cobranca-br.example/users/sign_in:lucas_farias:Girassol@11	URL:USER:PASS
+https://intranet.invalid/admin:giseledias77:Futebol@89	URL:USER:PASS
+clientes.invalid/signin:joao.lima@cobranca-sp.test:123456	URL(sem esquema):USER:PASS
+joao.moraes@vpn.invalid:Brasil82!:http://rh.test/admin	USER:PASS:URL
+https://webmail.invalid/signin:paulo.souza@extranet-app.example:Brasil288	URL:USER:PASS
+queilalima35:Brasil:21:https://ead.test/users/sign_in	USER:PASS:URL
+https://portalbanco.example/users/sign_in:brunocosta36:Futebol_38!	URL:USER:PASS
+bruno.farias@contaonline.example:Montanha@44	USER:PASS (sem URL)
+queila_dias:Montanha8:https://lojamodelo.example/#/login	USER:PASS:URL
+lojamodelo-br.test/auth/login:lucas8405:Brasil@92	URL(sem esquema):USER:PASS
+nelsonteixeira48:Girassol36!:http://contaonline.example/signin	USER:PASS:URL
+rh-br.example/login.php:elisa.dias@suporte.test:Musica_23!	URL(sem esquema):USER:PASS
+https://extranet.test:ana_silva:Girassol952	URL:USER:PASS
+rh-sp.test/portal/entrar:marina7502:Praia715	URL(sem esquema):USER:PASS
+https://webmail-sp.test:elisa.alves@portalbanco-web.example:Chocolate:48	URL:USER:PASS
+http://clientes.test/portal/entrar:gisele_farias:Cachorro171	URL:USER:PASS
+https://vpn-app.test/admin:hugo_dias:Verao_9!	URL:USER:PASS
+bruno5965:Brasil71!	USER:PASS (sem URL)
+hugo.farias@ead-web.invalid:Acesso4:https://suporte-web.example/wp-login.php	USER:PASS:URL
+https://rh.example/signin:marina.pinto@rh-app.invalid:Senha@25	URL:USER:PASS
+lucas.costa@intranet.invalid:Girassol108:http://intranet-br.example/admin	USER:PASS:URL
+https://extranet-app.test/signin:karina5283	URL:USER (sem PASS)
+lojamodelo-br.example/auth/login:rafael5623:ht68xgqmze3	URL(sem esquema):USER:PASS
+https://lojamodelo-app.invalid/login.php:ines9048	URL:USER (sem PASS)
+lojamodelo.invalid/portal/entrar:rafael_cunha:Estrela@32	URL(sem esquema):USER:PASS
+tiagoteixeira97:Brasil:93:http://portalbanco-web.invalid/signin	USER:PASS:URL
+intranet.example/login.php:paulo.rocha@rh.invalid:Futebol-37!	URL(sem esquema):USER:PASS
+https://admin-br.example/login:gisele.teixeira@portalbanco.invalid:Verao@38	URL:USER:PASS
+https://portalbanco-sp.invalid/#/login:sofia_barros:Cachorro847	URL:USER:PASS
+joaodias66:Estrela270:https://contaonline-app.invalid/#/login	USER:PASS:URL
+karina.costa@rh-app.invalid:hw9ei4n85:https://ead.invalid/signin	USER:PASS:URL
+http://intranet.test/users/sign_in:nelson.souza@vpn.invalid:123456	URL:USER:PASS
+http://webmail.example/login.php:ursula.silva@suporte.example:Musica@13	URL:USER:PASS
+cobranca-web.test/portal/entrar:olivia.silva@extranet.example:Acesso_69!	URL(sem esquema):USER:PASS
+marinasouza74:cgpqutudgk9hzf:http://cobranca.invalid	USER:PASS:URL
+ana.costa@portalbanco-web.invalid:Praia@55	USER:PASS (sem URL)
+https://clientes.example/login:vitoralves25:d9jrfjxkzu2zr8	URL:USER:PASS
+rafael_lima:Girassol-21!:https://webmail.test/login.php	USER:PASS:URL
+https://intranet-app.invalid/wp-login.php:fabio_farias:qmssbt52d	URL:USER:PASS
+https://webmail-sp.test/auth/login:sofia.silva@rh-sp.example:qwerty123	URL:USER:PASS
+https://lojamodelo.invalid/wp-login.php:inessilva70:Praia@27	URL:USER:PASS
+https://suporte.example/#/login:rafael_pinto:Girassol675	URL:USER:PASS
+https://clientes-sp.test:ana.souza@ead-sp.invalid:Montanha81!	URL:USER:PASS
+https://cobranca.test/login:elisa.braga@lojamodelo.example:Cachorro:57	URL:USER:PASS
+https://cobranca.test/users/sign_in:hugo.pinto@crm-br.example:Brasil375	URL:USER:PASS
+http://rh-web.test/signin:fabio3888:Brasil@20	URL:USER:PASS
+http://ead.invalid/admin:hugo127:dnmapib9v	URL:USER:PASS
+hugorocha18:Musica882	USER:PASS (sem URL)
+extranet-web.test/portal/entrar:vitor_silva:Senha859	URL(sem esquema):USER:PASS
+bruno.pinto@vpn-br.example:Cachorro:56	USER:PASS (sem URL)
+http://intranet-app.invalid/auth/login:paulo.alves@faturamento.test:admin	URL:USER:PASS
+http://contaonline.test/wp-login.php:elisa_lima:Verao4	URL:USER:PASS
+http://lojamodelo.test/wp-login.php:carla_pinto:Musica:37	URL:USER:PASS
+vitor.dias@clientes.example:Chocolate421:http://vpn.invalid/signin	USER:PASS:URL
+https://contaonline.test/#/login	URL only
+http://contaonline.test:8000/login.php	URL only
+http://portalbanco-web.test/portal/entrar:hugopinto20:admin	URL:USER:PASS
+ines_pinto:Acesso:49:http://vpn.example/auth/login	USER:PASS:URL
+http://crm.test/auth/login:tiagosouza25:Girassol@22	URL:USER:PASS
+https://webmail-app.test/auth/login:elisarocha34:Estrela:65	URL:USER:PASS
+rh.test/admin:sofiasouza50:Brasil62!	URL(sem esquema):USER:PASS
+ines.moraes@intranet.invalid:Acesso769:https://extranet-br.example/login.php	USER:PASS:URL
+elisa_dias:102030:https://ead.invalid/signin	USER:PASS:URL
+https://webmail-web.test/admin:vitoralves65:ewmj6m4q6d	URL:USER:PASS
+https://crm-br.test:gisele.silva@ead-app.test:qwerty123	URL:USER:PASS
+https://portalbanco.example/admin:elisasouza20	URL:USER (sem PASS)
+http://admin-br.example:lucas.barros@portalbanco.example:Girassol6	URL:USER:PASS
+http://suporte-app.test/wp-login.php	URL only
+clientes-sp.invalid/login:lucasmoraes11:Girassol381	URL(sem esquema):USER:PASS
+https://lojamodelo-web.invalid/#/login:fabio.farias@clientes.test:Musica220	URL:USER:PASS
+https://crm-web.invalid/wp-login.php:karina9344:Cachorro607	URL:USER:PASS
+https://faturamento-br.invalid:8080/portal/entrar	URL only
+http://extranet-app.invalid/admin:rafael.pinto@crm.test	URL:USER (sem PASS)
+https://portalbanco.test/#/login:ines5719:Musica@18	URL:USER:PASS
+ines.dias@rh-sp.test:Brasil@15:http://crm-web.test/auth/login	USER:PASS:URL
+http://rh-app.example/wp-login.php	URL only
+http://extranet-app.example/wp-login.php:karina.farias@suporte.test:wirzy62yfj4e	URL:USER:PASS
+https://intranet.invalid/login:oliviacosta55:Brasil594	URL:USER:PASS
+https://lojamodelo-web.test/auth/login:paulo2536:Cachorro207	URL:USER:PASS
+https://cobranca-app.invalid/users/sign_in:diego_moraes:Cachorro-8!	URL:USER:PASS
+https://clientes.example/login	URL only
+https://lojamodelo-sp.test/login:marina.souza@lojamodelo-app.example:asme9xg8d723v	URL:USER:PASS
+http://cobranca.test/#/login:lucas_alves:Cachorro252	URL:USER:PASS
+ana.farias@portalbanco.test:Senha:72	USER:PASS (sem URL)
+http://faturamento-br.test/users/sign_in:queila.rocha@clientes-web.invalid:Cachorro-17!	URL:USER:PASS
+nelson.lima@portalbanco-sp.test:senha123:https://contaonline.test	USER:PASS:URL
+http://webmail.test/auth/login:carlasilva26:zux2fq4xwm	URL:USER:PASS
+https://contaonline-sp.invalid/#/login:ines.barros@admin-web.invalid:yafwvrk4	URL:USER:PASS
+https://extranet.invalid/login.php:ines6008:Praia701	URL:USER:PASS
+http://contaonline-web.invalid/login:tiagocosta18	URL:USER (sem PASS)
+hugo.lima@intranet.test:Cachorro:55:https://extranet.test/login	USER:PASS:URL
+extranet.invalid/wp-login.php:queila7771:Girassol:75	URL(sem esquema):USER:PASS
+diegodias95:Cachorro469	USER:PASS (sem URL)
+clientes.test:rafael8216:Acesso590	URL(sem esquema):USER:PASS
+ana.alves@ead.example:Brasil392	USER:PASS (sem URL)
+karina.costa@lojamodelo-web.example:Brasil81!:http://vpn-app.invalid	USER:PASS:URL
+https://rh-br.example/#/login:carla_costa:ggphnpbwu65	URL:USER:PASS
+https://cobranca-sp.example/wp-login.php:tiago_farias:123456	URL:USER:PASS
+sofiabraga17:Girassol763	USER:PASS (sem URL)
+http://vpn.example/portal/entrar	URL only
+clientes-web.invalid/signin:sofia9489:Musica:57	URL(sem esquema):USER:PASS
+olivia.cunha@vpn.example:Futebol:68:https://admin.invalid/login	USER:PASS:URL
+https://admin-br.test/users/sign_in:queila.cunha@rh-br.invalid:Brasil:46	URL:USER:PASS
+https://lojamodelo-web.example/signin:tiago.barros@admin.example:123456	URL:USER:PASS
+https://extranet-web.invalid:8443/portal/entrar	URL only
+marina.souza@ead.invalid:Cachorro@81:http://vpn.test/wp-login.php	USER:PASS:URL
+http://ead.example/login.php:hugo.pinto@faturamento.example:102030	URL:USER:PASS
+ursula_teixeira:Musica281:https://webmail.test/wp-login.php	USER:PASS:URL
+https://extranet.invalid/#/login:nelsonfarias61:wsfc67rka	URL:USER:PASS
+http://contaonline.invalid/admin:hugo_pinto:admin	URL:USER:PASS
+webmail-app.invalid/portal/entrar:gisele.moraes@rh-sp.invalid:Acesso@38	URL(sem esquema):USER:PASS
+http://webmail.test/portal/entrar:tiago.moraes@portalbanco-app.example:Estrela:61	URL:USER:PASS
+karina.dias@extranet.example:Girassol-38!:https://crm.invalid/portal/entrar	USER:PASS:URL
+ines.silva@contaonline-app.test:Estrela722	USER:PASS (sem URL)
+http://rh-sp.test/auth/login:lucas.silva@suporte-br.test:Brasil@95	URL:USER:PASS
+ursula.silva@vpn-sp.test:Chocolate866:https://intranet-app.invalid/wp-login.php	USER:PASS:URL
+https://webmail-sp.example/login.php:lucas.silva@admin-sp.invalid:102030	URL:USER:PASS
+https://faturamento.example/users/sign_in:vitor5150:Senha414	URL:USER:PASS
+http://cobranca-br.invalid/auth/login	URL only
+https://vpn-web.example/auth/login:anacosta96:Senha52!	URL:USER:PASS
+https://intranet-app.invalid:8443/login	URL only
+https://suporte.invalid/signin:hugo.barros@vpn.invalid:Acesso83!	URL:USER:PASS
+ines.cunha@intranet.example:Acesso377:http://admin-sp.invalid/login	USER:PASS:URL
+marina_lima:5gv4m9qqpei:http://extranet-sp.invalid/admin	USER:PASS:URL
+fabio.farias@clientes-web.example:Musica816:http://extranet-app.test	USER:PASS:URL
+http://admin-web.example/portal/entrar:marina.costa@clientes.invalid:ua77c3yrnvif	URL:USER:PASS
+joaofarias10:Chocolate:29:http://intranet.test	USER:PASS:URL
+http://crm.test/portal/entrar:marina.rocha@faturamento-sp.invalid:ygc37ug7f2hfx	URL:USER:PASS
+https://webmail-app.invalid/#/login:inesbraga73:Cachorro362	URL:USER:PASS
+http://portalbanco-br.test/auth/login:hugo.silva@webmail-sp.invalid:Montanha@93	URL:USER:PASS
+http://ead.example/admin:inescosta70	URL:USER (sem PASS)
+http://faturamento-br.example/signin:paulo.souza@webmail.example:fuv2m8gu44ip5	URL:USER:PASS
+crm-sp.example:gisele.pinto@vpn-sp.example:Cachorro499	URL(sem esquema):USER:PASS
+http://portalbanco-sp.test/admin:lucas_braga:Musica816	URL:USER:PASS
+http://vpn.test/users/sign_in:sofia.cunha@rh-sp.test	URL:USER (sem PASS)
+hugo8567:Verao_6!	USER:PASS (sem URL)
+https://intranet.example/signin:pauloteixeira95:senha123	URL:USER:PASS
+nelson.dias@intranet-sp.test:Girassol:92:http://faturamento-app.test/signin	USER:PASS:URL
+https://cobranca-br.test/signin	URL only
+https://admin.test/wp-login.php	URL only
+http://extranet.invalid/login:nelson_cunha:Praia:12	URL:USER:PASS
+rafael.moraes@faturamento-br.invalid:Musica:51:http://vpn.test/login.php	USER:PASS:URL
+karinadias20:Senha:45	USER:PASS (sem URL)
+http://contaonline-web.test/login.php:lucas_souza:Senha@35	URL:USER:PASS
+https://rh-br.invalid/users/sign_in:lucas.rocha@admin.example	URL:USER (sem PASS)
+https://suporte-br.invalid/login:sofiabarros93:xix5dp6fpfj	URL:USER:PASS
+http://intranet.test:fabio.souza@intranet.example:Girassol-19!	URL:USER:PASS
+http://clientes.test/login:rafael.moraes@crm-br.test:Chocolate@36	URL:USER:PASS
+https://ead.invalid/login.php:sofia.braga@faturamento.example:Montanha_27!	URL:USER:PASS
+http://vpn.test/#/login:rafaelsilva75:Chocolate:94	URL:USER:PASS
+https://suporte.test/#/login:inesrocha66:Chocolate_47!	URL:USER:PASS
+tiago_dias:uvgxae7cukuj9w:https://rh-br.test/admin	USER:PASS:URL
+queilalima28:9u9xcb2n:https://ead.example/admin	USER:PASS:URL
+http://extranet-sp.invalid:ursula.silva@contaonline.invalid:Cachorro461	URL:USER:PASS
+queila_cunha:572nx2f5i8j6:https://webmail.invalid/portal/entrar	USER:PASS:URL
+https://crm.test/#/login	URL only
+http://cobranca.invalid/login.php:ursula.souza@ead-app.test:Futebol@90	URL:USER:PASS
+joao_farias:8z79tjpfx6v2jb:http://rh-sp.invalid/portal/entrar	USER:PASS:URL
+suporte.test:ana.braga@contaonline-web.invalid:Praia410	URL(sem esquema):USER:PASS
+http://crm.example/portal/entrar:queila.lima@suporte-br.example:iqanes3ki2ntgz	URL:USER:PASS
+http://ead.invalid/login:vitor.farias@cobranca.example:Girassol-61!	URL:USER:PASS
+lucaspinto96:Musica930	USER:PASS (sem URL)
+sofia1726:Acesso@16	USER:PASS (sem URL)
+paulo.silva@portalbanco-br.example:Cachorro@18	USER:PASS (sem URL)
+http://admin-web.invalid/auth/login:sofia.silva@vpn.invalid:Acesso@74	URL:USER:PASS
+webmail-app.test/login:karina1445:Senha26!	URL(sem esquema):USER:PASS
+https://cobranca.invalid/admin:nelson.dias@crm-web.invalid:Senha823	URL:USER:PASS
+lojamodelo-sp.example/users/sign_in:diego4840:Verao89!	URL(sem esquema):USER:PASS
+http://intranet.test/signin:ursula.costa@rh-sp.example	URL:USER (sem PASS)
+http://ead.test/#/login:lucasmoraes49:Acesso:15	URL:USER:PASS
+clientes.example/login.php:gisele.alves@clientes-web.invalid:Estrela-14!	URL(sem esquema):USER:PASS
+https://webmail-br.test/login.php:nelson.costa@portalbanco-sp.test:Estrela204	URL:USER:PASS
+https://portalbanco.test/signin:paulo.silva@suporte.test	URL:USER (sem PASS)
+https://clientes.example/#/login:joaocosta37:Futebol@86	URL:USER:PASS
+http://intranet-app.invalid/signin:lucas_dias:Acesso221	URL:USER:PASS
+https://extranet-app.invalid/signin:lucasbraga97:Acesso@24	URL:USER:PASS
+https://crm-web.invalid:rafaelpinto36:Brasil453	URL:USER:PASS
+https://suporte.example:8000/login.php	URL only
+marinacunha8:Musica@20:http://rh.test/#/login	USER:PASS:URL
+https://webmail.test/wp-login.php:marinacosta7:Senha:78	URL:USER:PASS
+ana.moraes@faturamento-sp.invalid:Girassol:34	USER:PASS (sem URL)
+https://extranet.invalid/login:ursulateixeira57	URL:USER (sem PASS)
+suporte.test/admin:vitor2569:Brasil:17	URL(sem esquema):USER:PASS
+marina6205:Montanha_22!	USER:PASS (sem URL)
+clientes.invalid/users/sign_in:tiagocunha15:Estrela@44	URL(sem esquema):USER:PASS
+nelson7775:Musica@80:http://webmail.test/portal/entrar	USER:PASS:URL
+olivia832:Estrela@71	USER:PASS (sem URL)
+http://intranet-web.test/admin:olivia.costa@rh-app.example:mcvuf2jmz9	URL:USER:PASS
+http://rh.example/users/sign_in:hugo.barros@webmail.example:Verao896	URL:USER:PASS
+https://rh-web.example/auth/login:paulo.rocha@suporte-web.test	URL:USER (sem PASS)
+https://extranet.example/users/sign_in:karina_braga:eua5mhw7wu	URL:USER:PASS
+vpn.invalid:ines_souza:Cachorro@36	URL(sem esquema):USER:PASS
+gisele_dias:Futebol:25:http://clientes-br.invalid/#/login	USER:PASS:URL
+http://lojamodelo-app.example:ana.souza@cobranca.invalid:Acesso:19	URL:USER:PASS
+inespinto96:Girassol250:http://contaonline-app.invalid/wp-login.php	USER:PASS:URL
+https://ead.test/wp-login.php:hugo9056	URL:USER (sem PASS)
+http://ead.invalid/users/sign_in:brunosilva57:Chocolate:62	URL:USER:PASS
+giselebarros2:Chocolate@61:http://vpn.test/admin	USER:PASS:URL
+marina.souza@cobranca-web.invalid:qwerty123	USER:PASS (sem URL)
+http://webmail.test/portal/entrar:vitordias22:Chocolate334	URL:USER:PASS
+https://cobranca.example/#/login:nelson.cunha@clientes.example:a6xg4hp3b	URL:USER:PASS
+inesfarias10:Senha195:https://contaonline.test/auth/login	USER:PASS:URL
+marina.souza@rh.test:Montanha@71:https://webmail-web.invalid/#/login	USER:PASS:URL
+vitor.teixeira@vpn-sp.example:Acesso@58	USER:PASS (sem URL)
+http://cobranca.test/wp-login.php:joao3749	URL:USER (sem PASS)
+https://crm-web.test/portal/entrar:hugo2954:Brasil16!	URL:USER:PASS
+http://suporte.test/#/login:carla6991:Futebol972	URL:USER:PASS
+http://vpn-sp.test/#/login:ines8167:Girassol:45	URL:USER:PASS
+http://extranet-web.invalid/auth/login:tiago.farias@admin.test:qwerty123	URL:USER:PASS
+nelson.costa@ead-sp.invalid:qwerty123:https://ead-app.test/signin	USER:PASS:URL
+carla5295:Brasil_5!:http://rh.test/auth/login	USER:PASS:URL
+http://suporte-app.test/portal/entrar:hugo.alves@extranet.example:Verao783	URL:USER:PASS
+http://contaonline-br.example/portal/entrar:ines_farias:Musica171	URL:USER:PASS
+https://suporte-app.invalid/login.php:marina_moraes:uqiuhfuvqc	URL:USER:PASS
+http://cobranca.test/login.php	URL only
+http://webmail-sp.test/#/login	URL only
+vpn.example/signin:hugorocha72:Chocolate288	URL(sem esquema):USER:PASS
+webmail.example/admin:gisele.cunha@portalbanco-app.invalid:Montanha:38	URL(sem esquema):USER:PASS
+vitor_alves:Praia-8!	USER:PASS (sem URL)
+ead-app.invalid/wp-login.php:fabio.souza@faturamento.example:Senha_37!	URL(sem esquema):USER:PASS
+joao6221:Cachorro-27!:http://cobranca.test/portal/entrar	USER:PASS:URL
+http://lojamodelo-sp.example/#/login:diego.teixeira@admin-sp.example:88m7eig59hat5	URL:USER:PASS
+http://vpn-sp.test/auth/login:marina4569:Acesso_51!	URL:USER:PASS
+https://clientes-sp.invalid/portal/entrar:nelson3074:Futebol788	URL:USER:PASS
+http://portalbanco.example/admin	URL only
+https://clientes.invalid/login:vitor.costa@ead-app.invalid:Cachorro77!	URL:USER:PASS
+https://admin.example/signin:ursula227:Brasil:36	URL:USER:PASS
+https://portalbanco-app.invalid/#/login:queila_dias:w2gexdwa	URL:USER:PASS
+http://extranet-br.invalid/auth/login:ana.dias@admin.test:2weyh3e5cx6t	URL:USER:PASS
+https://extranet.invalid/portal/entrar:diego_farias:Girassol:73	URL:USER:PASS
+ines.cunha@intranet-app.example:Musica@72:https://intranet-br.invalid/signin	USER:PASS:URL
+http://faturamento.test/login:queilaalves49:Estrela361	URL:USER:PASS
+ines.alves@intranet.example:Girassol@69:http://cobranca.test/login.php	USER:PASS:URL
+intranet-sp.test/#/login:ines_dias:qwerty123	URL(sem esquema):USER:PASS
+https://portalbanco.test:3000	URL only
+ead.example/login:rafael.costa@admin-sp.example:Praia:84	URL(sem esquema):USER:PASS
+carlacosta47:Praia@73	USER:PASS (sem URL)
+http://rh.test:8080/auth/login	URL only
+https://portalbanco.test/portal/entrar:lucas.pinto@extranet-br.example:Praia:76	URL:USER:PASS
+http://intranet.example/wp-login.php:hugo.moraes@lojamodelo-app.example	URL:USER (sem PASS)
+fabio4798:Montanha977:https://faturamento-br.invalid	USER:PASS:URL
+http://crm.test/auth/login	URL only
+http://crm-web.example/users/sign_in:diego7120:Girassol@86	URL:USER:PASS
+http://admin-sp.test/admin:vitormoraes60:Montanha@87	URL:USER:PASS
+karinalima93:Cachorro@99:https://webmail-sp.example/admin	USER:PASS:URL
+https://vpn-sp.invalid/login.php:elisa.rocha@clientes.test:qwerty123	URL:USER:PASS
+webmail.test/#/login:karina1393:Estrela:49	URL(sem esquema):USER:PASS
+https://clientes.invalid/admin:ursula.souza@extranet-app.example:Brasil-8!	URL:USER:PASS
+queila_moraes:Senha721:https://contaonline.test/auth/login	USER:PASS:URL
+https://rh.example/auth/login:elisa_lima	URL:USER (sem PASS)
+http://crm-br.test/wp-login.php:queila.cunha@contaonline-sp.example:Cachorro423	URL:USER:PASS
+paulo.farias@webmail-br.invalid:Praia815:https://vpn.example/users/sign_in	USER:PASS:URL
+rh.example/#/login:marinaalves93:Chocolate_74!	URL(sem esquema):USER:PASS
+https://webmail-app.invalid/users/sign_in:carla_dias:Estrela8!	URL:USER:PASS
+karina_dias:Estrela@72	USER:PASS (sem URL)
+https://extranet-sp.invalid/wp-login.php:joaobarros64:Chocolate-69!	URL:USER:PASS
+https://intranet.invalid/auth/login:queila.silva@vpn.test	URL:USER (sem PASS)
+http://contaonline.test/wp-login.php:olivialima38:Musica@80	URL:USER:PASS
+http://webmail-web.example/signin:ursula1479:Futebol:71	URL:USER:PASS
+lojamodelo-web.test/login.php:sofia.pinto@webmail.test:Musica:89	URL(sem esquema):USER:PASS
+queila_silva:Montanha:21:https://faturamento.invalid/login	USER:PASS:URL
+http://ead-web.example/users/sign_in:vitorpinto36:Senha817	URL:USER:PASS
+bruno.alves@ead.example:Chocolate:40:https://crm-sp.test/#/login	USER:PASS:URL
+extranet.example:joaodias74:yixfvzcd	URL(sem esquema):USER:PASS
+diego_cunha:Brasil@70:https://extranet-web.example/#/login	USER:PASS:URL
+http://contaonline-sp.invalid/admin:ursula.dias@extranet-web.invalid:Praia264	URL:USER:PASS
+portalbanco-sp.test/admin:lucas5353:Praia30!	URL(sem esquema):USER:PASS
+giselebarros59:Futebol523	USER:PASS (sem URL)
+olivia4569:Acesso30!:https://cobranca-sp.test/auth/login	USER:PASS:URL
+brunodias15:102030:https://rh-app.test/portal/entrar	USER:PASS:URL
+marinarocha8:Verao@10:https://rh.invalid/portal/entrar	USER:PASS:URL
+elisadias96:Verao_55!:https://faturamento.test/portal/entrar	USER:PASS:URL
+https://admin-br.test/login:sofiabraga63:Acesso-81!	URL:USER:PASS
+https://extranet.test/signin:vitor_dias:102030	URL:USER:PASS
+carla.costa@admin.example:zgniy5va	USER:PASS (sem URL)
+elisa.moraes@intranet-app.test:Estrela-29!:http://faturamento-web.invalid/wp-login.php	USER:PASS:URL
+https://vpn.test/wp-login.php:fabio.souza@suporte-sp.test:Senha60	URL:USER:PASS
+rafael.moraes@contaonline-br.test:Brasil@49:http://clientes-sp.invalid/login.php	USER:PASS:URL
+https://crm-app.example/admin:queila.costa@crm.test:senha123	URL:USER:PASS
+rafael.dias@contaonline-sp.test:sp373n2qbfxf7:https://ead.test/#/login	USER:PASS:URL
+crm.invalid/admin:hugolima61:Girassol_64!	URL(sem esquema):USER:PASS
+marina_cunha:Musica95!:http://crm.invalid/login.php	USER:PASS:URL
+suporte-br.invalid/login.php:hugo5115:Estrela@59	URL(sem esquema):USER:PASS
+tiago_farias:Senha74!:https://extranet.example/portal/entrar	USER:PASS:URL
+ead-app.example/users/sign_in:gisele_lima:Acesso:40	URL(sem esquema):USER:PASS
+http://contaonline-sp.invalid/wp-login.php:rafaelcosta32	URL:USER (sem PASS)
+bruno9567:Musica34!	USER:PASS (sem URL)
+gisele.pinto@faturamento-sp.test:admin	USER:PASS (sem URL)
+tiago.farias@lojamodelo.example:Estrela732:https://faturamento.example/#/login	USER:PASS:URL
+http://vpn-app.test/admin:lucasfarias94:Estrela478	URL:USER:PASS
+http://contaonline-web.example/users/sign_in:queilafarias90	URL:USER (sem PASS)
+vitor.pinto@lojamodelo.example:Acesso6:http://clientes.invalid/users/sign_in	USER:PASS:URL
+admin-sp.test/wp-login.php:ursula1847:senha123	URL(sem esquema):USER:PASS
+joao.souza@contaonline.test:Musica193:https://suporte-br.test	USER:PASS:URL
+joao.teixeira@rh.invalid:Cachorro@38:https://vpn.example/#/login	USER:PASS:URL
+https://crm-br.example/login.php:karinaalves67:Futebol34!	URL:USER:PASS
+http://rh-web.invalid/signin:ines.rocha@ead.example:Senha@11	URL:USER:PASS
+rafael.farias@faturamento.invalid:Praia:92:https://suporte.invalid/login	USER:PASS:URL
+rh-app.example/#/login:tiagolima89:nzicqct3zqp9e	URL(sem esquema):USER:PASS
+suporte.example/wp-login.php:ursula_alves:Senha@25	URL(sem esquema):USER:PASS
+olivia4290:Girassol:52:http://intranet.invalid/wp-login.php	USER:PASS:URL
+portalbanco-app.invalid/login:diego_barros:Musica823	URL(sem esquema):USER:PASS
+joao_teixeira:Chocolate-48!:http://ead-app.invalid/admin	USER:PASS:URL
+https://webmail.example/login:karinacunha15:Chocolate65!	URL:USER:PASS
+https://suporte-br.invalid/users/sign_in:elisamoraes20	URL:USER (sem PASS)
+https://rh-br.invalid/portal/entrar	URL only
+marinabraga36:Girassol@25:https://clientes-app.test/signin	USER:PASS:URL
+carla.costa@extranet-app.example:Montanha@88:https://lojamodelo-app.invalid/auth/login	USER:PASS:URL
+https://crm-web.test/auth/login:lucasteixeira49:Senha_16!	URL:USER:PASS
+https://intranet.test/wp-login.php:fabiomoraes83:Brasil534	URL:USER:PASS
+portalbanco.example/auth/login:ursulabraga92:Girassol:14	URL(sem esquema):USER:PASS
+paulo.rocha@cobranca-br.example:Musica:55:https://intranet-br.test/portal/entrar	USER:PASS:URL
+karinasouza66:Estrela:37:http://ead-web.example/wp-login.php	USER:PASS:URL
+joao_braga:Acesso_16!	USER:PASS (sem URL)
+http://contaonline-web.invalid/portal/entrar:ursula_teixeira:Brasil761	URL:USER:PASS
+queilafarias48:Praia90!:http://intranet.test/users/sign_in	USER:PASS:URL
+http://crm-app.test/#/login:oliviafarias77:ywj7gbm49m3k	URL:USER:PASS
+ines2070:Praia:82:https://ead-sp.invalid/signin	USER:PASS:URL
+suporte.invalid/portal/entrar:pauloalves3:Estrela77!	URL(sem esquema):USER:PASS
+https://suporte.invalid/admin	URL only
+https://intranet-sp.example/admin:elisa.cunha@clientes.invalid:Cachorro@99	URL:USER:PASS
+http://extranet-web.test/signin	URL only
+lucas_rocha:Girassol103	USER:PASS (sem URL)
+https://admin.example:diegobraga42:Praia_23!	URL:USER:PASS
+lucas4100:Girassol607:http://suporte.example/auth/login	USER:PASS:URL
+https://lojamodelo.example/login:rafaelrocha99:Chocolate@46	URL:USER:PASS
+http://ead.invalid:paulolima15:Praia377	URL:USER:PASS
+carla.barros@crm-sp.test:Senha8!	USER:PASS (sem URL)
+https://lojamodelo-sp.invalid/auth/login:elisa7933	URL:USER (sem PASS)
+http://extranet.invalid/#/login:queila2007:Chocolate72!	URL:USER:PASS
+https://portalbanco-app.invalid/admin:gisele3476:senha123	URL:USER:PASS
+https://rh-sp.example/signin:marinabarros9:Musica@99	URL:USER:PASS
+https://intranet.example/signin:diego.pinto@contaonline.example:Verao570	URL:USER:PASS
+rafael4883:Senha:48:http://ead-br.example/users/sign_in	USER:PASS:URL
+https://vpn-app.test/users/sign_in:rafael.dias@portalbanco.test:Musica38	URL:USER:PASS
+http://extranet.example/admin	URL only
+hugo.rocha@clientes.test:Girassol833	USER:PASS (sem URL)
+http://faturamento.example/login:sofia_alves:Verao60!	URL:USER:PASS
+https://lojamodelo-web.test/admin:joao.souza@rh.invalid:Futebol-25!	URL:USER:PASS
+webmail.example/users/sign_in:vitor.dias@portalbanco-sp.test:Cachorro363	URL(sem esquema):USER:PASS
+http://admin-app.invalid:joaosilva17:Verao625	URL:USER:PASS
+https://rh-sp.invalid/signin	URL only
+hugo.lima@vpn.invalid:Praia619:https://crm.example	USER:PASS:URL
+vitorteixeira97:Estrela61!:https://cobranca-app.example/wp-login.php	USER:PASS:URL
+http://faturamento-sp.example/portal/entrar:gisele.costa@suporte-br.test:admin	URL:USER:PASS
+gisele_moraes:Verao@77:https://cobranca.example/admin	USER:PASS:URL
+http://clientes.example/users/sign_in:giselemoraes98:jf6dbziz4	URL:USER:PASS
+http://faturamento-app.test/login:bruno4983	URL:USER (sem PASS)
+joao_cunha:Acesso51!:https://suporte-br.example/auth/login	USER:PASS:URL
+http://portalbanco-br.example/login.php:vitorcunha43:Senha@76	URL:USER:PASS
+gisele.silva@clientes.example:Estrela295:http://extranet-app.example/portal/entrar	USER:PASS:URL
+https://extranet-sp.test/wp-login.php:sofia.barros@webmail.invalid:Verao309	URL:USER:PASS
+http://contaonline.test/auth/login:queila.teixeira@ead.example:Verao127	URL:USER:PASS
+https://lojamodelo.example/admin:sofia_cunha	URL:USER (sem PASS)
+nelson.silva@intranet-br.example:Girassol:39	USER:PASS (sem URL)
+https://rh.invalid/auth/login	URL only
+elisaalves80:Senha:39:http://intranet-web.invalid/#/login	USER:PASS:URL
+https://faturamento-br.example/portal/entrar:joao.barros@cobranca-br.test:Brasil@80	URL:USER:PASS
+joaolima57:uuzg2dzj56:http://clientes.test/portal/entrar	USER:PASS:URL
+https://portalbanco.example/auth/login:olivia6512	URL:USER (sem PASS)
+http://ead.invalid/auth/login	URL only
+https://crm.example/login.php	URL only
+http://faturamento-web.example/login.php:hugo2551:Senha-37!	URL:USER:PASS
+https://cobranca.invalid/portal/entrar	URL only
+elisa.dias@rh-br.test:Brasil3!	USER:PASS (sem URL)
+https://faturamento-br.test:fabio.cunha@vpn.test	URL:USER (sem PASS)
+fabio.costa@extranet.test:j342jgkbn8bhq	USER:PASS (sem URL)
+https://extranet.test/users/sign_in:ursulacunha90:7i4hjghid	URL:USER:PASS
+http://lojamodelo-web.example/login:lucasbarros45:Futebol@10	URL:USER:PASS
+http://extranet.invalid/auth/login:queilaalves1:Girassol@39	URL:USER:PASS
+http://faturamento-app.example/login.php:queila9420:Montanha689	URL:USER:PASS
+http://rh-web.example/users/sign_in:lucas.barros@contaonline-web.invalid	URL:USER (sem PASS)
+carla.cunha@extranet-app.example:Girassol@81:http://extranet-br.example/login.php	USER:PASS:URL
+http://clientes-br.example/admin:bruno_moraes:Verao809	URL:USER:PASS
+http://lojamodelo-app.example/wp-login.php:joao.rocha@cobranca-app.example:Cachorro_37!	URL:USER:PASS
+karina.moraes@clientes.invalid:Praia@58	USER:PASS (sem URL)
+http://contaonline.test/wp-login.php:rafaelmoraes54:admin	URL:USER:PASS
+https://crm-br.example:3000/login.php	URL only
+hugo_barros:Cachorro129:http://rh-app.invalid/wp-login.php	USER:PASS:URL
+https://intranet-br.example/admin:karina.braga@cobranca-br.example:Chocolate242	URL:USER:PASS
+http://intranet.example:karina.moraes@rh.example:Montanha:71	URL:USER:PASS
+http://webmail-sp.invalid:8080/auth/login	URL only
+rafael2010:Musica@68	USER:PASS (sem URL)
+http://cobranca-br.test/#/login:ines.silva@portalbanco.example:Senha@83	URL:USER:PASS
+http://clientes-web.invalid/login.php:diegobarros69:Estrela_85!	URL:USER:PASS
+http://vpn.invalid:carla1618:Futebol947	URL:USER:PASS
+elisa.alves@cobranca-br.test:Girassol@79:http://portalbanco-app.example/auth/login	USER:PASS:URL
+lojamodelo-web.invalid/#/login:karina8066:Senha@78	URL(sem esquema):USER:PASS
+http://suporte.invalid/signin:sofia.alves@contaonline-web.invalid:Futebol@86	URL:USER:PASS
+diego.cunha@intranet-app.invalid:102030	USER:PASS (sem URL)
+hugocosta54:Estrela980:https://clientes.invalid/login.php	USER:PASS:URL
+https://crm.example	URL only
+karinarocha57:Verao:78:http://suporte.test/wp-login.php	USER:PASS:URL
+olivia.teixeira@portalbanco-app.example:Musica:64:https://ead-br.test/login	USER:PASS:URL
+http://cobranca-web.test/users/sign_in:joao.teixeira@extranet.invalid:Montanha@39	URL:USER:PASS
+http://ead-app.invalid/signin:sofia3275:Musica-41!	URL:USER:PASS
+http://ead.example/login.php:fabiocunha43:Chocolate:12	URL:USER:PASS
+http://webmail.test/users/sign_in:gisele.costa@suporte-web.example:Praia@46	URL:USER:PASS
+https://vpn.test:diego.farias@rh.example:Estrela103	URL:USER:PASS
+http://suporte-app.test/#/login:carla.alves@clientes.test:Estrela526	URL:USER:PASS
+https://rh-sp.test/auth/login:fabio.costa@rh-app.invalid	URL:USER (sem PASS)
+https://suporte-sp.invalid/login:joao.barros@rh-sp.invalid:Chocolate849	URL:USER:PASS
+http://ead-app.test/login.php:joao.lima@cobranca-web.example:Praia@70	URL:USER:PASS
+https://cobranca.example/#/login:fabio.silva@vpn.example:Praia@89	URL:USER:PASS
+http://vpn-web.test/admin:sofia_moraes:102030	URL:USER:PASS
+https://webmail-app.example/login:queila.silva@vpn.invalid	URL:USER (sem PASS)
+https://cobranca.test/#/login:nelsonbarros70:Montanha9!	URL:USER:PASS
+https://faturamento.invalid:8443/wp-login.php	URL only
+lucas8625:Girassol:56:https://intranet.invalid/#/login	USER:PASS:URL
+http://extranet-app.invalid/auth/login	URL only
+https://vpn-web.invalid/users/sign_in:oliviacosta30:Praia272	URL:USER:PASS
+http://lojamodelo.test/signin:carlasouza58:102030	URL:USER:PASS
+http://webmail-sp.example/#/login	URL only
+http://cobranca-web.invalid/login:marinabarros97	URL:USER (sem PASS)
+https://faturamento-app.invalid/auth/login:tiago.costa@cobranca-sp.invalid:Girassol:48	URL:USER:PASS
+lojamodelo.test/portal/entrar:anasilva78:Musica_29!	URL(sem esquema):USER:PASS
+nelson8343:Senha374:https://portalbanco.invalid	USER:PASS:URL
+http://ead-sp.invalid/login	URL only
+http://crm-sp.example:hugomoraes64:Brasil207	URL:USER:PASS
+https://extranet-web.example/portal/entrar:karina.souza@rh.example:8cwn6mb9dv	URL:USER:PASS
+https://extranet-sp.test/#/login:marinarocha88:Montanha997	URL:USER:PASS
+http://faturamento-sp.example/login:vitor7022:Chocolate398	URL:USER:PASS
+http://webmail-app.invalid/users/sign_in:ana6413:Musica52!	URL:USER:PASS
+carlapinto12:Cachorro622:https://contaonline.invalid/admin	USER:PASS:URL
+https://rh-sp.invalid/signin:joao.lima@intranet.invalid:Musica@49	URL:USER:PASS
+ana.teixeira@portalbanco.example:Chocolate:66:https://portalbanco.test/admin	USER:PASS:URL
+rafael.braga@webmail-web.invalid:Verao255	USER:PASS (sem URL)
+https://lojamodelo-br.example/admin:joaoteixeira26	URL:USER (sem PASS)
+http://cobranca-app.example:paulo2363:102030	URL:USER:PASS
+analima14:Senha29!	USER:PASS (sem URL)
+https://ead.test/auth/login:fabiobraga34:Chocolate368	URL:USER:PASS
+portalbanco.test/admin:sofia.pinto@extranet.invalid:Senha@47	URL(sem esquema):USER:PASS
+inescosta86:Musica@90:http://lojamodelo-web.example/wp-login.php	USER:PASS:URL
+https://ead.test/login.php:tiago.cunha@clientes.test	URL:USER (sem PASS)
+ursula7985:qwerty123:http://suporte.example/login.php	USER:PASS:URL
+carla.alves@contaonline.test:Estrela:37	USER:PASS (sem URL)
+https://crm-br.test/admin:ines_rocha:Futebol@97	URL:USER:PASS
+http://portalbanco-sp.test/wp-login.php:lucas_teixeira:admin	URL:USER:PASS
+https://portalbanco.invalid/wp-login.php:oliviacosta69:Cachorro19!	URL:USER:PASS
+paulo.pinto@admin.test:Acesso:76:http://rh-sp.example	USER:PASS:URL
+karina_souza:Chocolate757	USER:PASS (sem URL)
+rafael7591:Futebol200:https://lojamodelo-sp.test/#/login	USER:PASS:URL
+http://suporte.example/admin	URL only
+hugo.cunha@contaonline.test:senha123:http://clientes-sp.invalid/#/login	USER:PASS:URL
+http://admin.invalid/#/login:oliviamoraes89:Montanha:20	URL:USER:PASS
+http://portalbanco.example/auth/login:ines.cunha@admin-br.test:Verao@16	URL:USER:PASS
+https://suporte-app.invalid/portal/entrar:marina.dias@webmail-br.test:6rkh6638pzx	URL:USER:PASS
+nelson.lima@lojamodelo.invalid:Girassol66!:http://extranet-br.example/auth/login	USER:PASS:URL
+sofia.farias@clientes.test:Girassol:19:http://webmail.example/auth/login	USER:PASS:URL
+olivia.cunha@rh-web.invalid:Verao_13!:https://rh.invalid/portal/entrar	USER:PASS:URL
+https://portalbanco-sp.test/#/login	URL only
+tiago.moraes@faturamento-br.example:Girassol:70:https://lojamodelo-app.test	USER:PASS:URL
+karina.moraes@suporte-sp.example:Musica323	USER:PASS (sem URL)
+https://vpn-sp.invalid:8080/wp-login.php	URL only
+http://crm.test/portal/entrar:elisa9215:p2fz7i2wzygyde	URL:USER:PASS
+rh.example/users/sign_in:ana.souza@contaonline-web.example:Praia710	URL(sem esquema):USER:PASS
+vitor.barros@portalbanco.invalid:Brasil:80	USER:PASS (sem URL)
+https://suporte.example/login.php:fabio_teixeira	URL:USER (sem PASS)
+https://rh.example/auth/login:queila.lima@contaonline-web.invalid:102030	URL:USER:PASS
+http://clientes.test/users/sign_in:brunocosta86:Estrela436	URL:USER:PASS
+intranet-app.invalid/signin:gisele.teixeira@vpn-sp.example:Girassol@78	URL(sem esquema):USER:PASS
+https://crm.test/users/sign_in:diego.souza@lojamodelo.example:Verao993	URL:USER:PASS
+lucas_lima:Estrela:35:https://extranet.example/users/sign_in	USER:PASS:URL
+https://rh-br.example/login:elisa1692:Brasil73	URL:USER:PASS
+https://rh.invalid/users/sign_in:ana4591:Verao-20!	URL:USER:PASS
+clientes.invalid/admin:anabraga31:senha123	URL(sem esquema):USER:PASS
+https://admin-app.example/users/sign_in:rafael.pinto@ead.invalid:Montanha:45	URL:USER:PASS
+https://vpn.example/portal/entrar:hugo.souza@portalbanco-br.test:Senha234	URL:USER:PASS
+nelson.farias@lojamodelo-app.test:9y2ipuade6safb:https://portalbanco.test/portal/entrar	USER:PASS:URL
+olivia.rocha@suporte.example:Cachorro@16	USER:PASS (sem URL)
+https://crm.test/admin:elisa.dias@extranet-br.test:102030	URL:USER:PASS
+paulo_lima:Senha@27:https://suporte.invalid/login	USER:PASS:URL
+https://lojamodelo.test:ines8350:Musica@77	URL:USER:PASS
+http://contaonline-app.invalid:paulo.alves@lojamodelo.example:Brasil:77	URL:USER:PASS
+sofiasilva70:Estrela215	USER:PASS (sem URL)
+lojamodelo.invalid/login.php:marina556:Musica@18	URL(sem esquema):USER:PASS
+http://lojamodelo.example/login:fabiodias67:Musica758	URL:USER:PASS
+http://portalbanco.test/admin:ana.alves@lojamodelo.example:Acesso566	URL:USER:PASS
+http://faturamento.test/auth/login:diegofarias69:Montanha44!	URL:USER:PASS
+http://portalbanco.example:sofiabarros20:Praia@16	URL:USER:PASS
+vitor.costa@portalbanco-app.invalid:Musica2!:https://ead.test/login	USER:PASS:URL
+http://crm-br.invalid/login.php:ana.alves@crm-br.example:Estrela604	URL:USER:PASS
+hugo.farias@webmail.test:Montanha67!	USER:PASS (sem URL)
+cobranca.example/users/sign_in:marina.lima@contaonline-br.invalid:Verao@58	URL(sem esquema):USER:PASS
+https://cobranca.example/#/login:rafael7165:Senha@70	URL:USER:PASS
+suporte.invalid/signin:diego.silva@webmail-br.example:qwerty123	URL(sem esquema):USER:PASS
+https://intranet-sp.test/signin:ursula.braga@admin-br.invalid:Brasil504	URL:USER:PASS
+https://suporte.example/signin	URL only
+rafael.lima@cobranca.example:Verao90!:http://intranet-app.example/login.php	USER:PASS:URL
+clientes.example/#/login:fabio.teixeira@ead-web.invalid:Verao158	URL(sem esquema):USER:PASS
+diego.dias@lojamodelo.test:Montanha507	USER:PASS (sem URL)
+http://extranet-br.invalid/login.php:rafaelfarias79:Verao-85!	URL:USER:PASS
+https://contaonline.test/auth/login:rafael.barros@lojamodelo-web.test:2p5iai6f4v4	URL:USER:PASS
+https://portalbanco-sp.example/users/sign_in:karinateixeira38:Estrela@16	URL:USER:PASS
+intranet-br.invalid:paulobarros80:Verao903	URL(sem esquema):USER:PASS
+ana.moraes@crm.example:Acesso_64!:http://intranet-web.invalid/login.php	USER:PASS:URL
+http://faturamento-br.example/login.php:fabio3641:r26tivn6a	URL:USER:PASS
+https://webmail.invalid:8000	URL only
+paulo9912:Chocolate:28:https://admin-sp.example/login.php	USER:PASS:URL
+http://contaonline-app.invalid/signin:vitor.farias@contaonline.invalid:admin	URL:USER:PASS
+https://portalbanco.invalid:3000/signin	URL only
+https://vpn-app.test/wp-login.php:oliviabraga15	URL:USER (sem PASS)
+http://lojamodelo-web.invalid/login.php:olivia.cunha@rh.example:123456	URL:USER:PASS
+https://portalbanco.test/wp-login.php:hugosouza13:Brasil112	URL:USER:PASS
+http://contaonline.example/wp-login.php:ines.pinto@vpn-br.example:r8xsabwwf4ht	URL:USER:PASS
+http://crm-sp.invalid/auth/login	URL only
+https://clientes-app.example/login.php:queila.barros@cobranca.test:Girassol_79!	URL:USER:PASS
+nelson1569:Brasil-50!:https://ead.example/login.php	USER:PASS:URL
+http://faturamento-app.invalid/admin:ana_teixeira:Verao-95!	URL:USER:PASS
+http://ead.example/login.php:karina7945:Estrela@29	URL:USER:PASS
+https://intranet.invalid/signin:bruno.farias@vpn.invalid:pkwyikfjpd	URL:USER:PASS
+https://rh-web.invalid/#/login:rafael_farias:ftpqvtr7	URL:USER:PASS
+https://lojamodelo-sp.example/signin:karinacunha44:Verao-48!	URL:USER:PASS
+olivia.moraes@contaonline.example:Girassol@66:http://faturamento-web.test/portal/entrar	USER:PASS:URL
+https://vpn-br.invalid:tiagolima11:Chocolate-11!	URL:USER:PASS
+intranet-app.example/portal/entrar:ana.cunha@portalbanco-web.invalid:Futebol@25	URL(sem esquema):USER:PASS
+https://rh.invalid/login.php:queilacunha52	URL:USER (sem PASS)
+nelsonmoraes25:Praia:54	USER:PASS (sem URL)
+http://vpn.invalid/auth/login:hugo.barros@portalbanco.invalid:Praia44	URL:USER:PASS
+https://portalbanco-br.example/admin:karinabraga66:Brasil@14	URL:USER:PASS
+http://portalbanco-web.example/users/sign_in:ana.lima@cobranca-web.test	URL:USER (sem PASS)
+extranet-web.invalid/login.php:karina.costa@contaonline.invalid:Chocolate@77	URL(sem esquema):USER:PASS
+http://portalbanco-app.invalid/auth/login:lucas6219:23xyqnc6	URL:USER:PASS
+fabio7600:qwerty123	USER:PASS (sem URL)
+anadias18:Cachorro_58!:https://admin.invalid/portal/entrar	USER:PASS:URL
+http://intranet-br.invalid/signin:lucas.braga@intranet-sp.invalid:Chocolate322	URL:USER:PASS
+http://crm.invalid/login.php:olivia210:Girassol-58!	URL:USER:PASS
+http://extranet.test/#/login:elisa_cunha	URL:USER (sem PASS)
+https://clientes.invalid/portal/entrar:marina.dias@cobranca.test:6wujjbiir2mi27	URL:USER:PASS
+https://contaonline-br.test/#/login:ana_barros:Chocolate614	URL:USER:PASS
+https://admin-app.test/portal/entrar:lucasalves96:Girassol31!	URL:USER:PASS
+http://intranet-web.test/#/login:paulobarros84:Acesso-52!	URL:USER:PASS
+http://cobranca-sp.invalid:marina_costa:Futebol475	URL:USER:PASS
+https://cobranca-web.invalid/portal/entrar	URL only
+rh-app.example/login.php:brunocosta8:Praia@84	URL(sem esquema):USER:PASS
+https://intranet-sp.invalid:queilamoraes94	URL:USER (sem PASS)
+http://crm-app.invalid/wp-login.php:elisa6889	URL:USER (sem PASS)
+http://clientes-app.invalid/login.php:lucas.silva@crm-web.invalid:Estrela:11	URL:USER:PASS
+ines.moraes@extranet-app.test:Chocolate23	USER:PASS (sem URL)
+joao.farias@faturamento.invalid:Estrela@18	USER:PASS (sem URL)
+http://clientes.test/users/sign_in:anateixeira24:Chocolate97	URL:USER:PASS
+http://contaonline.example/portal/entrar:carla.silva@crm.invalid:Cachorro38	URL:USER:PASS
+joao.barros@lojamodelo-app.invalid:Brasil@36:https://intranet-app.example/auth/login	USER:PASS:URL
+fabio.costa@contaonline.example:Chocolate825:https://suporte-app.invalid/#/login	USER:PASS:URL
+carla_rocha:Girassol-17!:http://faturamento.invalid/login.php	USER:PASS:URL
+https://vpn.test/signin:ines6879:Girassol_12!	URL:USER:PASS
+ines.cunha@extranet-sp.test:senha123:https://intranet.test/#/login	USER:PASS:URL
+http://faturamento.example/login:ines3448:dkxhu5mhd69qst	URL:USER:PASS
+http://portalbanco-web.example/users/sign_in:karina_silva:Futebol@42	URL:USER:PASS
+http://faturamento.test/#/login:tiago.lima@intranet.example	URL:USER (sem PASS)
+http://clientes-sp.invalid:paulorocha25:Verao-33!	URL:USER:PASS
+intranet.example/#/login:hugo5201:102030	URL(sem esquema):USER:PASS
+http://portalbanco.invalid/auth/login:joao5271	URL:USER (sem PASS)
+https://cobranca-app.invalid/admin:paulobarros18	URL:USER (sem PASS)
+http://crm-sp.example/users/sign_in:joao.barros@webmail-app.example	URL:USER (sem PASS)
+https://faturamento-br.example/login.php:hugobarros8:Montanha95	URL:USER:PASS
+http://cobranca.test:sofia4707:Musica@13	URL:USER:PASS
+rafaelfarias84:Praia632:http://rh-br.invalid/login	USER:PASS:URL
+http://vpn-br.example/portal/entrar:sofia.braga@lojamodelo.invalid:123456	URL:USER:PASS
+http://ead-web.example/login.php:ines8688:Brasil:68	URL:USER:PASS
+https://vpn-br.example/users/sign_in:bruno_pinto:Estrela@27	URL:USER:PASS
+https://webmail-sp.test/portal/entrar:giseledias49:admin	URL:USER:PASS
+https://extranet.test/admin:gisele.dias@vpn-app.invalid:Chocolate@35	URL:USER:PASS
+http://vpn-sp.invalid/login:bruno_farias:Musica782	URL:USER:PASS
+hugo.alves@portalbanco.example:Girassol@14	USER:PASS (sem URL)
+http://lojamodelo-app.invalid:hugo.souza@cobranca.example:Acesso60!	URL:USER:PASS
+karina.alves@vpn-br.example:Cachorro:94	USER:PASS (sem URL)
+diego6641:senha123:https://extranet-web.invalid/signin	USER:PASS:URL
+https://admin.test:ines_costa	URL:USER (sem PASS)
+https://webmail.invalid:hugomoraes75:Girassol483	URL:USER:PASS
+http://extranet.example/portal/entrar:anadias52:Cachorro:46	URL:USER:PASS
+https://crm.invalid/wp-login.php:joao.barros@clientes.test:Montanha-23!	URL:USER:PASS
+olivia.costa@ead.example:Musica58!:http://clientes-web.example/signin	USER:PASS:URL
+https://portalbanco.test/wp-login.php:giselesilva30:123456	URL:USER:PASS
+https://webmail-app.test/admin:elisa.farias@extranet.test	URL:USER (sem PASS)
+fabio.farias@crm-app.invalid:Montanha@79:http://admin.invalid/signin	USER:PASS:URL
+https://webmail-web.invalid:fabiobarros40:jeiktqtsr25	URL:USER:PASS
+tiagocunha60:Futebol69!:http://lojamodelo-app.invalid/signin	USER:PASS:URL
+gisele5488:Musica524:http://extranet.test/admin	USER:PASS:URL
+https://suporte-web.invalid/auth/login:elisa.rocha@contaonline-br.test:Cachorro@57	URL:USER:PASS
+ana.rocha@clientes.example:Verao@27:http://vpn-sp.example/signin	USER:PASS:URL
+http://webmail.invalid:ines.souza@rh.test:Montanha@42	URL:USER:PASS
+https://faturamento-app.invalid/login:olivialima31:sqske8hbqsd	URL:USER:PASS
+https://crm-app.example:marina.dias@extranet-br.example:Praia370	URL:USER:PASS
+https://intranet.test:8000/portal/entrar	URL only
+http://ead.invalid/auth/login:fabio_braga:102030	URL:USER:PASS
+https://clientes.test:oliviadias79:Brasil-48!	URL:USER:PASS
+lojamodelo-app.test/users/sign_in:ines.rocha@vpn.example:Acesso487	URL(sem esquema):USER:PASS
+http://intranet.invalid/#/login:giselecosta4	URL:USER (sem PASS)
+carla9078:Cachorro_4!	USER:PASS (sem URL)
+https://clientes.invalid/admin:paulo9961:ai2djuuq7xrc	URL:USER:PASS
+https://faturamento-app.invalid:gisele.moraes@faturamento-br.example:Senha_60!	URL:USER:PASS
+rafael.cunha@cobranca-web.test:123456:https://crm.example/login	USER:PASS:URL
+queila.teixeira@faturamento.test:Chocolate928	USER:PASS (sem URL)
+https://extranet.test/#/login:queilapinto81	URL:USER (sem PASS)
+webmail.invalid/signin:hugo.dias@lojamodelo-app.invalid:Musica44!	URL(sem esquema):USER:PASS
+http://lojamodelo.example/wp-login.php:giselealves19:Verao@32	URL:USER:PASS
+https://portalbanco-br.test/#/login:inescunha39:pw7zpi7vtf	URL:USER:PASS
+https://extranet.test/auth/login:giselebarros55:Futebol690	URL:USER:PASS
+intranet-app.example/#/login:anabraga12:Brasil-22!	URL(sem esquema):USER:PASS
+ana_braga:Praia:77:http://cobranca.example/wp-login.php	USER:PASS:URL
+https://ead.test/login.php:olivia.costa@suporte.example:Praia15	URL:USER:PASS
+fabiomoraes90:102030:https://rh.example	USER:PASS:URL
+https://contaonline-web.invalid/admin	URL only
+lojamodelo-web.invalid:ursula.alves@extranet.invalid:Verao:82	URL(sem esquema):USER:PASS
+http://lojamodelo-br.invalid/users/sign_in:rafael.rocha@lojamodelo.test:Praia634	URL:USER:PASS
+karina_souza:123456:http://contaonline-web.test/portal/entrar	USER:PASS:URL
+http://contaonline-app.example/login:carlasilva95:Estrela@89	URL:USER:PASS
+https://rh.test/admin:marina.costa@suporte-sp.example:Praia99!	URL:USER:PASS
+https://webmail-web.invalid/users/sign_in:carla.pinto@cobranca.test:Verao:56	URL:USER:PASS
+lojamodelo.invalid/portal/entrar:joao.silva@admin.invalid:kx6qiexazrn	URL(sem esquema):USER:PASS
+http://suporte-web.invalid/wp-login.php:queilateixeira67	URL:USER (sem PASS)
+http://clientes-web.test/login.php:hugo_barros:Senha822	URL:USER:PASS
+lojamodelo.example/portal/entrar:tiago.alves@intranet-web.test:Acesso53!	URL(sem esquema):USER:PASS
+sofiaalves91:Estrela@63	USER:PASS (sem URL)
+https://portalbanco-sp.test/users/sign_in:ursuladias5	URL:USER (sem PASS)
+http://cobranca.test/users/sign_in:hugo.barros@portalbanco-br.example:q9ztxfsscu5ha	URL:USER:PASS
+https://portalbanco-app.test/#/login:joaocosta56:Girassol@27	URL:USER:PASS
+https://portalbanco.test/admin:brunosilva86:Praia407	URL:USER:PASS
+http://webmail-br.example/admin:tiago_lima:Musica56!	URL:USER:PASS
+http://crm.test/wp-login.php:joao.souza@contaonline.invalid:Praia-9!	URL:USER:PASS
+https://portalbanco.test/signin:ana.moraes@webmail-br.test:Estrela46	URL:USER:PASS
+https://intranet.invalid/#/login:diego_braga:Brasil862	URL:USER:PASS
+https://intranet.test/auth/login:sofiarocha73:Senha@98	URL:USER:PASS
+https://webmail-br.invalid/users/sign_in:joao_cunha:Brasil-20!	URL:USER:PASS
+elisa.silva@cobranca.test:Cachorro:17:https://admin.example	USER:PASS:URL
+elisa_farias:Verao181	USER:PASS (sem URL)
+https://clientes.invalid/users/sign_in:vitor.pinto@cobranca-br.test:zd5fty3n5pf	URL:USER:PASS
+http://intranet.test/login:carla_rocha:Cachorro712	URL:USER:PASS
+extranet.test/wp-login.php:pauloalves57:Praia248	URL(sem esquema):USER:PASS
+https://webmail.invalid	URL only
+http://extranet-br.invalid/signin:oliviasouza31:Musica@96	URL:USER:PASS
+https://cobranca.test/login:ana.cunha@ead.test:Verao:21	URL:USER:PASS
+http://clientes.example/auth/login:ana519:Montanha@62	URL:USER:PASS
+https://lojamodelo.invalid:sofia_alves:Musica:23	URL:USER:PASS
+https://admin-web.invalid/wp-login.php:ana_farias	URL:USER (sem PASS)
+http://faturamento.invalid/signin:bruno.rocha@portalbanco.invalid	URL:USER (sem PASS)
+https://rh.test/login.php:sofia.lima@crm-br.test:Chocolate:58	URL:USER:PASS
+admin.example/wp-login.php:tiagopinto5:Musica675	URL(sem esquema):USER:PASS
+http://webmail.example/login.php:rafael5938:Brasil313	URL:USER:PASS
+https://contaonline.example/auth/login:ursularocha67:Chocolate789	URL:USER:PASS
+carla.souza@lojamodelo-br.invalid:Montanha@54	USER:PASS (sem URL)
+vitorteixeira93:Chocolate:98:http://suporte-app.invalid/login	USER:PASS:URL
+https://extranet-sp.example/users/sign_in:ana.barros@vpn-sp.invalid	URL:USER (sem PASS)
+http://lojamodelo.invalid/admin:vitor.costa@faturamento.test:qwerty123	URL:USER:PASS
+ursula1973:Cachorro@68	USER:PASS (sem URL)
+https://contaonline.invalid/#/login:lucas7622:Girassol@47	URL:USER:PASS
+http://intranet-br.example/admin:paulo.dias@suporte-web.example:qwerty123	URL:USER:PASS
+gisele.pinto@admin.example:Futebol974	USER:PASS (sem URL)
+olivia_costa:Estrela739	USER:PASS (sem URL)
+https://vpn-web.invalid:8000/auth/login	URL only
+https://portalbanco-app.example/auth/login:queila.alves@ead-app.example:Futebol:82	URL:USER:PASS
+http://suporte-br.test/login:diego.pinto@ead-sp.invalid:Montanha98!	URL:USER:PASS
+webmail.test/#/login:elisa.dias@cobranca-app.example:Futebol191	URL(sem esquema):USER:PASS
+http://clientes-br.invalid/auth/login:paulo.farias@extranet.example:Praia792	URL:USER:PASS
+http://intranet.test/auth/login:vitor807:8gnb4a6z	URL:USER:PASS
+http://clientes-sp.test/login.php:hugo5131:Chocolate911	URL:USER:PASS
+ursuladias70:Cachorro84!:http://crm-app.example/wp-login.php	USER:PASS:URL
+https://cobranca.invalid/auth/login:lucas.silva@webmail-app.example:Senha489	URL:USER:PASS
+https://clientes.test/users/sign_in	URL only
+http://vpn-sp.example/auth/login:olivia.costa@suporte-sp.invalid:Estrela@77	URL:USER:PASS
+http://lojamodelo.example/#/login:vitor489:Brasil@15	URL:USER:PASS
+https://admin.test:bruno_lima:admin	URL:USER:PASS
+lojamodelo-sp.test/login:paulo.silva@vpn-sp.test:Girassol-67!	URL(sem esquema):USER:PASS
+lojamodelo.invalid/portal/entrar:bruno_teixeira:qwerty123	URL(sem esquema):USER:PASS
+http://lojamodelo-sp.invalid:8080/admin	URL only
+https://contaonline-br.test/#/login:nelson_souza:Verao@78	URL:USER:PASS
+https://rh.invalid/login	URL only
+http://vpn.invalid/users/sign_in:queila_pinto	URL:USER (sem PASS)
+http://webmail.example/users/sign_in:diego.souza@extranet-web.example:Cachorro785	URL:USER:PASS
+fabio.lima@suporte.invalid:Chocolate-31!:http://rh-web.example	USER:PASS:URL
+https://portalbanco.test	URL only
+hugo.pinto@admin.invalid:Girassol@31:https://admin-sp.example/auth/login	USER:PASS:URL
+https://cobranca.test:gisele.farias@faturamento-sp.invalid	URL:USER (sem PASS)
+karina.farias@contaonline-br.invalid:Musica:24:https://rh.invalid/signin	USER:PASS:URL
+webmail-app.invalid/wp-login.php:tiago.barros@clientes.test:Musica598	URL(sem esquema):USER:PASS
+http://extranet-br.test:vitordias26:Chocolate@45	URL:USER:PASS
+https://clientes-app.invalid/#/login	URL only
+https://cobranca-sp.test/portal/entrar:joao_silva:Senha207	URL:USER:PASS
+http://admin.invalid:ana.braga@portalbanco.test:102030	URL:USER:PASS
+http://faturamento-br.example/admin:ines.teixeira@intranet-br.invalid:Estrela:76	URL:USER:PASS
+http://webmail-br.invalid/users/sign_in:nelson4391:Verao728	URL:USER:PASS
+https://ead.invalid:8000/users/sign_in	URL only
+giselesilva17:Girassol@78:http://intranet.test/#/login	USER:PASS:URL
+https://ead-app.example/users/sign_in:bruno.cunha@lojamodelo-sp.example:Estrela513	URL:USER:PASS
+https://contaonline.example:ursula.cunha@crm.example:c3cuhuvg	URL:USER:PASS
+https://intranet.example/signin:ana_cunha:Verao229	URL:USER:PASS
+https://suporte.invalid/admin:gisele.souza@webmail-web.test:Futebol357	URL:USER:PASS
+https://vpn-sp.invalid/login.php:hugocunha31:Senha528	URL:USER:PASS
+http://extranet-sp.example/login:tiago.pinto@clientes.invalid:Girassol704	URL:USER:PASS
+https://vpn-br.invalid/auth/login:vitorfarias80:Futebol46	URL:USER:PASS
+https://portalbanco-br.example/wp-login.php:rafaelbraga42:bmw7xmfvy	URL:USER:PASS
+ursula_cunha:Cachorro_40!	USER:PASS (sem URL)
+tiago.lima@portalbanco.invalid:Acesso@33:https://ead.test/login.php	USER:PASS:URL
+https://intranet.test/admin:bruno.lima@webmail-br.invalid:Chocolate-28!	URL:USER:PASS
+http://rh.test/signin:fabio.cunha@contaonline-web.example:qwerty123	URL:USER:PASS
+http://extranet.invalid/#/login:lucas.dias@clientes-web.invalid	URL:USER (sem PASS)
+intranet.example/login.php:ana.cunha@vpn.test:Girassol@16	URL(sem esquema):USER:PASS
+https://clientes-br.test/signin:hugo.pinto@rh.invalid:Montanha853	URL:USER:PASS
+oliviafarias16:Acesso399	USER:PASS (sem URL)
+https://ead.example/admin:karina_moraes:Montanha_58!	URL:USER:PASS
+http://clientes.example/portal/entrar	URL only
+hugodias48:Chocolate-22!	USER:PASS (sem URL)
+https://clientes.invalid/login:ana_rocha:senha123	URL:USER:PASS
+crm.invalid/users/sign_in:queila.teixeira@lojamodelo-br.example:123456	URL(sem esquema):USER:PASS
+http://vpn.invalid/signin:paulorocha73:hw5xx86m3qn9kw	URL:USER:PASS
+http://contaonline.test:vitorbarros60:Musica512	URL:USER:PASS
+http://portalbanco.invalid:ursula2944	URL:USER (sem PASS)
+http://admin.example/auth/login	URL only
+sofia_dias:102030:http://rh.example/login	USER:PASS:URL
+rafaelbarros54:Cachorro@47:http://cobranca.test	USER:PASS:URL
+http://webmail.invalid/login	URL only
+http://vpn.example/portal/entrar:diego.souza@contaonline-app.invalid:senha123	URL:USER:PASS
+http://ead.test/wp-login.php:queila4569:Estrela317	URL:USER:PASS
+http://contaonline.example/login.php	URL only
+https://intranet-app.invalid/portal/entrar:nelson_farias	URL:USER (sem PASS)
+http://rh-br.invalid/login.php:fabio_dias:Senha466	URL:USER:PASS
+vitor_lima:Montanha-44!	USER:PASS (sem URL)
+https://admin.example:fabiosilva41	URL:USER (sem PASS)
+http://rh.example:ana.alves@intranet-web.invalid:Acesso68!	URL:USER:PASS
+http://contaonline-br.test/wp-login.php:rafael.dias@contaonline-br.example:Musica@78	URL:USER:PASS
+https://lojamodelo.test/wp-login.php:ursulabraga39:Girassol633	URL:USER:PASS
+cobranca-sp.example/#/login:diego_alves:Musica@80	URL(sem esquema):USER:PASS
+ines.costa@suporte-web.test:4qyhtzepynm:http://webmail-sp.test/#/login	USER:PASS:URL
+karina_souza:Cachorro-66!	USER:PASS (sem URL)
+http://lojamodelo.invalid/portal/entrar:hugorocha52:Cachorro706	URL:USER:PASS
+olivia3122:senha123:https://cobranca.invalid/auth/login	USER:PASS:URL
+http://portalbanco.test/login:karina_pinto:Musica:82	URL:USER:PASS
+vitor_teixeira:Cachorro:71:http://contaonline-sp.test/#/login	USER:PASS:URL
+http://portalbanco.example/login.php:ines_alves:Senha:41	URL:USER:PASS
+inescunha50:Estrela765:https://cobranca.invalid/login.php	USER:PASS:URL
+https://portalbanco.invalid/portal/entrar:diego_silva:Montanha60!	URL:USER:PASS
+https://portalbanco.test:vitor5904:Brasil@40	URL:USER:PASS
+olivia_barros:qrjkahiq:https://lojamodelo-br.test/login	USER:PASS:URL
+https://rh-sp.test/auth/login:carladias40:Girassol703	URL:USER:PASS
+http://vpn.example/portal/entrar:rafael.souza@crm.example:Girassol188	URL:USER:PASS
+http://ead-app.test/signin:rafael8918:Acesso@58	URL:USER:PASS
+https://suporte-br.invalid/admin:ines.teixeira@admin.example:Futebol940	URL:USER:PASS
+https://intranet.example/login:lucas_souza:Acesso@23	URL:USER:PASS
+http://clientes-app.test/admin:lucas_rocha:Verao-44!	URL:USER:PASS
+tiago8747:123456:http://rh.example/login.php	USER:PASS:URL
+faturamento-web.test/admin:marina.rocha@admin.test:Musica_90!	URL(sem esquema):USER:PASS
+marina.teixeira@portalbanco-app.example:123456:http://admin-br.test	USER:PASS:URL
+https://extranet-app.example/auth/login:nelson7127:Cachorro80!	URL:USER:PASS
+http://lojamodelo.invalid/login.php:karina.barros@clientes-app.test:Acesso:35	URL:USER:PASS
+http://ead-sp.invalid:ana.silva@faturamento-web.test:p46qh3z377mkf	URL:USER:PASS
+https://rh-br.test/#/login:hugosouza51:Brasil@22	URL:USER:PASS
+joao4266:Montanha847:https://extranet.example	USER:PASS:URL
+https://cobranca-br.invalid:olivia.alves@faturamento-sp.invalid:Musica42!	URL:USER:PASS
+karina_rocha:Acesso935:http://suporte-br.invalid	USER:PASS:URL
+karinasouza28:Senha_18!	USER:PASS (sem URL)
+https://portalbanco-web.invalid/wp-login.php:paulo.barros@ead.invalid:Brasil_46!	URL:USER:PASS
+https://admin.test/wp-login.php:marinasouza97:Cachorro@16	URL:USER:PASS
+karina162:bdcmqhc22qw4	USER:PASS (sem URL)
+https://intranet-web.example/admin:joao_farias:Montanha:25	URL:USER:PASS
+http://cobranca-web.example:3000/users/sign_in	URL only
+https://ead.test:sofiabarros97:haayje66v	URL:USER:PASS
+http://rh-app.invalid/portal/entrar:marinarocha55:Girassol@10	URL:USER:PASS
+http://extranet-app.test/login:joao_rocha:Montanha7!	URL:USER:PASS
+http://rh-sp.example/admin:olivia.cunha@vpn-sp.invalid:Estrela568	URL:USER:PASS
+karinapinto9:Senha_1!:http://admin-app.test/portal/entrar	USER:PASS:URL
+lucas6607:Verao470:https://suporte-app.test	USER:PASS:URL
+https://crm-web.test/portal/entrar:diego3350:Verao@86	URL:USER:PASS
+ursula.pinto@faturamento-sp.example:Praia108	USER:PASS (sem URL)
+http://contaonline-br.invalid/wp-login.php:queila_silva	URL:USER (sem PASS)
+hugo6980:Verao:94:http://vpn-br.example/#/login	USER:PASS:URL
+carlaalves66:Chocolate@23	USER:PASS (sem URL)
+admin-app.example/users/sign_in:queila1626:Girassol@29	URL(sem esquema):USER:PASS
+ead.example/login.php:carla.lima@extranet-web.example:Montanha350	URL(sem esquema):USER:PASS
+https://clientes-br.test:karina.lima@crm.test:Verao@25	URL:USER:PASS
+http://contaonline-web.invalid/wp-login.php:fabio_moraes:Musica@38	URL:USER:PASS
+http://lojamodelo-app.invalid/portal/entrar:sofia.teixeira@suporte.test:Verao:35	URL:USER:PASS
+diego_silva:Verao@62:https://faturamento-web.invalid/auth/login	USER:PASS:URL
+http://cobranca-sp.invalid/auth/login:lucasbarros81:Estrela-72!	URL:USER:PASS
+https://lojamodelo.invalid/admin:elisa.pinto@vpn.invalid	URL:USER (sem PASS)
+http://intranet.test/portal/entrar:ursula.souza@extranet-sp.invalid:Senha:96	URL:USER:PASS
+http://webmail-app.invalid/portal/entrar:sofia.silva@lojamodelo.invalid:h327aucd8ei	URL:USER:PASS
+http://suporte.invalid/#/login:anasouza41:Montanha491	URL:USER:PASS
+http://webmail.example/signin:marina.silva@crm.invalid:Acesso:46	URL:USER:PASS
+intranet.invalid/portal/entrar:paulo7879:Praia286	URL(sem esquema):USER:PASS
+http://extranet.test/admin:vitor.teixeira@webmail.test:Senha@61	URL:USER:PASS
+paulo.barros@cobranca.example:Futebol:22:https://crm-sp.example/wp-login.php	USER:PASS:URL
+https://webmail-web.invalid/auth/login:diego_alves:Montanha-57!	URL:USER:PASS
+gisele.alves@faturamento.test:senha123:http://portalbanco.example	USER:PASS:URL
+contaonline-br.example/login.php:elisa.cunha@clientes-br.test:Futebol319	URL(sem esquema):USER:PASS
+https://rh.test/login.php:paulosouza94:Musica-63!	URL:USER:PASS
+http://admin.test/login.php:sofiacosta96	URL:USER (sem PASS)
+sofia.silva@admin-sp.example:Futebol38!	USER:PASS (sem URL)
+ana.alves@ead-app.invalid:Praia120:http://portalbanco-app.test	USER:PASS:URL
+http://cobranca-br.example/wp-login.php:nelson6760:Acesso:82	URL:USER:PASS
+https://suporte.example:marina.moraes@suporte-sp.test:Estrela94	URL:USER:PASS
+http://rh-app.test/login	URL only
+https://clientes-sp.example/signin:nelsonalves35:Musica@38	URL:USER:PASS
+https://clientes.example/login.php:tiago7650:123456	URL:USER:PASS
+http://cobranca.example/auth/login:ana.farias@suporte-web.invalid:Cachorro:51	URL:USER:PASS
+joaodias72:ry5fwne887:https://suporte-app.invalid/admin	USER:PASS:URL
+https://clientes-app.example/#/login:tiago.costa@intranet-web.test:Futebol53!	URL:USER:PASS
+http://lojamodelo-web.invalid/signin:sofia.alves@faturamento-web.test:Montanha@33	URL:USER:PASS
+https://crm-sp.invalid/login:ines.farias@vpn-br.test:Chocolate:30	URL:USER:PASS
+http://faturamento.invalid/auth/login:marina2568	URL:USER (sem PASS)
+fabio_cunha:Brasil:66	USER:PASS (sem URL)
+rh.example/auth/login:sofia.souza@portalbanco.invalid:Senha28!	URL(sem esquema):USER:PASS
+https://faturamento-sp.example:8443/login	URL only
+https://suporte.test/wp-login.php	URL only
+https://clientes.example:hugo.teixeira@portalbanco-web.test:Brasil266	URL:USER:PASS
+http://portalbanco.example/wp-login.php:hugo.cunha@webmail-br.invalid:Praia59!	URL:USER:PASS
+queila.costa@cobranca.invalid:Senha@95:http://contaonline-sp.example/login	USER:PASS:URL
+olivia.teixeira@contaonline.test:Praia320:http://admin.test/signin	USER:PASS:URL
+https://ead-sp.example/auth/login:hugo_rocha:Futebol@47	URL:USER:PASS
+http://extranet.test/wp-login.php:diego_rocha:123456	URL:USER:PASS
+http://contaonline.example/login.php:carla_moraes:Estrela-26!	URL:USER:PASS
+http://extranet.test:karina.rocha@portalbanco.invalid:Montanha@64	URL:USER:PASS
+https://vpn-web.invalid:3000/admin	URL only
+https://intranet.test/auth/login:carladias91:Praia40!	URL:USER:PASS
+http://crm.invalid/#/login	URL only
+http://intranet.example/admin:ines.braga@portalbanco-br.invalid:Girassol_87!	URL:USER:PASS
+https://intranet-app.example/admin:joao.alves@cobranca.example:Montanha@73	URL:USER:PASS
+http://lojamodelo-app.example/login:carla.lima@crm-app.example:Brasil487	URL:USER:PASS
+http://extranet.test/users/sign_in:lucas_lima:fip9j859fw9v	URL:USER:PASS
+https://vpn-sp.example:sofiadias66:Futebol6	URL:USER:PASS
+https://rh.example:elisa_lima:Chocolate68	URL:USER:PASS
+https://clientes-app.example/signin:joao2113	URL:USER (sem PASS)
+rafaelcosta43:Senha@19	USER:PASS (sem URL)
+rh-sp.test/auth/login:paulo_teixeira:s7zixzf3y	URL(sem esquema):USER:PASS
+carla.moraes@clientes-sp.invalid:Futebol-20!:https://lojamodelo-br.invalid/#/login	USER:PASS:URL
+https://contaonline.example/auth/login:diego.braga@webmail.invalid:Verao@29	URL:USER:PASS
+https://ead.invalid/login.php:fabio.pinto@clientes.test:Acesso270	URL:USER:PASS
+faturamento.example/users/sign_in:karina.dias@contaonline.example:hz457mi8gr	URL(sem esquema):USER:PASS
+karina5474:admin:http://lojamodelo.test/login.php	USER:PASS:URL
+sofia.barros@rh-br.invalid:Verao:20:https://vpn-app.example/wp-login.php	USER:PASS:URL
+http://faturamento.test/#/login:bruno3999	URL:USER (sem PASS)
+marina.farias@suporte-web.example:Acesso_5!:http://vpn-app.example/login	USER:PASS:URL
+http://vpn-sp.invalid/auth/login:bruno.farias@extranet.example:Montanha59!	URL:USER:PASS
+http://contaonline-sp.test:8443/login.php	URL only
+queila.alves@portalbanco-sp.invalid:Senha391:https://admin-web.test/portal/entrar	USER:PASS:URL
+suporte.example/wp-login.php:ana_teixeira:Musica:12	URL(sem esquema):USER:PASS
+http://contaonline.test:paulocunha32:Acesso@77	URL:USER:PASS
+ines8492:Chocolate206:http://webmail.example/login.php	USER:PASS:URL
+https://webmail.invalid/login:paulo.rocha@suporte.test:Acesso655	URL:USER:PASS
+https://webmail-sp.invalid/portal/entrar:elisa.teixeira@extranet.invalid:Musica408	URL:USER:PASS
+https://faturamento.example/#/login	URL only
+https://vpn-br.example/signin:carla.moraes@portalbanco.invalid	URL:USER (sem PASS)
+https://crm.test/login.php:karina.costa@faturamento.invalid:Montanha771	URL:USER:PASS
+https://portalbanco.test/signin:joao1482	URL:USER (sem PASS)
+http://extranet-web.test:sofiafarias28:Girassol664	URL:USER:PASS
+https://ead-web.test/login:olivia_costa:Cachorro:88	URL:USER:PASS
+https://intranet.invalid/wp-login.php:joao.pinto@crm.example:nwci8fwe77sce	URL:USER:PASS
+hugo.cunha@crm.example:3564xe8si8	USER:PASS (sem URL)
+lucas.alves@admin-br.test:Cachorro70!	USER:PASS (sem URL)
+http://vpn-app.example/portal/entrar	URL only
+https://contaonline.example/#/login:rafael_cunha:Chocolate44!	URL:USER:PASS
+ines.moraes@cobranca.example:Acesso@34:https://suporte-br.test/#/login	USER:PASS:URL
+paulobraga88:Montanha619:http://vpn.invalid/login.php	USER:PASS:URL
+elisa6233:Brasil518	USER:PASS (sem URL)
+http://contaonline.invalid/wp-login.php:vitor.pinto@cobranca.example:Senha-76!	URL:USER:PASS
+http://admin.invalid/wp-login.php:marinaalves32:Senha@76	URL:USER:PASS
+hugo.farias@webmail.example:Chocolate:68:https://intranet.test/#/login	USER:PASS:URL
+carla.braga@webmail.invalid:Chocolate@74:http://clientes-app.test	USER:PASS:URL
+https://intranet.example/#/login:bruno.costa@clientes.invalid:tbbz946rtrgq5	URL:USER:PASS
+karina_lima:Acesso3!:https://ead.test/portal/entrar	USER:PASS:URL
+http://vpn-br.test/admin:lucas.costa@admin-br.invalid	URL:USER (sem PASS)
+vitor.moraes@contaonline-app.example:Chocolate_81!:https://extranet.invalid	USER:PASS:URL
+http://webmail.invalid/login:giselerocha26	URL:USER (sem PASS)
+http://admin-br.test/#/login:rafael9762:Brasil644	URL:USER:PASS
+https://portalbanco-br.invalid/login.php:karina.souza@extranet-web.invalid:Brasil@80	URL:USER:PASS
+ana344:Chocolate:91:https://cobranca-app.invalid/login	USER:PASS:URL
+https://clientes.invalid:8443/portal/entrar	URL only
+vitor_rocha:c88b2sy7c:http://rh-br.invalid/login	USER:PASS:URL
+http://portalbanco-br.test/login:lucas_pinto:Verao:48	URL:USER:PASS
+faturamento.test/auth/login:ines.barros@vpn.test:6p4z3rg59wm	URL(sem esquema):USER:PASS
+https://ead.test/login.php:lucasrocha49	URL:USER (sem PASS)
+tiagocosta64:Cachorro@47:http://crm.invalid/users/sign_in	USER:PASS:URL
+https://clientes-sp.test/wp-login.php	URL only
+http://crm-br.invalid/login:joao.teixeira@suporte.example:Chocolate917	URL:USER:PASS
+https://extranet.test/signin:diego.teixeira@portalbanco.invalid:123456	URL:USER:PASS
+http://ead-app.example/login:marina_costa	URL:USER (sem PASS)
+rafaelmoraes21:Girassol-18!	USER:PASS (sem URL)
+carla.alves@vpn.example:Montanha-7!	USER:PASS (sem URL)
+http://cobranca.test/#/login:nelsoncunha50:Futebol25	URL:USER:PASS
+http://extranet.invalid/portal/entrar:vitorrocha45:Montanha582	URL:USER:PASS
+http://suporte-br.test/portal/entrar:marinaalves55:Musica@65	URL:USER:PASS
+https://vpn-app.example/signin:elisa_braga:Praia188	URL:USER:PASS
+ines_braga:Acesso@57:http://lojamodelo.test	USER:PASS:URL
+https://ead-web.example/#/login:rafael_dias:Musica746	URL:USER:PASS
+https://ead.invalid/auth/login:ursula.teixeira@webmail.test:Montanha:21	URL:USER:PASS
+http://intranet-web.example/admin:vitor_braga:xxqm3k94aaxkv	URL:USER:PASS
+https://contaonline.invalid/wp-login.php:carla.teixeira@crm-app.test:Girassol1!	URL:USER:PASS
+https://intranet-br.example:paulo_silva:Cachorro@94	URL:USER:PASS
+bruno.braga@ead-sp.test:Cachorro967:https://rh.example/wp-login.php	USER:PASS:URL
+marina_alves:Acesso-38!:https://clientes-app.example/users/sign_in	USER:PASS:URL
+fabio6456:zbc7pue7q9k9ft:http://clientes.example/admin	USER:PASS:URL
+https://rh.example/admin:vitorlima48:Montanha36!	URL:USER:PASS
+carla.pinto@faturamento.example:Acesso555	USER:PASS (sem URL)
+http://suporte-sp.test/auth/login:diego4898:Chocolate@56	URL:USER:PASS
+https://crm.test:giseledias25	URL:USER (sem PASS)
+http://portalbanco-br.example/admin:ines.cunha@suporte.example:Estrela_63!	URL:USER:PASS
+https://faturamento-app.invalid/wp-login.php	URL only
+http://suporte-app.example	URL only
+https://webmail-web.test/signin	URL only
+https://lojamodelo.example/login.php:diego.barros@clientes.invalid	URL:USER (sem PASS)
+https://webmail.invalid/portal/entrar:carla.alves@vpn-sp.invalid:rske97aib	URL:USER:PASS
+http://lojamodelo-sp.example/#/login	URL only
+diego.farias@intranet.test:Praia8!	USER:PASS (sem URL)
+https://vpn.example/auth/login:elisa3345:Estrela@49	URL:USER:PASS
+https://cobranca-sp.test/auth/login:nelson_rocha:102030	URL:USER:PASS
+lucas.braga@extranet.test:Chocolate@89	USER:PASS (sem URL)
+http://contaonline-sp.test/login.php:sofia.lima@intranet-sp.test:5k9gjjdwd	URL:USER:PASS
+carlateixeira75:Senha795:http://cobranca-br.invalid/#/login	USER:PASS:URL
+diego4699:Montanha48!	USER:PASS (sem URL)
+suporte.invalid/admin:joao.teixeira@webmail.example:Chocolate@93	URL(sem esquema):USER:PASS
+https://cobranca.test:8080	URL only
+http://cobranca-app.invalid/admin:hugobarros19:Acesso515	URL:USER:PASS
+carla.silva@suporte-app.example:admin	USER:PASS (sem URL)
+http://ead-web.example/auth/login:rafael.lima@contaonline-app.test	URL:USER (sem PASS)
+cobranca.test/portal/entrar:lucas.alves@vpn-sp.example:Praia44!	URL(sem esquema):USER:PASS
+elisa.dias@vpn.example:Acesso@19	USER:PASS (sem URL)
+https://crm.invalid/wp-login.php:carla.moraes@faturamento-sp.invalid:Chocolate257	URL:USER:PASS
+http://vpn-app.example:8443	URL only
+tiagoalves28:123456:https://vpn.example/portal/entrar	USER:PASS:URL
+http://suporte.invalid/wp-login.php	URL only
+https://portalbanco.invalid/login.php:sofia.costa@contaonline.invalid:Senha:18	URL:USER:PASS
+http://lojamodelo-br.invalid/login:carla.souza@webmail.test:Praia286	URL:USER:PASS
+http://contaonline.example/#/login:ana.barros@vpn.invalid:Musica@93	URL:USER:PASS
+olivia651:p7g5d29da:https://ead.example/auth/login	USER:PASS:URL
+https://intranet.invalid/users/sign_in:olivia4394	URL:USER (sem PASS)
+http://rh.test/wp-login.php:fabio.alves@lojamodelo-sp.test	URL:USER (sem PASS)
+https://vpn-br.example/auth/login:marinabraga19:qwerty123	URL:USER:PASS
+https://clientes.test/admin:brunosouza80:Brasil@14	URL:USER:PASS
+karina.cunha@clientes.example:Estrela131:http://cobranca.invalid/admin	USER:PASS:URL
+vpn-web.invalid:rafael.teixeira@intranet.test:Estrela863	URL(sem esquema):USER:PASS
+portalbanco.example/admin:elisa.costa@crm.example:2ijjc6apv27kxy	URL(sem esquema):USER:PASS
+http://portalbanco-sp.example/admin:fabiopinto45:Cachorro_98!	URL:USER:PASS
+bruno.lima@faturamento-br.example:Acesso@65	USER:PASS (sem URL)
+ead-sp.invalid/portal/entrar:queila.pinto@extranet.test:Estrela718	URL(sem esquema):USER:PASS
+tiago_silva:Chocolate875	USER:PASS (sem URL)
+elisateixeira94:Senha894:http://admin-web.invalid/login.php	USER:PASS:URL
+fabio.barros@admin-sp.test:Senha@94:https://rh.test/auth/login	USER:PASS:URL
+queila.moraes@ead-app.test:Brasil-1!:https://crm.test/auth/login	USER:PASS:URL
+marina6875:Chocolate@46:https://suporte-br.example/users/sign_in	USER:PASS:URL
+http://intranet.test/portal/entrar:diegomoraes45:Praia641	URL:USER:PASS
+https://suporte-br.test/signin:joao.souza@clientes.example:Acesso45	URL:USER:PASS
+cobranca.test/users/sign_in:hugo.braga@extranet.example:Brasil@10	URL(sem esquema):USER:PASS
+http://lojamodelo.example/login.php:joao7108:Brasil@56	URL:USER:PASS
+http://rh-app.example/users/sign_in:fabio.alves@extranet-web.example	URL:USER (sem PASS)
+ursula.cunha@portalbanco-sp.test:Futebol4!:http://cobranca.invalid/admin	USER:PASS:URL
+https://cobranca.invalid:ines.alves@intranet.test:Senha_73!	URL:USER:PASS
+https://contaonline-app.test/#/login:anabraga11:Praia205	URL:USER:PASS
+https://webmail.example/portal/entrar	URL only
+https://webmail-sp.invalid/#/login:sofia_teixeira:Senha@62	URL:USER:PASS
+http://crm-br.test/auth/login:ines.rocha@faturamento.invalid:Montanha-75!	URL:USER:PASS
+rafaelbarros87:123456:http://vpn.invalid/login	USER:PASS:URL
+tiago9782:Chocolate-93!:https://crm-sp.test/login	USER:PASS:URL
+http://contaonline.test/users/sign_in:queila.alves@admin-br.invalid:q3uugwgb	URL:USER:PASS
+webmail-web.invalid/#/login:karina.pinto@contaonline-sp.test:Acesso136	URL(sem esquema):USER:PASS
+http://intranet.test/login	URL only
+vitor.braga@lojamodelo-web.invalid:admin	USER:PASS (sem URL)
+http://webmail.invalid/login.php:elisasilva62:Musica605	URL:USER:PASS
+https://cobranca-app.test/wp-login.php:rafael.farias@admin-sp.invalid:Montanha708	URL:USER:PASS
+lucassouza22:fc7zejfutt:http://clientes-sp.invalid/wp-login.php	USER:PASS:URL
+https://rh-sp.example:nelsonsouza16:Praia788	URL:USER:PASS
+http://vpn-sp.test:karina_farias:Futebol@75	URL:USER:PASS
+ursula.alves@rh.example:qwerty123:http://admin.example/users/sign_in	USER:PASS:URL
+http://vpn.invalid:joao.moraes@ead-app.example	URL:USER (sem PASS)
+vitor.farias@vpn-app.test:Girassol:18:http://faturamento.invalid/login	USER:PASS:URL
+http://ead-br.example/users/sign_in:giselemoraes81:rfp4agung	URL:USER:PASS
+http://rh.test/login:carla.dias@vpn-br.example:Chocolate@11	URL:USER:PASS
+ead-web.test/wp-login.php:elisarocha61:senha123	URL(sem esquema):USER:PASS
+http://contaonline.invalid/#/login:vitor.teixeira@intranet.test	URL:USER (sem PASS)
+http://vpn-br.test/#/login:tiago8259:Chocolate739	URL:USER:PASS
+http://cobranca.test/signin:rafael.teixeira@contaonline-br.test:Futebol:19	URL:USER:PASS
+https://rh-sp.invalid/wp-login.php:nelsonbraga2:Praia:94	URL:USER:PASS
+https://faturamento.invalid/#/login:lucas.teixeira@suporte-app.test:Brasil_39!	URL:USER:PASS
+https://crm-app.test/login.php	URL only
+https://cobranca-app.invalid/signin:sofialima36:Acesso@26	URL:USER:PASS
+http://ead.example/signin:karina_souza	URL:USER (sem PASS)
+http://intranet-br.example/admin:karina.cunha@crm.test:senha123	URL:USER:PASS
+https://faturamento-br.test/wp-login.php	URL only
+https://faturamento-app.invalid:elisa.lima@contaonline.test:fnh2quvrkb9dbd	URL:USER:PASS
+https://lojamodelo-web.test/auth/login:bruno.alves@suporte.test:Brasil282	URL:USER:PASS
+http://portalbanco.example/auth/login	URL only
+https://portalbanco.example:queilabraga80:Verao642	URL:USER:PASS
+https://admin.invalid/signin	URL only
+http://extranet-sp.invalid/signin:queila.lima@vpn-app.test:Cachorro90!	URL:USER:PASS
+http://portalbanco-app.test/#/login:paulo.costa@clientes-web.invalid:Girassol-92!	URL:USER:PASS
+http://rh-sp.example/admin:hugolima80:Cachorro@80	URL:USER:PASS
+http://admin.test/users/sign_in:lucas_lima:Girassol_14!	URL:USER:PASS
+carla1143:123456:https://faturamento-app.example/wp-login.php	USER:PASS:URL
+http://rh.example/auth/login:paulo1179:Senha753	URL:USER:PASS
+https://webmail-sp.example/admin:olivia_braga:Cachorro166	URL:USER:PASS
+https://intranet-app.example/login.php:marina_lima:zt9wj6ddzhs5p	URL:USER:PASS
+http://portalbanco.example/signin	URL only
+queila.pinto@rh.example:Verao990	USER:PASS (sem URL)
+https://extranet-sp.example/auth/login:rafael_alves:Senha190	URL:USER:PASS
+http://ead.example/admin:elisa.braga@extranet-br.test:Montanha:53	URL:USER:PASS
+https://webmail.test/signin:olivia.silva@portalbanco-app.invalid:Girassol-19!	URL:USER:PASS
+bruno.cunha@suporte.example:Praia811	USER:PASS (sem URL)
+http://crm-br.invalid/#/login:ines.costa@clientes.invalid:Acesso46!	URL:USER:PASS
+https://extranet.example/users/sign_in:fabiosilva27:Estrela740	URL:USER:PASS
+http://contaonline-app.invalid/login.php:fabioalves69:Montanha122	URL:USER:PASS
+ana.silva@contaonline-web.test:Chocolate54!	USER:PASS (sem URL)
+gisele.alves@rh.example:qwerty123:https://clientes.example/wp-login.php	USER:PASS:URL
+intranet-br.example/admin:vitor_barros:senha123	URL(sem esquema):USER:PASS
+http://extranet-web.test:joao_barros	URL:USER (sem PASS)
+http://vpn.invalid/auth/login:hugoalves32:Cachorro857	URL:USER:PASS
+https://rh-sp.test/signin:joao.alves@crm.test:Praia:40	URL:USER:PASS
+elisa6258:Brasil@44:http://extranet-sp.invalid/login	USER:PASS:URL
+http://faturamento-br.test:3000/admin	URL only
+https://webmail.invalid/#/login:elisateixeira42:Estrela457	URL:USER:PASS
+http://faturamento-sp.example/signin:elisa.barros@intranet.invalid:Futebol@97	URL:USER:PASS
+cobranca.test:vitorsouza29:Girassol:93	URL(sem esquema):USER:PASS
+https://intranet.test/auth/login:gisele.cunha@admin-web.test:Senha@76	URL:USER:PASS
+extranet.invalid/login.php:rafael.moraes@faturamento-web.example:Senha99!	URL(sem esquema):USER:PASS
+ursula.pinto@rh.test:123456	USER:PASS (sem URL)
+fabiocosta69:Montanha63!	USER:PASS (sem URL)
+http://intranet-sp.test/login.php:oliviafarias24:wx9i6g2gt	URL:USER:PASS
+https://cobranca-br.invalid/login:vitor_teixeira:Acesso366	URL:USER:PASS
+marina.souza@portalbanco.example:Estrela_5!	USER:PASS (sem URL)
+http://portalbanco-sp.invalid:sofia3960	URL:USER (sem PASS)
+http://cobranca.test/auth/login:sofia.alves@lojamodelo-app.invalid:Chocolate930	URL:USER:PASS
+http://ead-app.example/users/sign_in:rafael8935:2xkjspidg9jzi	URL:USER:PASS
+https://ead-app.test/admin:gisele.dias@cobranca.example:Praia@45	URL:USER:PASS
+https://extranet-br.test/login.php:nelsonfarias86:Acesso:43	URL:USER:PASS
+http://extranet.example/admin:rafael.farias@webmail-app.test:Acesso_13!	URL:USER:PASS
+http://ead.invalid/signin:rafaelbarros86:Musica723	URL:USER:PASS
+joao_costa:Cachorro310:http://contaonline-br.test	USER:PASS:URL
+https://faturamento-app.example/login:nelson.cunha@extranet.invalid:Estrela:97	URL:USER:PASS
+faturamento-app.test/login:brunodias74:Praia381	URL(sem esquema):USER:PASS
+ana_farias:Acesso@24:https://lojamodelo-web.invalid/auth/login	USER:PASS:URL
+https://crm.invalid:sofia.lima@cobranca.test:Brasil23	URL:USER:PASS
+http://rh-sp.test/#/login:olivia4129:qwerty123	URL:USER:PASS
+carla.braga@portalbanco.test:Praia@87:https://contaonline-br.invalid	USER:PASS:URL
+hugo.moraes@extranet-app.test:u2s6hahv3h:https://suporte.example/login.php	USER:PASS:URL
+https://vpn.invalid/wp-login.php:bruno.alves@ead.invalid:Musica94	URL:USER:PASS
+http://vpn-web.test/login:tiagorocha8:Senha@29	URL:USER:PASS
+https://webmail-br.example/portal/entrar:tiago7689:Brasil841	URL:USER:PASS
+http://cobranca.test/#/login:queila.braga@extranet.invalid:Estrela@77	URL:USER:PASS
+http://admin.invalid/auth/login:joaocosta73:Senha857	URL:USER:PASS
+https://portalbanco-sp.invalid/portal/entrar:elisa.souza@vpn-app.invalid:Senha@40	URL:USER:PASS
+clientes.invalid/login:diego8985:Chocolate927	URL(sem esquema):USER:PASS
+https://ead.invalid:paulopinto99:Praia:67	URL:USER:PASS
+https://rh-sp.example/login.php:nelson9366:Chocolate:72	URL:USER:PASS
+vitor.costa@crm.example:Montanha_24!	USER:PASS (sem URL)
+http://faturamento.test/#/login:elisafarias10:f6ib7im9j9	URL:USER:PASS
+queilamoraes19:Cachorro263:http://ead-app.invalid/portal/entrar	USER:PASS:URL
+http://ead-br.invalid/portal/entrar:karina_moraes:Girassol850	URL:USER:PASS
+http://admin-app.example/#/login:ursula.braga@clientes.test:Praia@73	URL:USER:PASS
+http://crm-sp.example/portal/entrar:elisa.silva@lojamodelo-web.example:qwerty123	URL:USER:PASS
+https://cobranca.example:tiago.farias@admin.invalid:Acesso99!	URL:USER:PASS
+hugo.dias@extranet-br.invalid:Estrela34!	USER:PASS (sem URL)
+lojamodelo.test/admin:fabio_farias:Brasil6!	URL(sem esquema):USER:PASS
+https://suporte-web.test/auth/login:lucasmoraes90:Futebol395	URL:USER:PASS
+http://lojamodelo.test/login.php:joao.teixeira@vpn.example:Praia88	URL:USER:PASS
+https://webmail.example/portal/entrar:queilateixeira15:Girassol947	URL:USER:PASS
+fabiopinto19:Praia-76!:https://webmail.invalid/login	USER:PASS:URL
+sofia.lima@extranet.invalid:Acesso:41	USER:PASS (sem URL)
+http://clientes.test/wp-login.php:sofiadias20:Montanha:95	URL:USER:PASS
+https://suporte-app.invalid/login:lucas.alves@lojamodelo.example:Acesso@24	URL:USER:PASS
+https://rh-br.test/wp-login.php:gisele.alves@crm.test:123456	URL:USER:PASS
+http://extranet-br.invalid/login	URL only
+https://extranet.test/wp-login.php:karinateixeira57:Senha@70	URL:USER:PASS
+http://faturamento.test/login.php	URL only
+https://admin-br.invalid/users/sign_in:vitorfarias98:Brasil@97	URL:USER:PASS
+gisele.pinto@portalbanco-sp.test:Futebol504	USER:PASS (sem URL)
+cobranca.test:ana.farias@cobranca.example:Musica-61!	URL(sem esquema):USER:PASS
+https://vpn.test/login.php:ursula.teixeira@rh-sp.invalid:Brasil_2!	URL:USER:PASS
+http://portalbanco-app.example/users/sign_in:fabio.lima@webmail-sp.test:123456	URL:USER:PASS
+https://suporte-br.test/#/login:hugo.moraes@vpn-br.invalid:Acesso@33	URL:USER:PASS
+http://intranet.test/#/login:vitoralves30:Estrela108	URL:USER:PASS
+ines_teixeira:Musica@35:http://cobranca-web.invalid/portal/entrar	USER:PASS:URL
+https://admin.test/auth/login:elisa.braga@ead-app.test:Verao@83	URL:USER:PASS
+https://rh.invalid/admin:sofiabraga30	URL:USER (sem PASS)
+fabio.pinto@ead-app.test:Musica573:https://webmail.invalid/login	USER:PASS:URL
+http://cobranca.invalid/#/login:karina.lima@webmail.test	URL:USER (sem PASS)
+http://admin-web.invalid/wp-login.php	URL only
+lucas.lima@extranet-sp.test:Acesso:21	USER:PASS (sem URL)
+https://lojamodelo-web.example/signin:fabio8267:2tdgef8pv3	URL:USER:PASS
+http://webmail-br.test/signin	URL only
+http://intranet-sp.test/users/sign_in	URL only
+https://contaonline-br.example/signin:bruno.dias@crm-sp.test:Girassol250	URL:USER:PASS
+rafael_alves:Brasil542:http://vpn.example/wp-login.php	USER:PASS:URL
+http://vpn.invalid/auth/login:ana.costa@portalbanco-app.invalid:Brasil@21	URL:USER:PASS
+http://clientes-app.example/login:nelson.souza@vpn-sp.test	URL:USER (sem PASS)
+fabio_farias:Chocolate132	USER:PASS (sem URL)
+rafaelcunha76:Girassol871	USER:PASS (sem URL)
+ines.pinto@cobranca.test:Montanha@64:https://vpn-sp.example/users/sign_in	USER:PASS:URL
+carla.farias@portalbanco.example:Musica_25!	USER:PASS (sem URL)
+https://rh-br.test/users/sign_in:fabio.dias@contaonline.invalid:Brasil895	URL:USER:PASS
+http://clientes-br.invalid:8000/signin	URL only
+http://intranet-web.test/#/login:marina_alves:Chocolate@45	URL:USER:PASS
+https://vpn.invalid/users/sign_in:elisa.costa@contaonline-br.example:Cachorro@97	URL:USER:PASS
+http://contaonline.test/admin:karinamoraes89	URL:USER (sem PASS)
+ursula_lima:Acesso@40:http://crm-br.example/wp-login.php	USER:PASS:URL
+bruno_cunha:Chocolate@82:http://intranet-sp.test/#/login	USER:PASS:URL
+https://cobranca.invalid/auth/login:olivia_rocha:Futebol@85	URL:USER:PASS
+https://rh-br.example/portal/entrar:joaosouza22:Acesso341	URL:USER:PASS
+https://extranet-br.invalid/login.php:ines1615:Chocolate30!	URL:USER:PASS
+https://extranet-br.example:queila.braga@vpn.example:senha123	URL:USER:PASS
+https://crm-app.test/login:ursula.silva@vpn-sp.invalid:Chocolate:10	URL:USER:PASS
+intranet-sp.test/users/sign_in:ines_moraes:102030	URL(sem esquema):USER:PASS
+https://faturamento-app.invalid/wp-login.php:gisele.braga@portalbanco.test:Chocolate346	URL:USER:PASS
+https://webmail-app.invalid/signin:tiagocosta20:Musica249	URL:USER:PASS
+http://suporte.example/signin:rafael5255:Senha939	URL:USER:PASS
+cobranca-app.test/auth/login:inesbarros77:Futebol:84	URL(sem esquema):USER:PASS
+ursula.teixeira@faturamento-br.test:Cachorro-45!:https://suporte-sp.invalid/auth/login	USER:PASS:URL
+http://vpn.example/portal/entrar:joao.pinto@lojamodelo-sp.example:Brasil194	URL:USER:PASS
+http://extranet.example:hugo.moraes@extranet.invalid:Montanha882	URL:USER:PASS
+https://intranet-app.invalid:elisa.silva@extranet-sp.example:Brasil603	URL:USER:PASS
+http://portalbanco-app.example/login:vitor.lima@contaonline-br.invalid:dt4b22ndb5i2	URL:USER:PASS
+lojamodelo-sp.test/admin:joaodias58:Estrela@37	URL(sem esquema):USER:PASS
+https://admin.example:diego.dias@portalbanco-br.invalid	URL:USER (sem PASS)
+elisa8795:Senha_51!:https://clientes-web.example/#/login	USER:PASS:URL
+http://clientes-web.invalid:8443/login.php	URL only
+http://portalbanco-app.example/login:fabiocosta47:Chocolate64!	URL:USER:PASS
+https://webmail-web.invalid:8000/#/login	URL only
+diego.dias@cobranca.test:admin	USER:PASS (sem URL)
+http://portalbanco.test:olivia_teixeira:Musica779	URL:USER:PASS
+lucas2073:Montanha538:https://portalbanco-app.example	USER:PASS:URL
+https://rh-app.example/wp-login.php:elisa.souza@rh.invalid:qwerty123	URL:USER:PASS
+suporte-sp.test/users/sign_in:rafael.farias@vpn.test:123456	URL(sem esquema):USER:PASS
+http://cobranca-sp.invalid/#/login:tiago.rocha@contaonline-app.invalid	URL:USER (sem PASS)
+rafael_silva:Cachorro@11	USER:PASS (sem URL)
+ursula.dias@admin-app.example:Senha@26	USER:PASS (sem URL)
+gisele_braga:Musica98!:http://clientes-web.example/users/sign_in	USER:PASS:URL
+https://ead-web.invalid/login.php	URL only
+http://extranet-sp.example/wp-login.php:rafael.moraes@crm.invalid:Estrela:44	URL:USER:PASS
+http://cobranca-sp.example/users/sign_in:oliviamoraes80	URL:USER (sem PASS)
+portalbanco-app.example/users/sign_in:queilabraga92:Verao297	URL(sem esquema):USER:PASS
+http://intranet.test/login.php:marina.souza@portalbanco-sp.invalid:Acesso_44!	URL:USER:PASS
+https://cobranca.invalid/login.php:rafael_farias:Senha_16!	URL:USER:PASS
+http://suporte-app.test/login.php:vitorteixeira29:Futebol-19!	URL:USER:PASS
+http://cobranca.invalid:8080/login.php	URL only
+https://ead.example:8443/signin	URL only
+karina5364:Acesso539:https://faturamento-web.invalid/login	USER:PASS:URL
+https://vpn.test:elisamoraes39:Girassol276	URL:USER:PASS
+http://lojamodelo.example/wp-login.php:rafael.costa@crm-web.test	URL:USER (sem PASS)
+marina3951:Verao345	USER:PASS (sem URL)
+https://contaonline.test/login:diego7473:Futebol841	URL:USER:PASS
+http://rh.example/login:diegocosta65:a5w6dq5mqspy5f	URL:USER:PASS
+rafael.dias@webmail.invalid:Cachorro@22	USER:PASS (sem URL)
+http://vpn-app.example/admin:elisafarias97:Brasil300	URL:USER:PASS
+http://portalbanco.test:3000/auth/login	URL only
+hugo9807:102030	USER:PASS (sem URL)
+vitor.alves@portalbanco-web.test:Chocolate38:https://admin-app.example/login.php	USER:PASS:URL
+bruno.souza@extranet.example:Chocolate641:https://portalbanco-br.example/wp-login.php	USER:PASS:URL
+paulo.teixeira@crm-sp.invalid:Chocolate68!:https://cobranca.invalid/login.php	USER:PASS:URL
+lojamodelo.test/signin:tiago.barros@ead.test:Musica797	URL(sem esquema):USER:PASS
+https://suporte-sp.invalid/#/login	URL only
+https://lojamodelo-sp.invalid/admin:paulo.barros@ead.test:wkvkftrqa4c	URL:USER:PASS
+http://admin.example/admin:fabiosilva29:Cachorro-99!	URL:USER:PASS
+https://clientes-sp.test/signin:vitorbraga88:Verao558	URL:USER:PASS
+http://faturamento-app.test/auth/login:paulocosta23:Estrela802	URL:USER:PASS
+vpn.invalid/admin:tiago.silva@suporte-app.example:6bjdkea7c6x	URL(sem esquema):USER:PASS
+https://cobranca.example/wp-login.php:ines439:Girassol@52	URL:USER:PASS
+giselemoraes39:Futebol:27	USER:PASS (sem URL)
+sofia.farias@intranet-br.test:Montanha54!	USER:PASS (sem URL)
+https://lojamodelo.invalid/login.php:nelsonrocha65:qwerty123	URL:USER:PASS
+https://rh.test/login:rafael_cunha:pcgihajw9neq	URL:USER:PASS
+https://crm-app.test:8000/login	URL only
+http://cobranca.example/login:ines1776:Brasil88!	URL:USER:PASS
+https://ead.example:brunofarias54	URL:USER (sem PASS)
+http://cobranca-sp.test/#/login:fabio.silva@faturamento-web.invalid:Senha@13	URL:USER:PASS
+oliviasouza51:Cachorro739	USER:PASS (sem URL)
+http://admin-sp.invalid/login.php:sofia3945:123456	URL:USER:PASS
+http://ead-web.example/#/login:bruno.moraes@clientes-sp.example:Girassol@35	URL:USER:PASS
+bruno9436:Estrela@61:https://contaonline-br.invalid/wp-login.php	USER:PASS:URL
+http://lojamodelo-br.example/signin:joao.dias@ead.test	URL:USER (sem PASS)
+marina.costa@intranet-sp.test:Estrela-66!	USER:PASS (sem URL)
+https://webmail-sp.test/portal/entrar:karinadias69:Girassol222	URL:USER:PASS
+http://vpn-sp.invalid/auth/login:nelson_souza:Acesso662	URL:USER:PASS
+http://admin.example/users/sign_in:ines.farias@intranet-br.test:Montanha@53	URL:USER:PASS
+diego9899:txga2cxa8dqf	USER:PASS (sem URL)
+queila.pinto@cobranca-sp.invalid:senha123:https://intranet-app.test	USER:PASS:URL
+https://crm.invalid/users/sign_in:joaosilva95:qwerty123	URL:USER:PASS
+https://rh-web.test/users/sign_in:carla.farias@cobranca.test:Praia@29	URL:USER:PASS
+clientes.example/admin:hugo.cunha@vpn.invalid:Futebol:24	URL(sem esquema):USER:PASS
+https://vpn.invalid/admin:diego_rocha:Verao@82	URL:USER:PASS
+clientes.invalid/login:karina.rocha@lojamodelo.invalid:Estrela_5!	URL(sem esquema):USER:PASS
+carlarocha67:Senha-94!:https://cobranca.invalid/users/sign_in	USER:PASS:URL
+joao_farias:Senha_33!:http://intranet.example/login	USER:PASS:URL
+nelsonsilva88:Chocolate52!:https://crm.invalid/users/sign_in	USER:PASS:URL
+http://clientes-br.test/signin:ana.dias@ead.test:Acesso48!	URL:USER:PASS
+http://webmail.example/login:inesdias62:ucg3rsufdpw2	URL:USER:PASS
+contaonline.invalid/wp-login.php:nelsonteixeira68:Girassol-62!	URL(sem esquema):USER:PASS
+http://admin.test/signin:sofia.cunha@extranet.invalid:Futebol48!	URL:USER:PASS
+rafael.souza@extranet-br.test:Musica@33:https://intranet-app.test/wp-login.php	USER:PASS:URL
+ines.pinto@suporte.test:Verao801	USER:PASS (sem URL)
+http://admin.test:elisa1092:Girassol432	URL:USER:PASS
+https://vpn-web.invalid/login.php:lucascunha81:Estrela42	URL:USER:PASS
+http://intranet-web.invalid/#/login:nelsonbraga28:Futebol66	URL:USER:PASS
+https://suporte-br.invalid/users/sign_in:gisele.silva@cobranca.test:Chocolate@91	URL:USER:PASS
+queilamoraes52:Musica260	USER:PASS (sem URL)
+lojamodelo.example/users/sign_in:fabiopinto45:admin	URL(sem esquema):USER:PASS
+https://admin-br.test/login:olivia.pinto@portalbanco.invalid:Acesso765	URL:USER:PASS
+https://crm-sp.test/auth/login	URL only
+http://ead.example/users/sign_in:rafael.silva@ead-app.test:senha123	URL:USER:PASS
+vitor_alves:Estrela_31!:http://contaonline-br.invalid/users/sign_in	USER:PASS:URL
+http://rh.test/users/sign_in:joao_dias:Girassol19!	URL:USER:PASS
+https://suporte.invalid/admin:diegocosta63:Brasil61	URL:USER:PASS
+carla2722:Senha@49	USER:PASS (sem URL)
+faturamento.test/login.php:rafael.rocha@rh.invalid:Chocolate91!	URL(sem esquema):USER:PASS
+carla.alves@ead-br.invalid:Acesso@60:http://webmail.test/users/sign_in	USER:PASS:URL
+carlafarias80:Montanha860:https://contaonline-app.invalid/auth/login	USER:PASS:URL
+rafael.barros@ead-web.example:Montanha90:http://vpn-br.test/#/login	USER:PASS:URL
+https://faturamento.example/login.php:olivia_rocha:Senha422	URL:USER:PASS
+https://ead.example/login.php:karina5882:Montanha_2!	URL:USER:PASS
+https://portalbanco.invalid/wp-login.php:anaalves33:Futebol@91	URL:USER:PASS
+http://clientes.invalid/#/login:joaofarias50	URL:USER (sem PASS)
+https://webmail.invalid/wp-login.php:sofiasilva97:Musica@75	URL:USER:PASS
+vitoralves11:Senha@79:https://admin-web.invalid/portal/entrar	USER:PASS:URL
+http://suporte.test/auth/login:tiago_lima:admin	URL:USER:PASS
+http://cobranca-sp.test/login.php:sofiasilva61:Praia@66	URL:USER:PASS
+https://admin.invalid/portal/entrar:nelson290	URL:USER (sem PASS)
+olivia.silva@webmail-br.test:Praia@42:https://admin-sp.invalid/users/sign_in	USER:PASS:URL
+intranet-sp.test/portal/entrar:lucas8079:Praia:45	URL(sem esquema):USER:PASS
+elisa.silva@faturamento-br.test:Musica47:https://faturamento.invalid/wp-login.php	USER:PASS:URL
+https://cobranca.test/signin:oliviadias41:Girassol@10	URL:USER:PASS
+http://contaonline.example/login.php:diego5863:123456	URL:USER:PASS
+https://portalbanco-br.test/portal/entrar:rafael.souza@lojamodelo.example:Praia303	URL:USER:PASS
+http://extranet-sp.test/signin:tiago.rocha@clientes.example	URL:USER (sem PASS)
+karina.farias@lojamodelo-br.invalid:Chocolate-11!	USER:PASS (sem URL)
+http://rh-br.test/admin:hugofarias22:Cachorro428	URL:USER:PASS
+vitorteixeira26:Girassol684	USER:PASS (sem URL)
+http://portalbanco.example/#/login:vitorsouza68:Cachorro-79!	URL:USER:PASS
+http://contaonline-app.example/login:ana_cunha:Acesso@98	URL:USER:PASS
+http://extranet-app.example/#/login:joao6458:Chocolate681	URL:USER:PASS
+http://contaonline-br.test/auth/login:vitor5177:Verao815	URL:USER:PASS
+https://lojamodelo.example/#/login:sofia_braga:xynyd528sa5j	URL:USER:PASS
+https://rh-web.test/portal/entrar:fabio.barros@contaonline.test:Girassol:23	URL:USER:PASS
+https://portalbanco-web.test/login.php:queilaalves79:Montanha641	URL:USER:PASS
+https://portalbanco-sp.example/admin:carla1422	URL:USER (sem PASS)
+https://faturamento-app.example/login:sofia8212	URL:USER (sem PASS)
+nelson.alves@extranet.invalid:Estrela:68	USER:PASS (sem URL)
+https://contaonline.invalid/login.php:joaolima83:edudjbk6	URL:USER:PASS
+http://cobranca.test/login:marina9997:Estrela:30	URL:USER:PASS
+https://vpn-br.invalid/admin:gisele.teixeira@rh-sp.test:Acesso49	URL:USER:PASS
+https://portalbanco-sp.test:diegoalves89:Senha@12	URL:USER:PASS
+https://lojamodelo.example/signin:diego.rocha@vpn.example:Girassol183	URL:USER:PASS
+https://cobranca-br.test/login.php:queila.alves@lojamodelo-br.example:Futebol_59!	URL:USER:PASS
+http://faturamento-sp.example:3000/admin	URL only
+http://crm-sp.invalid/portal/entrar:paulo_costa:Girassol828	URL:USER:PASS
+http://admin-app.invalid/admin:nelson445:Estrela62	URL:USER:PASS
+gisele.souza@rh-web.example:Chocolate@50	USER:PASS (sem URL)
+marina9159:123456	USER:PASS (sem URL)
+contaonline-br.test:marinarocha37:Verao409	URL(sem esquema):USER:PASS
+webmail-sp.invalid/portal/entrar:joao1161:Cachorro_54!	URL(sem esquema):USER:PASS
+http://webmail-app.example/signin:tiagodias68:senha123	URL:USER:PASS
+http://intranet-app.test:elisa.braga@suporte-sp.test:Acesso@79	URL:USER:PASS
+olivia.braga@rh-app.test:vkhbg4qhkybyhd:http://webmail-web.example/login	USER:PASS:URL
+tiago.lima@intranet.invalid:Cachorro338:http://lojamodelo.example/#/login	USER:PASS:URL
+https://portalbanco.test/login:karina.alves@clientes.test:Senha@68	URL:USER:PASS
+http://extranet-app.test/#/login:karina_braga	URL:USER (sem PASS)
+https://contaonline-br.example/portal/entrar:tiagocosta29:Verao@43	URL:USER:PASS
+elisa.souza@clientes.test:Girassol13!:https://admin-br.example/portal/entrar	USER:PASS:URL
+extranet-web.example/#/login:tiago.braga@rh.invalid:hm4srjyhmuu525	URL(sem esquema):USER:PASS
+diegoteixeira67:7w2msewwmkbb	USER:PASS (sem URL)
+http://extranet-sp.invalid/admin:sofia.alves@clientes.test:Verao16!	URL:USER:PASS
+ead-br.test/login.php:fabio.barros@extranet-app.example:Cachorro@32	URL(sem esquema):USER:PASS
+diegobraga85:Brasil208:https://crm-sp.test/#/login	USER:PASS:URL
+https://faturamento.test/portal/entrar:queila7681:Brasil_20!	URL:USER:PASS
+ead-web.invalid/admin:joao.cunha@admin-br.example:Senha_25!	URL(sem esquema):USER:PASS
+https://contaonline.example/admin:sofiateixeira33:Musica822	URL:USER:PASS
+https://vpn.example/login.php:marina4115:Chocolate743	URL:USER:PASS
+http://crm-web.test/login:ines.farias@extranet-app.example:Cachorro@95	URL:USER:PASS
+http://clientes.test/signin:ursula.moraes@contaonline-web.test:z7nht9xvru	URL:USER:PASS
+http://extranet.example/signin	URL only
+https://webmail-sp.test:3000/login	URL only
+https://admin-app.test/users/sign_in:ines.silva@crm.test:Musica@19	URL:USER:PASS
+https://cobranca.invalid/portal/entrar:lucas.moraes@intranet.example	URL:USER (sem PASS)
+faturamento-br.example/admin:sofia.dias@portalbanco.test:Chocolate:24	URL(sem esquema):USER:PASS
+olivia7825:Cachorro544	USER:PASS (sem URL)
+https://vpn-app.test/users/sign_in:queila.costa@webmail-br.invalid	URL:USER (sem PASS)
+http://clientes-br.example/wp-login.php:nelson_alves	URL:USER (sem PASS)
+https://suporte-sp.invalid:fabio.costa@vpn.example:Verao:27	URL:USER:PASS
+http://suporte-br.test/#/login:diego.dias@crm-app.example:Praia@16	URL:USER:PASS
+joao_costa:Girassol-72!	USER:PASS (sem URL)
+bruno4273:Senha:23:http://webmail.example/signin	USER:PASS:URL
+http://admin.example:8080/login.php	URL only
+http://rh-app.test/auth/login:carla.alves@rh-web.example:Montanha-99!	URL:USER:PASS
+https://ead-br.test/auth/login:paulo.lima@intranet-br.test	URL:USER (sem PASS)
+rafael.dias@webmail-app.test:Senha376:https://extranet.test/auth/login	USER:PASS:URL
+http://portalbanco-app.test/signin:vitor.moraes@cobranca-web.example:Verao-59!	URL:USER:PASS
+http://rh.test/users/sign_in:marina_braga:Estrela215	URL:USER:PASS
+hugopinto42:xpk7jeeqzdt:http://intranet-br.example/login	USER:PASS:URL
+http://rh-br.example/portal/entrar:carla7301:Cachorro@49	URL:USER:PASS
+tiago.moraes@extranet.invalid:Cachorro:34	USER:PASS (sem URL)
+marina.alves@portalbanco-app.test:Girassol853:https://contaonline-web.example/users/sign_in	USER:PASS:URL
+http://extranet-web.invalid/wp-login.php:gisele_dias:Senha83!	URL:USER:PASS
+https://admin-br.invalid/#/login	URL only
+http://clientes-br.example/login:joao7346:Verao_2!	URL:USER:PASS
+joao.alves@portalbanco-app.example:7b7q32sr3uk:https://suporte-br.invalid/wp-login.php	USER:PASS:URL
+http://cobranca-br.invalid/signin:gisele_alves:Musica742	URL:USER:PASS
+https://vpn-sp.test/admin:vitorrocha99:Verao:44	URL:USER:PASS
+ead.test/#/login:paulosilva47:123456	URL(sem esquema):USER:PASS
+tiago.teixeira@lojamodelo.invalid:Futebol:42:https://suporte-web.invalid/auth/login	USER:PASS:URL
+https://contaonline-sp.test/users/sign_in:ines_pinto:Futebol804	URL:USER:PASS
+nelson.rocha@vpn.invalid:Praia398:http://crm-br.test/login.php	USER:PASS:URL
+karina_rocha:Girassol@48:http://cobranca-web.test/login	USER:PASS:URL
+cobranca-web.test/login:ana2202:Girassol548	URL(sem esquema):USER:PASS
+https://cobranca-web.test/auth/login	URL only
+http://lojamodelo-sp.invalid/wp-login.php:ursula_cunha:Musica_62!	URL:USER:PASS
+paulo1819:Acesso:29:https://vpn-web.invalid/wp-login.php	USER:PASS:URL
+sofia_costa:Estrela878	USER:PASS (sem URL)
+rafael.cunha@contaonline-br.test:Girassol325:http://intranet-app.test	USER:PASS:URL
+https://ead.test/login	URL only
+rafael.silva@ead-app.test:Verao245:https://webmail.test/login.php	USER:PASS:URL
+https://lojamodelo.invalid	URL only
+http://contaonline.test/login.php:fabio.alves@clientes-web.invalid:Verao49!	URL:USER:PASS
+https://cobranca-web.test/signin:lucas.dias@lojamodelo-sp.test:a98shm6tncue	URL:USER:PASS
+http://rh.example/auth/login:sofia6866	URL:USER (sem PASS)
+http://cobranca-app.invalid/admin:ana.barros@cobranca-br.invalid:Girassol809	URL:USER:PASS
+https://crm-web.test:marinasouza29:Acesso661	URL:USER:PASS
+http://intranet-br.invalid	URL only
+http://extranet.test/auth/login:ursula.rocha@ead-web.invalid:Futebol638	URL:USER:PASS
+http://vpn.example/login.php	URL only
+https://extranet.test/#/login	URL only
+https://ead.test/login.php:diegoteixeira15:Chocolate71	URL:USER:PASS
+http://rh-sp.invalid/auth/login:rafael.barros@crm-br.example:Musica_70!	URL:USER:PASS
+https://extranet.invalid/#/login:elisa.costa@portalbanco.invalid:Brasil-23!	URL:USER:PASS
+tiagopinto34:Estrela:23:https://intranet-web.example/users/sign_in	USER:PASS:URL
+https://cobranca.invalid/admin:karina.farias@lojamodelo-app.invalid:Senha618	URL:USER:PASS
+http://admin.invalid/login.php:lucas.costa@vpn.test:Girassol733	URL:USER:PASS
+http://contaonline-br.test:tiagocunha69:Musica-75!	URL:USER:PASS
+ana.rocha@clientes-sp.example:Estrela-74!:http://extranet.example	USER:PASS:URL
+intranet-app.test/users/sign_in:vitor.braga@intranet-sp.example:Verao766	URL(sem esquema):USER:PASS
+http://vpn.invalid/users/sign_in:joaobarros70:Verao22!	URL:USER:PASS
+https://clientes-app.example/#/login	URL only
+http://extranet-sp.invalid/auth/login:ana.rocha@rh.test:Senha936	URL:USER:PASS
+https://extranet.invalid/wp-login.php	URL only
+https://clientes.invalid:karina.alves@intranet-app.example:Acesso@27	URL:USER:PASS
+https://ead-br.test/portal/entrar:queila8268:Futebol767	URL:USER:PASS
+rafaelsilva6:Brasil:81	USER:PASS (sem URL)
+inesalves74:Estrela83!	USER:PASS (sem URL)
+http://admin-br.test:hugo3036:Brasil519	URL:USER:PASS
+tiagopinto7:Chocolate820	USER:PASS (sem URL)
+https://vpn.test/login.php:gisele.costa@suporte-br.invalid:senha123	URL:USER:PASS
+https://intranet-web.test/users/sign_in:vitor.lima@webmail.test:8fbt8q4erh	URL:USER:PASS
+https://faturamento-web.example/portal/entrar:vitorrocha9	URL:USER (sem PASS)
+https://extranet-br.invalid/#/login:sofiabraga23:Cachorro926	URL:USER:PASS
+https://intranet-br.invalid:8000/portal/entrar	URL only
+https://cobranca-app.test:8000/users/sign_in	URL only
+https://contaonline.invalid/login	URL only
+https://rh.invalid:brunopinto68:Verao689	URL:USER:PASS
+http://crm.test/portal/entrar:paulo.rocha@crm.example:Chocolate333	URL:USER:PASS
+https://extranet-app.invalid/login.php:carla_farias:Brasil-61!	URL:USER:PASS
+https://extranet-sp.example/login.php	URL only
+elisa8024:Brasil:39:http://clientes.test/#/login	USER:PASS:URL
+rafaelcunha71:Cachorro_47!	USER:PASS (sem URL)
+https://suporte.example/#/login	URL only
+http://lojamodelo.test:anacunha1	URL:USER (sem PASS)
+http://rh-app.invalid/login:hugofarias23:123456	URL:USER:PASS
+http://crm-app.invalid/wp-login.php:gisele.barros@portalbanco-sp.invalid:Praia745	URL:USER:PASS
+http://suporte-web.example/login.php:olivia.alves@intranet-sp.test	URL:USER (sem PASS)
+https://rh-sp.example/admin:nelsoncosta1:Montanha@37	URL:USER:PASS
+http://suporte.invalid/portal/entrar:ursulaalves93:Cachorro_58!	URL:USER:PASS
+http://extranet.invalid/portal/entrar	URL only
+tiago.teixeira@crm.example:Montanha289:https://admin.invalid/wp-login.php	USER:PASS:URL
+clientes.test:tiago_moraes:mesnwhzu2z	URL(sem esquema):USER:PASS
+https://intranet.example/auth/login:fabio6206	URL:USER (sem PASS)
+paulo.costa@extranet.invalid:Senha-19!:http://webmail.invalid/login.php	USER:PASS:URL
+karinadias46:Praia963	USER:PASS (sem URL)
+https://extranet-br.test/auth/login:hugo.souza@contaonline.test:Acesso@28	URL:USER:PASS
+https://ead-sp.test/auth/login:ines_alves:kpzd4wnqcc85m	URL:USER:PASS
+http://suporte-br.invalid/auth/login:diegodias58	URL:USER (sem PASS)
+https://intranet.invalid/signin:paulo.costa@clientes-app.invalid:Cachorro381	URL:USER:PASS
+diego9797:123456:http://faturamento-web.invalid/login.php	USER:PASS:URL
+http://admin-app.invalid/admin:gisele_braga	URL:USER (sem PASS)
+marina.rocha@portalbanco.example:Futebol873:http://intranet-sp.invalid	USER:PASS:URL
+vitor_moraes:Verao618	USER:PASS (sem URL)
+rafael2564:Montanha:57:https://crm.invalid/portal/entrar	USER:PASS:URL
+clientes.example/login.php:rafael8588:Futebol@53	URL(sem esquema):USER:PASS
+http://admin-app.example/users/sign_in:sofia3835	URL:USER (sem PASS)
+https://clientes-sp.test/login:ines2026:Praia425	URL:USER:PASS
+http://cobranca.test/login.php:ursulapinto91:Futebol_37!	URL:USER:PASS
+karinapinto72:Girassol717	USER:PASS (sem URL)
+https://extranet-web.example:nelsonbarros29	URL:USER (sem PASS)
+https://suporte.invalid/#/login:diegoteixeira43:Acesso119	URL:USER:PASS
+vitorfarias41:khhdptv8:https://suporte-app.test	USER:PASS:URL
+https://extranet.invalid/portal/entrar	URL only
+carla.braga@intranet.invalid:Montanha:98	USER:PASS (sem URL)
+rafael.braga@cobranca.example:Cachorro850	USER:PASS (sem URL)
+carla.souza@crm-web.example:senha123:https://crm.example/login.php	USER:PASS:URL
+lucasbraga49:Senha155:https://portalbanco.invalid/portal/entrar	USER:PASS:URL
+https://crm.invalid/wp-login.php:nelson_farias	URL:USER (sem PASS)
+http://contaonline.invalid/signin:joao.pinto@admin-app.test:Cachorro@74	URL:USER:PASS
+http://cobranca.invalid:vitor.barros@suporte.invalid:Chocolate571	URL:USER:PASS
+http://portalbanco.example:fabio.costa@intranet.test:Praia@69	URL:USER:PASS
+https://webmail.example:8443/#/login	URL only
+contaonline.test/wp-login.php:tiago.barros@contaonline-sp.example:Girassol:80	URL(sem esquema):USER:PASS
+https://admin-app.invalid/users/sign_in:diego.alves@lojamodelo-br.test:Futebol124	URL:USER:PASS
+webmail-web.invalid/users/sign_in:fabio_rocha:Brasil951	URL(sem esquema):USER:PASS
+vitor.lima@clientes-web.example:Chocolate@99:https://intranet-app.invalid/#/login	USER:PASS:URL
+faturamento.test/login:vitor.braga@crm.test:qwerty123	URL(sem esquema):USER:PASS
+http://faturamento-sp.test/portal/entrar:diego_alves	URL:USER (sem PASS)
+bruno.braga@lojamodelo-br.example:Girassol249:https://portalbanco.test	USER:PASS:URL
+http://webmail.example:3000/users/sign_in	URL only
+https://cobranca.invalid	URL only
+ead.test:sofia.moraes@portalbanco.invalid:Estrela293	URL(sem esquema):USER:PASS
+http://faturamento-app.example/#/login:queila2246:Estrela_98!	URL:USER:PASS
+https://extranet-web.test/users/sign_in:ursula.costa@ead.invalid:6xiiw6d5szpe	URL:USER:PASS
+http://contaonline.example/admin	URL only
+suporte.test/wp-login.php:ursula_moraes:Futebol211	URL(sem esquema):USER:PASS
+joao.lima@rh-sp.test:Estrela@94:https://extranet.test/users/sign_in	USER:PASS:URL
+oliviacosta73:Verao-73!:https://ead.invalid/users/sign_in	USER:PASS:URL
+https://extranet.example/signin:tiagodias85:Brasil-36!	URL:USER:PASS
+bruno.braga@cobranca-web.test:admin:https://rh-sp.example	USER:PASS:URL
+lucas.braga@portalbanco.example:Montanha369:http://cobranca.test/wp-login.php	USER:PASS:URL
+https://clientes.invalid:diego_farias:Senha:43	URL:USER:PASS
+https://clientes.example/login.php:ursula.teixeira@intranet.example:Verao@80	URL:USER:PASS
+suporte.test:rafaelmoraes38:Praia381	URL(sem esquema):USER:PASS
+https://rh.invalid/login.php:elisa.barros@clientes.test:Brasil948	URL:USER:PASS
+http://lojamodelo-web.example/admin:nelson_lima:Acesso-47!	URL:USER:PASS
+http://extranet.test/users/sign_in:brunosilva38:Chocolate@51	URL:USER:PASS
+tiagomoraes90:4h3k2n2s:http://cobranca-app.test/admin	USER:PASS:URL
+queila.pinto@rh.example:Senha463	USER:PASS (sem URL)
+http://portalbanco.example/signin:tiago.souza@crm.test:Estrela_38!	URL:USER:PASS
+vitor.dias@contaonline.invalid:Chocolate884:http://admin.test/admin	USER:PASS:URL
+https://lojamodelo-sp.example/login:ana7157:Praia@59	URL:USER:PASS
+https://contaonline.invalid/signin:joaosouza41:102030	URL:USER:PASS
+queila.costa@extranet.invalid:Cachorro-73!:http://lojamodelo-sp.example/portal/entrar	USER:PASS:URL
+lucas.costa@admin-app.test:Montanha-77!:http://cobranca.example/users/sign_in	USER:PASS:URL
+gisele4044:Girassol210	USER:PASS (sem URL)
+vitorpinto98:Acesso@51	USER:PASS (sem URL)
+http://crm.test/login:diego.silva@webmail-app.example:Acesso142	URL:USER:PASS
+http://extranet-br.example/login:karina.lima@admin-br.example	URL:USER (sem PASS)
+gisele.dias@faturamento.example:Verao@40	USER:PASS (sem URL)
+http://portalbanco.invalid/wp-login.php	URL only
+https://faturamento-br.test:8080/auth/login	URL only
+cobranca-br.invalid/login.php:fabio.braga@ead.example:Acesso@26	URL(sem esquema):USER:PASS
+http://cobranca.invalid/portal/entrar:fabio3374:Verao@83	URL:USER:PASS
+https://ead-br.test/login:joao_barros:Verao419	URL:USER:PASS
+https://admin.example:hugodias26:Chocolate74!	URL:USER:PASS
+http://portalbanco-app.test/auth/login:fabio_alves	URL:USER (sem PASS)
+marina4808:Montanha456	USER:PASS (sem URL)
+https://cobranca.test/login.php:ana3796	URL:USER (sem PASS)
+paulo.dias@contaonline-sp.example:Acesso706:http://ead-sp.example/login.php	USER:PASS:URL
+https://webmail-web.example:8000	URL only
+analima97:Estrela878	USER:PASS (sem URL)
+http://extranet-br.invalid/wp-login.php:ursulacunha16:d6h5tyb95j	URL:USER:PASS
+https://admin.example/#/login:lucascunha84:Verao976	URL:USER:PASS
+portalbanco.invalid/signin:ursularocha65:Chocolate437	URL(sem esquema):USER:PASS
+intranet-web.example/signin:sofiabarros8:senha123	URL(sem esquema):USER:PASS
+http://clientes-app.test/auth/login:diego_moraes:Estrela:23	URL:USER:PASS
+https://clientes-br.invalid/login.php:marina_braga:102030	URL:USER:PASS
+http://admin-br.test/login.php:elisa.cunha@vpn-sp.invalid	URL:USER (sem PASS)
+anamoraes9:Montanha_82!:https://extranet-app.invalid/auth/login	USER:PASS:URL
+clientes.invalid/wp-login.php:paulodias2:Acesso@24	URL(sem esquema):USER:PASS
+diego7943:Futebol@40:https://cobranca.invalid/wp-login.php	USER:PASS:URL
+http://rh.example/portal/entrar:ines.barros@lojamodelo.test:Cachorro590	URL:USER:PASS
+admin.test/auth/login:fabio.lima@cobranca.example:Senha89	URL(sem esquema):USER:PASS
+ines.costa@admin.test:Senha_25!:https://ead-web.invalid/auth/login	USER:PASS:URL
+https://vpn-sp.example/signin:olivia7486:Brasil280	URL:USER:PASS
+elisasouza59:Futebol-20!:https://rh-web.test/login	USER:PASS:URL
+https://lojamodelo.example/#/login:ursularocha38:Musica@50	URL:USER:PASS
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+	linha vazia
+https://lojamodelo-app.invalid/signin|marinacosta71|iktwunahkmm	separador | em vez de :
+https://cobranca-app.example/admin|sofia5698|6pz6xtzcdt3emf	separador | em vez de :
+http://cobranca.example/login.php|nelsonpinto69|8bc6zt7hmgwk9	separador | em vez de :
+https://clientes.invalid/users/sign_in|nelson.moraes@suporte-app.example|Praia:31	separador | em vez de :
+http://admin.test/login|joao.rocha@rh.example|Estrela:12	separador | em vez de :
+https://portalbanco-br.invalid|gisele_barros|Senha@15	separador | em vez de :
+https://faturamento-sp.example/admin|marina.cunha@faturamento-br.example|Acesso:96	separador | em vez de :
+http://lojamodelo.example/#/login|rafael1158|Senha159	separador | em vez de :
+http://clientes-sp.example/admin|carla_dias|Chocolate@21	separador | em vez de :
+http://intranet-br.example/auth/login|ursula_barros|3xhrwe6a2v	separador | em vez de :
+http://intranet.example/login|bruno_teixeira|Chocolate179	separador | em vez de :
+http://lojamodelo-web.invalid/login.php|oliviamoraes66|Musica@29	separador | em vez de :
+http://ead-web.example/wp-login.php|diegobarros20|Senha@35	separador | em vez de :
+https://intranet-app.test/signin|rafael.braga@vpn-app.invalid|ai9knrd9s	separador | em vez de :
+http://lojamodelo.example/portal/entrar|vitor9261|Estrela_45!	separador | em vez de :
+https://contaonline.test/auth/login|tiagorocha31|Acesso@83	separador | em vez de :
+https://webmail-app.invalid/users/sign_in|carla.pinto@faturamento.invalid|Chocolate947	separador | em vez de :
+https://lojamodelo-br.invalid|ana7089|Chocolate:68	separador | em vez de :
+https://admin.invalid/users/sign_in|joaofarias80|Acesso397	separador | em vez de :
+http://contaonline-br.test/login|elisa_alves|Estrela892	separador | em vez de :
+http://intranet-sp.invalid/wp-login.php|elisa.lima@portalbanco.example|Estrela@72	separador | em vez de :
+http://webmail.example/auth/login|rafaelsouza29|admin	separador | em vez de :
+https://lojamodelo.test/signin|karina.farias@rh.example|Futebol285	separador | em vez de :
+http://suporte.test/admin|nelsonrocha19|qwerty123	separador | em vez de :
+http://clientes.example/auth/login|diego8486|Cachorro-38!	separador | em vez de :
+https://ead-app.example|karina.rocha@lojamodelo-sp.test|Musica:73	separador | em vez de :
+http://admin-br.example/admin|nelson_silva|twr3sp4nqs6cgn	separador | em vez de :
+http://extranet-sp.example/login.php|sofia.silva@portalbanco.example|Senha_43!	separador | em vez de :
+http://cobranca-web.example/signin|olivia_lima|Girassol476	separador | em vez de :
+https://intranet.example/login.php|lucas.lima@cobranca-app.invalid|Futebol615	separador | em vez de :
+https://ead.invalid/portal/entrar|diegolima20|Verao:77	separador | em vez de :
+https://cobranca.example/#/login|elisasouza33|Girassol_77!	separador | em vez de :
+http://faturamento-app.test/admin|joao.dias@extranet.example|Estrela-34!	separador | em vez de :
+https://webmail.invalid/signin|hugo.lima@rh-app.example|Girassol160	separador | em vez de :
+https://webmail.test|ines.costa@crm.example|Verao:53	separador | em vez de :
+http://suporte-br.invalid/login.php|joaobarros65|Futebol_12!	separador | em vez de :
+https://cobranca-app.invalid/auth/login|sofia4164|Girassol75!	separador | em vez de :
+http://faturamento-br.invalid/admin|ines5113|Musica:60	separador | em vez de :
+http://clientes-sp.example/signin|elisafarias33|Cachorro35!	separador | em vez de :
+https://admin.test/#/login|joaobraga85|Brasil168	separador | em vez de :
+https://crm-sp.test/admin|vitor.braga@clientes.example|Cachorro201	separador | em vez de :
+https://crm.example/auth/login|joao.cunha@extranet-sp.example|Verao@50	separador | em vez de :
+https://webmail-sp.example/users/sign_in|bruno_moraes|Praia-26!	separador | em vez de :
+http://portalbanco-web.example/auth/login|diegocunha61|Brasil@11	separador | em vez de :
+http://faturamento-app.example/login.php|karina5135|Girassol:53	separador | em vez de :
+http://faturamento-sp.invalid/#/login|olivia1957|Praia@36	separador | em vez de :
+https://webmail.test/signin|karinacosta25|senha123	separador | em vez de :
+https://webmail-app.example|carla_costa|Acesso173	separador | em vez de :
+http://admin-app.invalid|hugo.lima@contaonline.example|Musica710	separador | em vez de :
+https://intranet-br.example/signin|olivia.lima@webmail-app.example|Chocolate@83	separador | em vez de :
+http://vpn-web.invalid/login.php|rafael.braga@webmail-br.invalid|Estrela@84	separador | em vez de :
+https://cobranca-web.example/login.php|joao.silva@clientes-sp.test|Cachorro873	separador | em vez de :
+http://intranet.example/wp-login.php|gisele.costa@ead.test|Futebol-54!	separador | em vez de :
+http://crm-app.example/portal/entrar|ursula.teixeira@vpn.example|Senha-35!	separador | em vez de :
+http://lojamodelo-app.invalid/#/login|ursula.souza@faturamento-app.example|Musica@81	separador | em vez de :
+http://contaonline-app.example/login|gisele.alves@faturamento.test|Senha855	separador | em vez de :
+http://intranet.test/users/sign_in|oliviamoraes82|Girassol501	separador | em vez de :
+https://ead-web.example/#/login|ana.moraes@faturamento.example|Musica168	separador | em vez de :
+http://intranet.invalid/users/sign_in|ines.braga@suporte-app.example|Verao@30	separador | em vez de :
+http://suporte-app.test/#/login|lucas_farias|Montanha883	separador | em vez de :
+===== by @canal_ficticio =====	cabecalho/ruido
+===== by @canal_ficticio =====	cabecalho/ruido
+===== FREE SAMPLE =====	cabecalho/ruido
+===== by @canal_ficticio =====	cabecalho/ruido
+===== FREE SAMPLE =====	cabecalho/ruido
+===== PRIVATE CLOUD =====	cabecalho/ruido
+===== PRIVATE CLOUD =====	cabecalho/ruido
+===== PRIVATE CLOUD =====	cabecalho/ruido
+===== by @canal_ficticio =====	cabecalho/ruido
+===== PRIVATE CLOUD =====	cabecalho/ruido
+===== PRIVATE CLOUD =====	cabecalho/ruido
+===== ULP MIX 2026 =====	cabecalho/ruido
+===== by @canal_ficticio =====	cabecalho/ruido
+===== by @canal_ficticio =====	cabecalho/ruido
+===== by @canal_ficticio =====	cabecalho/ruido
+===== by @canal_ficticio =====	cabecalho/ruido
+===== ULP MIX 2026 =====	cabecalho/ruido
+===== PRIVATE CLOUD =====	cabecalho/ruido
+===== by @canal_ficticio =====	cabecalho/ruido
+===== by @canal_ficticio =====	cabecalho/ruido
+===== FREE SAMPLE =====	cabecalho/ruido
+===== ULP MIX 2026 =====	cabecalho/ruido
+===== ULP MIX 2026 =====	cabecalho/ruido
+===== PRIVATE CLOUD =====	cabecalho/ruido
+===== ULP MIX 2026 =====	cabecalho/ruido
+===== PRIVATE CLOUD =====	cabecalho/ruido
+===== by @canal_ficticio =====	cabecalho/ruido
+===== FREE SAMPLE =====	cabecalho/ruido
+===== ULP MIX 2026 =====	cabecalho/ruido
+===== PRIVATE CLOUD =====	cabecalho/ruido
+===== FREE SAMPLE =====	cabecalho/ruido
+===== by @canal_ficticio =====	cabecalho/ruido
+===== by @canal_ficticio =====	cabecalho/ruido
+===== by @canal_ficticio =====	cabecalho/ruido
+===== ULP MIX 2026 =====	cabecalho/ruido
+===== by @canal_ficticio =====	cabecalho/ruido
+===== FREE SAMPLE =====	cabecalho/ruido
+===== FREE SAMPLE =====	cabecalho/ruido
+===== PRIVATE CLOUD =====	cabecalho/ruido
+===== PRIVATE CLOUD =====	cabecalho/ruido
+android://9832907a241d163e8d0d0b@lojamodelo.test	android:// (app, nao site)
+android://e2b57df807a9b19e8b0e48@admin.example	android:// (app, nao site)
+android://a3a7103ded368135797a0a@clientes-br.example	android:// (app, nao site)
+android://0a470929effa46f3aedab8@suporte-web.invalid	android:// (app, nao site)
+android://a2a654a3257e4718da1299@extranet-app.invalid	android:// (app, nao site)
+android://15caacbf48aa5b852c9a8e@crm-br.invalid	android:// (app, nao site)
+android://cd38326c7f46ec2c01e66a@crm-sp.example	android:// (app, nao site)
+android://f11463d7b372f59b7c5a9c@clientes-sp.invalid	android:// (app, nao site)
+android://2bfba4b2a0722336ff8420@faturamento.test	android:// (app, nao site)
+android://13f50b04bd4280d78d8a24@portalbanco-web.example	android:// (app, nao site)
+android://054a656c55d6f86b84c070@vpn-br.invalid	android:// (app, nao site)
+android://6506bdad4561a8910b9472@vpn-sp.test	android:// (app, nao site)
+android://ad740331bc5acc186f8f5c@contaonline.example	android:// (app, nao site)
+android://40fdd3953a2ec4d0454433@crm.test	android:// (app, nao site)
+android://a8cecc2050ecc16416888f@webmail.example	android:// (app, nao site)
+android://6c7a86eb58ebcaf7f3375d@faturamento-app.test	android:// (app, nao site)
+android://60361354f04fb2eccb3ade@cobranca-sp.example	android:// (app, nao site)
+android://fcd01c57ccbda72ee68084@intranet-web.example	android:// (app, nao site)
+android://288451c7685862103243ce@vpn.example	android:// (app, nao site)
+android://42aece247646f04768b1da@lojamodelo-br.example	android:// (app, nao site)
+android://9bd59b93eaffafa2cd3cfd@cobranca.example	android:// (app, nao site)
+android://1199a1bf9a3230b11fcd90@portalbanco.test	android:// (app, nao site)
+android://da6baf1d31886f99b74854@vpn-br.test	android:// (app, nao site)
+android://ae9aaed6bae8699dbaf8d5@lojamodelo-web.test	android:// (app, nao site)
+android://e79e1e9ca854fc7aca2eb4@crm-sp.test	android:// (app, nao site)
+android://f874f736bc911489d81c9f@crm-app.test	android:// (app, nao site)
+android://c2b99c381658671c18c629@vpn.test	android:// (app, nao site)
+android://af87ceeeee70fb5536e111@lojamodelo.invalid	android:// (app, nao site)
+android://54a41085bd8a21ee61a148@extranet-app.invalid	android:// (app, nao site)
+android://0983bee261303fc36eb38e@rh-app.test	android:// (app, nao site)
+android://05e6e8c63c05314969e350@lojamodelo.example	android:// (app, nao site)
+android://6cc786c9b163edee064238@intranet-app.invalid	android:// (app, nao site)
+android://2c9920df43478df38fff2c@rh-app.test	android:// (app, nao site)
+android://055f06b58bdf74fd279958@portalbanco.invalid	android:// (app, nao site)
+android://9be477902b37757d89e552@crm.example	android:// (app, nao site)
+android://fcc21a37722e488684f3da@crm-br.example	android:// (app, nao site)
+android://5e5a6db23f426b922bc508@contaonline-sp.invalid	android:// (app, nao site)
+android://ab4c5796c665240f22e49d@lojamodelo-br.test	android:// (app, nao site)
+android://fd52d1e978123af969f39b@lojamodelo.invalid	android:// (app, nao site)
+android://dcfa73e89c29ea72447d08@crm-app.example	android:// (app, nao site)
+http://extranet.example/wp-login.php:karina.souza@vpn-sp.invalid:	PASS vazio (termina em :)
+http://ead-app.invalid:tiago1489:	PASS vazio (termina em :)
+http://cobranca-web.example/signin:marina.silva@portalbanco-sp.test:	PASS vazio (termina em :)
+https://portalbanco-web.test/auth/login:diego275:	PASS vazio (termina em :)
+http://intranet-app.example/wp-login.php:ursula.braga@portalbanco-sp.example:	PASS vazio (termina em :)
+https://intranet.example/wp-login.php:diego.souza@faturamento.invalid:	PASS vazio (termina em :)
+http://cobranca.example/portal/entrar:gisele.farias@clientes-web.invalid:	PASS vazio (termina em :)
+http://portalbanco.invalid/signin:ana_souza:	PASS vazio (termina em :)
+http://intranet.test/users/sign_in:olivia.teixeira@suporte-app.invalid:	PASS vazio (termina em :)
+http://rh.invalid/users/sign_in:olivia.costa@suporte.invalid:	PASS vazio (termina em :)
+http://clientes.invalid/login.php:ana.souza@crm-app.invalid:	PASS vazio (termina em :)
+https://faturamento.test:rafael7682:	PASS vazio (termina em :)
+https://intranet.test/signin:ana.moraes@contaonline-br.example:	PASS vazio (termina em :)
+https://webmail.test/login.php:karina.barros@faturamento.invalid:	PASS vazio (termina em :)
+http://webmail-br.example/login.php:olivia.teixeira@portalbanco.invalid:	PASS vazio (termina em :)
+http://ead.test/wp-login.php:joao_dias:	PASS vazio (termina em :)
+http://ead-sp.test/portal/entrar:nelson_silva:	PASS vazio (termina em :)
+http://rh-web.example/users/sign_in:diegopinto59:	PASS vazio (termina em :)
+https://faturamento.invalid/portal/entrar:paulofarias80:	PASS vazio (termina em :)
+http://contaonline-sp.invalid/login.php:ines_silva:	PASS vazio (termina em :)
+http://suporte.test/users/sign_in:hugo.farias@crm.invalid:Cachorro528	(duplicata exata)
+contaonline.example/signin:nelson259:vks37ce2wv	(duplicata exata)
+http://cobranca.test/#/login:queila.braga@extranet.invalid:Estrela@77	(duplicata exata)
+ana.teixeira@portalbanco.example:Chocolate:66:https://portalbanco.test/admin	(duplicata exata)
+	(duplicata exata)
+queila_silva:Montanha:21:https://faturamento.invalid/login	(duplicata exata)
+https://rh-web.invalid/#/login:rafael_farias:ftpqvtr7	(duplicata exata)
+ana.farias@portalbanco.test:Senha:72	(duplicata exata)
+http://extranet-br.invalid/login.php:rafaelfarias79:Verao-85!	(duplicata exata)
+tiago9341:Cachorro524:https://crm.example/users/sign_in	(duplicata exata)
+karina.cunha@clientes.example:Estrela131:http://cobranca.invalid/admin	(duplicata exata)
+http://faturamento-app.test/admin|joao.dias@extranet.example|Estrela-34!	(duplicata exata)
+ead-sp.invalid/portal/entrar:queila.pinto@extranet.test:Estrela718	(duplicata exata)
+http://faturamento-br.example/login.php:fabio3641:r26tivn6a	(duplicata exata)
+https://rh-sp.test/auth/login:carladias40:Girassol703	(duplicata exata)
+extranet.invalid/login.php:rafael.moraes@faturamento-web.example:Senha99!	(duplicata exata)
+https://extranet-br.example:8000/portal/entrar	(duplicata exata)
+https://extranet-app.test/portal/entrar:diegosouza7	(duplicata exata)
+===== by @canal_ficticio =====	(duplicata exata)
+webmail.test/#/login:elisa.dias@cobranca-app.example:Futebol191	(duplicata exata)
+http://faturamento-br.example/signin:paulo.souza@webmail.example:fuv2m8gu44ip5	(duplicata exata)
+http://crm-app.test/#/login:oliviafarias77:ywj7gbm49m3k	(duplicata exata)
+https://suporte.example/users/sign_in:inesmoraes64:Chocolate742	(duplicata exata)
+http://cobranca.invalid/portal/entrar:fabio3374:Verao@83	(duplicata exata)
+gisele.moraes@rh.invalid:admin	(duplicata exata)
+https://clientes.invalid/users/sign_in:vitor.pinto@cobranca-br.test:zd5fty3n5pf	(duplicata exata)
+https://cobranca.example/wp-login.php:ines439:Girassol@52	(duplicata exata)
+http://ead-app.invalid:tiago1489:	(duplicata exata)
+	(duplicata exata)
+suporte-sp.example/auth/login:vitor.farias@crm.test:Praia_6!	(duplicata exata)
+fabio.farias@clientes-web.example:Musica816:http://extranet-app.test	(duplicata exata)
+https://admin.invalid/users/sign_in|joaofarias80|Acesso397	(duplicata exata)
+http://webmail-sp.test/auth/login:hugomoraes69:Estrela@29	(duplicata exata)
+http://crm.test/portal/entrar:elisa9215:p2fz7i2wzygyde	(duplicata exata)
+ursula.silva@cobranca.test:Praia-69!:http://intranet-web.test	(duplicata exata)
+http://extranet.invalid/auth/login:queilaalves1:Girassol@39	(duplicata exata)
+nelson.pinto@crm-br.invalid:Musica_96!	(duplicata exata)
+https://portalbanco.example/admin:elisasouza20	(duplicata exata)
+http://extranet-web.invalid/auth/login:tiago.farias@admin.test:qwerty123	(duplicata exata)
+===== PRIVATE CLOUD =====	(duplicata exata)
+carla.alves@vpn.example:Montanha-7!	(duplicata exata)
+https://webmail-web.example/#/login:rafaelpinto79	(duplicata exata)
+https://admin-app.test/users/sign_in:ines.silva@crm.test:Musica@19	(duplicata exata)
+https://admin-br.test/users/sign_in:queila.cunha@rh-br.invalid:Brasil:46	(duplicata exata)
+carla.souza@crm-web.example:senha123:https://crm.example/login.php	(duplicata exata)
+http://suporte-web.test/wp-login.php:carlacosta27:Chocolate918	(duplicata exata)
+http://vpn-sp.test/#/login:ines8167:Girassol:45	(duplicata exata)
+nelson8343:Senha374:https://portalbanco.invalid	(duplicata exata)
+https://cobranca.invalid/login.php:ursula.lima@crm.invalid:Musica@17	(duplicata exata)
+http://intranet.example/signin:nelson.braga@vpn-sp.invalid	(duplicata exata)
+	(duplicata exata)
+giselebarros59:Futebol523	(duplicata exata)
+vpn.example/portal/entrar:nelson.moraes@contaonline-app.test:Musica998	(duplicata exata)
+ursulaalves66:Praia:65:http://cobranca-web.test/wp-login.php	(duplicata exata)
+http://cobranca-br.invalid/auth/login	(duplicata exata)
+carla2308:Musica:24	(duplicata exata)
+http://vpn.test/users/sign_in:sofia.cunha@rh-sp.test	(duplicata exata)
+ines8492:Chocolate206:http://webmail.example/login.php	(duplicata exata)
+ursula.farias@cobranca.invalid:Acesso-9!:http://portalbanco.test/admin	(duplicata exata)
+http://contaonline-web.invalid/login	(duplicata exata)
+http://cobranca.example/auth/login:rafael.lima@webmail.test:Praia-6!	(duplicata exata)
+http://admin.test/signin:sofia.cunha@extranet.invalid:Futebol48!	(duplicata exata)
+https://rh-web.test/portal/entrar:fabio.barros@contaonline.test:Girassol:23	(duplicata exata)
+elisa.dias@rh-br.test:Brasil3!	(duplicata exata)
+http://ead.invalid/signin:rafaelbarros86:Musica723	(duplicata exata)
+http://vpn-br.test/#/login:tiago8259:Chocolate739	(duplicata exata)
+https://webmail-web.invalid/users/sign_in:carla.pinto@cobranca.test:Verao:56	(duplicata exata)
+ursula.cunha@portalbanco-sp.test:Futebol4!:http://cobranca.invalid/admin	(duplicata exata)
+http://admin-app.invalid:joaosilva17:Verao625	(duplicata exata)
+https://vpn.example/wp-login.php:lucas.dias@portalbanco-br.test:senha123	(duplicata exata)
+https://extranet-app.test/signin:karina5283	(duplicata exata)
+elisa6233:Brasil518	(duplicata exata)
+http://webmail.invalid/admin	(duplicata exata)
+https://crm-app.test/login:ursula.silva@vpn-sp.invalid:Chocolate:10	(duplicata exata)
+https://admin.example/auth/login:elisa.teixeira@suporte.test:Acesso@51	(duplicata exata)
+admin-sp.test/wp-login.php:ursula1847:senha123	(duplicata exata)
+http://admin.invalid/#/login:marina.braga@crm.example	(duplicata exata)
+joao.barros@lojamodelo-app.invalid:Brasil@36:https://intranet-app.example/auth/login	(duplicata exata)
+	(duplicata exata)
+https://faturamento.test:rafael7682:	(duplicata exata)
+ursula_barros:Praia962:https://ead-br.invalid/admin	(duplicata exata)
+https://cobranca-br.test/signin	(duplicata exata)
+https://webmail.invalid/login:paulo.rocha@suporte.test:Acesso655	(duplicata exata)
+https://crm-br.test:gisele.silva@ead-app.test:qwerty123	(duplicata exata)
+vitor.cunha@cobranca-br.example:Estrela857	(duplicata exata)
+http://intranet.example/wp-login.php|gisele.costa@ead.test|Futebol-54!	(duplicata exata)
+https://portalbanco.invalid:3000/signin	(duplicata exata)
+portalbanco.invalid/wp-login.php:hugo.farias@extranet-web.invalid:Futebol31!	(duplicata exata)
+http://faturamento.invalid/auth/login:marina2568	(duplicata exata)
+http://suporte.test/auth/login:tiago_lima:admin	(duplicata exata)
+http://faturamento.test/#/login:ines7781:Futebol@41	(duplicata exata)
+https://intranet.invalid/auth/login:queila.silva@vpn.test	(duplicata exata)
+	(duplicata exata)
+http://cobranca.example:paulocosta44:Verao630	(duplicata exata)
+http://extranet-sp.example/login:tiago.pinto@clientes.invalid:Girassol704	(duplicata exata)
+http://portalbanco-sp.example/admin:fabiopinto45:Cachorro_98!	(duplicata exata)
+http://webmail.test/auth/login:carlasilva26:zux2fq4xwm	(duplicata exata)
+https://webmail.test/wp-login.php:marinacosta7:Senha:78	(duplicata exata)
+clientes.invalid/admin:anabraga31:senha123	(duplicata exata)
+marina_alves:Acesso-38!:https://clientes-app.example/users/sign_in	(duplicata exata)
+https://extranet-web.example/portal/entrar:karina.souza@rh.example:8cwn6mb9dv	(duplicata exata)
+http://rh.test:fabioteixeira3:ewrgsafg88	(duplicata exata)
+elisa_dias:102030:https://ead.invalid/signin	(duplicata exata)
+http://contaonline.invalid/#/login:vitor.teixeira@intranet.test	(duplicata exata)
+https://extranet.test/users/sign_in:ursulacunha90:7i4hjghid	(duplicata exata)
+suporte.test/wp-login.php:ursula_moraes:Futebol211	(duplicata exata)
+https://crm.test/signin	(duplicata exata)
+http://lojamodelo.invalid/portal/entrar:hugorocha52:Cachorro706	(duplicata exata)
+sofia.barros@rh-br.invalid:Verao:20:https://vpn-app.example/wp-login.php	(duplicata exata)
+	(duplicata exata)
+===== by @canal_ficticio =====	(duplicata exata)
+ead-app.example/users/sign_in:gisele_lima:Acesso:40	(duplicata exata)
+http://contaonline-app.invalid/login.php:fabioalves69:Montanha122	(duplicata exata)
+https://portalbanco.test/login:karina.alves@clientes.test:Senha@68	(duplicata exata)
+carla.costa@admin.example:zgniy5va	(duplicata exata)
+http://portalbanco-app.example/login:fabiocosta47:Chocolate64!	(duplicata exata)
+diego_silva:Verao@62:https://faturamento-web.invalid/auth/login	(duplicata exata)
+	(duplicata exata)
+rh-sp.test/portal/entrar:marina7502:Praia715	(duplicata exata)
+https://crm-web.test/auth/login:lucasteixeira49:Senha_16!	(duplicata exata)
+http://extranet-sp.test/signin:tiago.rocha@clientes.example	(duplicata exata)
+https://contaonline-br.example/portal/entrar:tiagocosta29:Verao@43	(duplicata exata)
+https://extranet-br.invalid/login.php:ines1615:Chocolate30!	(duplicata exata)
+https://contaonline.invalid/signin:joaosouza41:102030	(duplicata exata)
+carlarocha67:Senha-94!:https://cobranca.invalid/users/sign_in	(duplicata exata)
+https://ead.test:rafael.costa@lojamodelo.invalid	(duplicata exata)
+marina_cunha:Estrela239:http://faturamento-sp.example/login	(duplicata exata)
+	(duplicata exata)
+https://vpn-web.invalid/users/sign_in:oliviacosta30:Praia272	(duplicata exata)
+http://webmail-sp.test/login.php:lucasteixeira1:Praia92!	(duplicata exata)
+android://6c7a86eb58ebcaf7f3375d@faturamento-app.test	(duplicata exata)
+paulo.farias@webmail-br.invalid:Praia815:https://vpn.example/users/sign_in	(duplicata exata)
+carla7858:y9phyyvrbbee4s:http://intranet.invalid/#/login	(duplicata exata)
+hugorocha19:Girassol441	(duplicata exata)
