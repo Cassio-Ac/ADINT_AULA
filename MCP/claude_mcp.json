@@ -1,0 +1,28 @@
+{
+  "mcpServers": {
+    "degrau1": {
+      "command": "wsl.exe",
+      "args": ["-d", "Ubuntu-24.04", "-e",
+               "/opt/adint-venv/bin/python3",
+               "/mnt/c/ADINT/ADINT_AULA/MCP/mcp_1_ping.py"]
+    },
+    "degrau2": {
+      "command": "wsl.exe",
+      "args": ["-d", "Ubuntu-24.04", "-e",
+               "/opt/adint-venv/bin/python3",
+               "/mnt/c/ADINT/ADINT_AULA/MCP/mcp_2_argumento.py"]
+    },
+    "degrau3": {
+      "command": "wsl.exe",
+      "args": ["-d", "Ubuntu-24.04", "-e",
+               "/opt/adint-venv/bin/python3",
+               "/mnt/c/ADINT/ADINT_AULA/MCP/mcp_3_agente.py"]
+    },
+    "degrau4": {
+      "command": "wsl.exe",
+      "args": ["-d", "Ubuntu-24.04", "-e",
+               "/opt/adint-venv/bin/python3",
+               "/mnt/c/ADINT/ADINT_AULA/MCP/mcp_4_kb.py"]
+    }
+  }
+}

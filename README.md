@@ -199,6 +199,8 @@ Os dados de todas as empresas convivem nos mesmos índices; o que separa é o ca
 | `FEED/` | coleta feeds RSS de segurança (`feeds.yaml`) |
 | `TELEGRAM/` | criação de sessão e coleta de canais de CVE/vazamento |
 | `ELK/` | configuração do Elasticsearch para o laboratório |
+| `MCP/` | a escada do MCP: 4 servidores, do mínimo ao agente com base de conhecimento |
+| `fala_com_mcp.py` | cliente MCP na mão — JSON-RPC por stdin/stdout, **sem nenhum LLM** |
 | `mcp_exposure_poc.py` | servidor MCP que expõe os índices a uma LLM |
 | `docs/INSTALLATION.md` | instalação detalhada |
 | `docs/TROUBLESHOOTING.md` | o que fazer quando quebra |
@@ -226,6 +228,7 @@ bash COLETOR/coletor.sh dominios.txt
 | `ModuleNotFoundError: No module named 'whois'` | rodou com o Python do sistema | use o Python do venv |
 | `ModuleNotFoundError: pkg_resources` no Shodan | `setuptools` ≥81 | `pip install 'setuptools<80'` |
 | `No module named 'mcp.server.fastmcp'` | instalou `mcp` 2.x | `pip install 'mcp<2'` |
+| servidor MCP "falhou" **só no Windows**: `Invalid JSON: expected value at line 1 column 1` | o `wsl.exe` injeta um BOM (`EF BB BF`) no 1º byte do stdin e suja o `initialize` | chame `tira_bom()` antes do `mcp.run()` — veja `MCP/sem_bom.py` |
 | índices do coletor não aparecem | `action.auto_create_index` restritivo | veja `docker-compose.yml` / `ELK/` |
 | `nuclei` devolve 0 achados | pode ser WAF **ou o alvo ter caído** | confirme que o alvo responde antes de concluir "limpo" |
 | etapa `feed` está `enabled: true` mas não roda | a ordem das etapas é uma lista fixa em `run_pipeline()` | rode `FEED/rss_feed.py` direto, ou inclua o nome na lista `tools_order` |

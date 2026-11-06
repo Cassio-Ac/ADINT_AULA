@@ -1,0 +1,27 @@
+{
+  "_comentario": [
+    "Claude Desktop no macOS/Linux: nao ha wsl.exe no meio, entao o comando",
+    "e o proprio python3. Troque TODOS os caminhos pelos seus.",
+    "Arquivo: ~/Library/Application Support/Claude/claude_desktop_config.json",
+    "Se o servidor nao subir, troque \"python3\" pela saida de: which python3",
+    "Em aula, deixe UM degrau por vez para a diferenca ficar limpa."
+  ],
+  "mcpServers": {
+    "degrau1": {
+      "command": "python3",
+      "args": ["/Users/SEU_USUARIO/ADINT_AULA/MCP/mcp_1_ping.py"]
+    },
+    "degrau2": {
+      "command": "python3",
+      "args": ["/Users/SEU_USUARIO/ADINT_AULA/MCP/mcp_2_argumento.py"]
+    },
+    "degrau3": {
+      "command": "python3",
+      "args": ["/Users/SEU_USUARIO/ADINT_AULA/MCP/mcp_3_agente.py"]
+    },
+    "degrau4": {
+      "command": "python3",
+      "args": ["/Users/SEU_USUARIO/ADINT_AULA/MCP/mcp_4_kb.py"]
+    }
+  }
+}
